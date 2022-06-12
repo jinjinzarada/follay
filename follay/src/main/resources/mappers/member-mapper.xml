@@ -6,4 +6,13 @@
 	insert into member(member_id, member_password, member_email, member_phone, member_birth)
 	values (#{member_id}, #{member_password}, #{member_email}, #{member_phone}, #{member_birth})
 </insert>
+
+<select id="selectAllMember" resultType="Member">
+	select * from member
+</select>
+
+<delete id="deleteMember" parameterType="string">
+	delete from member where member_id=#{member_id}
+</delete>
+
 </mapper>

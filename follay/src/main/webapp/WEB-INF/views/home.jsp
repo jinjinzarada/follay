@@ -13,6 +13,7 @@
 
 <P>  The time on the server is ${serverTime}. </P>
 
-<button type="button" onclick="location.href='<%=request.getContextPath()%>/member/insert'">х╦©Ь╟║ют</button>
+<button type="button" onclick="location.href='<%=request.getContextPath()%>/member/insert'">М ▄Л⌡░Й╟─Л·┘</button>
+<button type="button" onclick="location.href='<%=request.getContextPath()%>/member/list'">М ▄Л⌡░К╙╘К║²</button>
 </body>
 </html>

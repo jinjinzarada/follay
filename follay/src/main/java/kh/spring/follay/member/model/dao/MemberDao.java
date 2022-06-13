@@ -7,7 +7,7 @@ import org.apache.ibatis.session.SqlSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
-import kh.spring.follay.member.model.domain.Member;
+import kh.spring.follay.member.domain.Member;
 
 @Repository
 public class MemberDao {
@@ -15,17 +15,17 @@ public class MemberDao {
 	@Autowired
 	private SqlSession sqlSession;
 	
-	//È¸¿ø°¡ÀÔ
+	//íšŒì›ê°€ì…
 	public int insertMember(Member member) {
 		return sqlSession.insert("Member.insertMember",member);
 		
 	}
-	//È¸¿ø¸ñ·Ï
+	//íšŒì›ëª©ë¡
 	public List<Member> selectAllMember() {
 		return sqlSession.selectList("Member.selectAllMember");
 		
 	}
-	//È¸¿ø»èÁ¦
+	//íšŒì›ì‚­ì œ
 	public int deleteMember(String member_id) {
 		return sqlSession.delete("Member.deleteMember", member_id);
 		

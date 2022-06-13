@@ -5,7 +5,7 @@
 		<setting name="jdbcTypeForNull" value="NULL"/>
 	</settings>
 	<typeAliases>
-		<typeAlias type="kh.spring.follay.member.model.domain.Member" alias="Member"/>
+		<typeAlias type="kh.spring.follay.member.domain.Member" alias="Member"/>
 	</typeAliases>
 	<mappers>
 		<mapper resource="mappers/member-mapper.xml"/>

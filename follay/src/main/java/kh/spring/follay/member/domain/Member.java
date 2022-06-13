@@ -1,4 +1,4 @@
-package kh.spring.follay.member.model.domain;
+package kh.spring.follay.member.domain;
 
 import org.springframework.stereotype.Component;
 

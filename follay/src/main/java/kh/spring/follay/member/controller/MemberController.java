@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
-import kh.spring.follay.member.model.domain.Member;
+import kh.spring.follay.member.domain.Member;
 import kh.spring.follay.member.model.service.MemberService;
 
 @Controller

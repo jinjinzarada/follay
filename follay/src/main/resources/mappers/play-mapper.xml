@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="Play">
+
+<insert id="insertPlay" parameterType="Play">
+	insert into play 
+	(play_no
+	, play_title, member_id, play_content, play_original_filename, play_rename_filename
+	, play_date
+	, play_level
+	, play_ref, play_reply_ref
+	, play_reply_seq
+	, play_readcount)
+	values 
+	(	(select nvl(max(PLAY_NO),0)+1 from play)
+	, #{play_title},#{member_id}, #{play_content}, #{play_original_filename}, #{play_rename_filename}
+	, DEFAULT
+	, DEFAULT
+	, (select nvl(max(PLAY_NO),0)+1 from play), (select nvl(max(PLAY_NO),0)+1 from play)
+	, DEFAULT
+	, DEFAULT
+	)
+	
+</insert>
+<update id="updatePlayReplySeq" parameterType="Play">
+<![CDATA[
+	update play set play_reply_seq = play_reply_seq+1
+	where play_ref=(select play_ref from play where play_num=#{refnum})
+	and play_reply_seq > (select play_reply_seq from play where play_num=#{refnum})
+]]>
+</update>
+<insert id="insertPlayReply" parameterType="Play">
+<![CDATA[
+	insert into play
+	(play_no
+	, play_title, member_id, play_content, play_original_filename, play_rename_filename
+	, play_date
+	, play_level
+	, play_ref, play_reply_ref
+	, play_reply_seq
+	, play_readcount)
+	values
+	( (select nvl(max(PLAY_NO),0)+1 from play)
+	, #{play_title},#{member_id}, #{play_content}, #{play_original_filename}, #{play_rename_filename}
+	, DEFAULT
+	, (select play_level+1 from play where play_no=#{refnum})
+	, (select play_ref from play where play_no=#{refnum})
+	, #{refnum}
+	, (select play_reply_seq+1 from play where play_no=#{refnum})
+	, DEFAULT
+	)
+]]>
+</insert>
+<insert id="insertPlayReply2" parameterType="Play">
+<![CDATA[
+	insert into play
+		(play_num
+		, play_title, member_id, play_content, play_original_filename, play_rename_filename
+		, play_date
+		, play_level
+		, play_ref, play_reply_ref
+		, play_reply_seq
+		, play_readcount)
+	select (select nvl(max(PLAY_NO),0)+1 from play)
+		, #{play_title},#{member_id}, #{play_content}, #{play_original_filename}, #{play_rename_filename}
+		, systimestamp
+		, play_level+1
+		, play_ref
+		, #{refnum}
+		, play_reply_seq+1
+		, 0
+		from play where play_no=#{refnum}
+]]>
+</insert>
+
+
+<select id="selectPlayListAll" resultType="Play">
+<![CDATA[
+	select * from play
+	order by play_ref desc, play_reply_seq asc
+]]>
+</select>
+<select id="selectPlay" resultType="Play" parameterType="string">
+<![CDATA[
+	select * from play
+	where play_no=#{play_no}
+]]>
+</select>
+
+<update id="updatePlay" parameterType="Play">
+	update play set
+		  play_title = #{play_title}
+		, play_content = #{play_content}
+		, play_original_filename = #{play_original_filename}
+		, play_rename_filename = #{play_rename_filename}
+	where play_no=#{play_no}
+</update>
+
+<delete id="deletePlay" parameterType="string">
+	delete from play where play_no=#{play_no}
+</delete>
+</mapper>

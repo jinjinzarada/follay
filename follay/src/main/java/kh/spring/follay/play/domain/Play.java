@@ -43,6 +43,4 @@ public class Play {
 				+ play_replay_ref + ", play_reply_seq=" + play_reply_seq + ", play_readcount=" + play_readcount
 				+ ", member_id=" + member_id + "]";
 	}
-	
-	
 }

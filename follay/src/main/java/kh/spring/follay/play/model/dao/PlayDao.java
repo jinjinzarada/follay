@@ -19,11 +19,11 @@ public class PlayDao {
 			return sqlsession.insert("Play.insertPlay",play);
 	}
 	// 답글 seq 업데이트
-	public int updateBoardReplySeq(Play play) {
+	public int updatePlayReplySeq(Play play) {
 			return sqlsession.update("Play.updatePlayReplySeq",play);
 	}
 	// 답글
-	public int insertBoardReply(Play play) {
+	public int insertPlayReply(Play play) {
 		return sqlsession.insert("Play.insertPlayReply2",play);
 	}
 		

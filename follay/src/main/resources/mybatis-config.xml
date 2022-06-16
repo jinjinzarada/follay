@@ -6,8 +6,10 @@
 	</settings>
 	<typeAliases>
 		<typeAlias type="kh.spring.follay.member.domain.Member" alias="Member"/>
+		<typeAlias type="kh.spring.follay.play.domain.Play" alias="Play"/>
 	</typeAliases>
 	<mappers>
 		<mapper resource="mappers/member-mapper.xml"/>
+		<mapper resource="mappers/play-mapper.xml"/>
 	</mappers>
 </configuration>

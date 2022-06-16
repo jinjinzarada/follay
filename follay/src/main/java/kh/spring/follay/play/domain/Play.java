@@ -34,6 +34,8 @@ public class Play {
 	private int play_readcount;
 	
 	private String member_id;
+	
+	private int refnum;
 
 	@Override
 	public String toString() {
@@ -41,6 +43,7 @@ public class Play {
 				+ ", play_original_filename=" + play_original_filename + ", play_rename_filename="
 				+ play_rename_filename + ", play_date=" + play_date + ", play_ref=" + play_ref + ", play_replay_ref="
 				+ play_replay_ref + ", play_reply_seq=" + play_reply_seq + ", play_readcount=" + play_readcount
-				+ ", member_id=" + member_id + "]";
+				+ ", member_id=" + member_id + ", refnum=" + refnum + "]";
 	}
+
 }

@@ -10,14 +10,14 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
 import kh.spring.follay.member.domain.Member;
-import kh.spring.follay.member.model.service.MemberService;
+import kh.spring.follay.member.model.service.MemberServiceImpl;
 
 @Controller
 @RequestMapping("/member")
 public class MemberController {
 	
 	@Autowired
-	private MemberService service;
+	private MemberServiceImpl service;
 
 	@RequestMapping(value = "/insert", method = RequestMethod.GET)
 	public ModelAndView pageinsertMember(ModelAndView mv) {

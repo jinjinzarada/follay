@@ -9,7 +9,7 @@ import kh.spring.follay.member.domain.Member;
 import kh.spring.follay.member.model.dao.MemberDao;
 
 @Service
-public class MemberService {
+public class MemberServiceImpl {
 	@Autowired
 	private MemberDao dao;
 	

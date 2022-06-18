@@ -19,7 +19,7 @@ import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 import kh.spring.follay.common.FileUpload;
 import kh.spring.follay.member.domain.Member;
 import kh.spring.follay.play.domain.Play;
-import kh.spring.follay.play.model.service.PlayService;
+import kh.spring.follay.play.model.service.PlayServiceImpl;
 
 
 @Controller
@@ -28,7 +28,7 @@ public class PlayController {
 	private static final Logger logger = LoggerFactory.getLogger(PlayController.class);
 
 	@Autowired
-	private PlayService service;
+	private PlayServiceImpl service;
 	
 	@Autowired
 	private FileUpload commonFile;

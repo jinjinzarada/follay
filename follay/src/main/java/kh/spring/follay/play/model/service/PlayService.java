@@ -2,44 +2,41 @@ package kh.spring.follay.play.model.service;
 
 import java.util.List;
 
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Service;
-
 import kh.spring.follay.play.domain.Play;
-import kh.spring.follay.play.model.dao.PlayDao;
 
-@Service
-public class PlayService {
+public interface PlayService {
 
-	@Autowired
-	private PlayDao dao;
+	/**
+	 * @param play 게시글로 추가할 내용
+	 * @return 추가된 글 갯수
+	 * @author Jinny
+	 */
+	public int insertPlay(Play play);
+	/**
+	 * @param play 수정할 글번호
+	 * @return 수정괸 글의 갯수
+	 */
+	public int updatePlay(Play play);
+	/**
+	 * @param play_no 삭제할 글번호 하나
+	 * @return 삭제된 글의 갯수
+	 */
+	public int deletePlay(String play_no);
 	
-	// 글쓰기
-	public int insertPlay(Play play) {
-		if(play.getRefnum() > 0) {
-			dao.updatePlayReplySeq(play);
-			return dao.insertPlayReply(play);
-		}else {
-			return dao.insertPlay(play);
-		}
-	}
-	// 게시글 수정
-	public int updatePlay(Play play) {
-		return dao.updatePlay(play);
-	}
+	/**
+	 * @param play_no 삭제할 글번호 리스트
+	 * @return 삭제된 글의 갯수
+	 * 
+	 */
+	public int deletePlay(List<String> play_no);
 	
-	// 게시글 삭제
-	public int deletePlay(String play_no) {
-		return dao.deletePlay(play_no);
-	}
+	public Play selectPlay(String play_no);
+	public List<Play> selectPlayListAll();
 	
-	public Play selectPlay(String play_no) {
-		return dao.selectPlay(play_no);
-	}
-	
-	// 게시글 목록
-	public List<Play> selectPlayListAll() {
-		return dao.selectPlayListAll();
-	}
-	
+	/**
+	 * @param pageNum 읽을 페이지
+	 * @param limit 읽을 게시글 수
+	 * @param searchWord 검색할 단어
+	 * @return 추가된 글개수
+	 */
 }

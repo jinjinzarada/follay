@@ -3,11 +3,11 @@
 <mapper namespace="Member">
 
 <insert id="insertMember" parameterType="Member">
-	insert into member(member_id, member_password, member_email, member_phone, member_birth)
+	insert into member(MEMBER_ID, MEMBER_PASSWORD, MEMBER_EMAIL, MEMBER_PHONE, MEMBER_BIRTH)
 	values (#{member_id}, #{member_password}, #{member_email}, #{member_phone}, #{member_birth})
 </insert>
 
-<select id="selectAllMember" resultType="Member">
+<select id="selectLogin" parameterType="Member" resultType="Member">
 	select * from member
 </select>
 

@@ -54,7 +54,7 @@
 	<c:if test="${not empty play.play_original_filename }">
 		<input type="hidden" name="play_rename_filename" value="${play.play_rename_filename }">
 		<div>
-		기존첨부파일: <input type="text" name="play_original_filename" value="${play.play_original_filename }" id="orgFile" readonly ]>
+		기존첨부파일: <input type="text" name="play_original_filename" value="${play.play_original_filename }" id="orgFile" readonly>
 		<button type="button" onclick="document.getElementById('orgFile').value='';">기존파일삭제</button></div>
 		<div><img src="<%=request.getContextPath() %>/${play.play_rename_filename }" width="500"></div>
 	</c:if>

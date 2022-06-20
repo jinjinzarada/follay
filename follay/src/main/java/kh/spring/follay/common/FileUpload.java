@@ -38,22 +38,22 @@ public class FileUpload {
 	}
 	
 
-	public void removeFile(String board_file, HttpServletRequest request) {
+	public void removeFile(String play_file, HttpServletRequest request) {
 		String resourcesPath = "resources";
 		String uploadPath = "uploadFiles";
 		
 		String root = request.getSession().getServletContext().getRealPath(resourcesPath);
 		String savePath = root + "\\"+ uploadPath;
 
-		System.out.println("remove file b:"+board_file);
-		board_file = board_file.substring(board_file.lastIndexOf("/")+1);
+		System.out.println("remove file b:"+play_file);
+		play_file = play_file.substring(play_file.lastIndexOf("/")+1);
 //		중요 이해바람
-		System.out.println("remove file a:"+board_file);
+		System.out.println("remove file a:"+play_file);
 		
-		String filePath = savePath + "\\" + board_file;
+		String filePath = savePath + "\\" + play_file;
 		try {
 			// 파일 저장
-			System.out.println(board_file + "을 삭제합니다.");
+			System.out.println(play_file + "을 삭제합니다.");
 			System.out.println("기존 저장 경로 : " + savePath);
 
 			File delFile = new File(filePath);

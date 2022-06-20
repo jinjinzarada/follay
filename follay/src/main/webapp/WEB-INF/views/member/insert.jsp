@@ -13,7 +13,7 @@
 		<div>이메일 : <input type="email" name="member_email" required></div>
 		<div>휴대폰 : <input type="tel" name="member_phone" required></div>
 		<div>생년월일 : <input type="date" name="member_birth" required></div>
-		<input type="submit" value="회원가입">
+		<button type="submit">회원가입</button>
 	</form>
 
 </body>

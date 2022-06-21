@@ -1,0 +1,54 @@
+@charset "UTF-8";
+
+/* 폰트자리 */
+
+		.wrap {
+            width: 100%;
+        }
+        .wrap.header {
+            background: white;
+        }
+        /* bootstrap 클래스 명과 구분하기 위해 section으로 변경함*/
+        .wrap.section {
+            background: white;
+        }
+        .wrap.footer {
+            background: white;
+        }
+		
+        /* header */
+        header{ 
+        /* header.css에서 따로 설정함.  */
+            width: 100%; margin: 0 auto;
+            margin-top: 10px;
+            margin-bottom: 10px;
+        }
+
+        /* section */
+        section{
+            /* 1. 중앙정렬 */
+        	/* header.css의 nav 설정과 비슷하게 함 */
+			width: 1200px;
+			max-width: 1200px;
+			margin: 0 auto;
+            position: relative;
+            overflow: hidden;
+        }
+        /* article */
+        article {
+            padding: 30px 20px;
+            margin-top: 10px;
+            margin-bottom: 10px;
+        }
+
+        /* footer */
+        footer{
+        	/* header.css의 nav 설정과 비슷하게 함 */
+			width: 1200px;
+			max-width: 1200px;
+			margin: auto;
+			
+            margin-top: 10px;
+            margin-bottom: 10px;
+        }
+

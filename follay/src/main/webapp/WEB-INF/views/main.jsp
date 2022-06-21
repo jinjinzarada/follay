@@ -1,19 +1,23 @@
-<link rel="stylesheet" type="text/css" href="<%=request.getContextPath()%>/resources/css/home.css">
+<!-- <link rel="shortcut icon" type="image/x-icon" href="http://http://localhost:8090/follay/favicon.ico" /> -->
+<link rel="stylesheet" type="text/css" href="<%=request.getContextPath()%>/resources/css/common/reset.css">
+<link rel="stylesheet" type="text/css" href="<%=request.getContextPath()%>/resources/css/common/common.css">
+<link rel="stylesheet" type="text/css" href="<%=request.getContextPath()%>/resources/css/main.css">
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%@ page session="false" %>
 <html>
 <head>
-	<title>Home</title>
+	<title>Follay!</title>
 </head>
 <body>
-<h1>
-	follay!  
-</h1>
-
-<P>  The time on the server is ${serverTime}. </P>
-
+	<img src="<%=request.getContextPath()%>/resources/image/main/jong2.png">
+	<img src="<%=request.getContextPath()%>/resources/image/main/ppom.png">
+	<img src="<%=request.getContextPath()%>/resources/image/main/noliteo.png">
+	<img src="<%=request.getContextPath()%>/resources/image/main/follay!.gif" style="width:-100%">
+	<img src="<%=request.getContextPath()%>/resources/image/main/login.png">
+	<img src="<%=request.getContextPath()%>/resources/image/main/hoewongaib.png">
+	<img src="<%=request.getContextPath()%>/resources/image/main/mypage.png">
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
   <div class="container-fluid">
     <a class="navbar-brand" href="#">Navbar</a>

@@ -1,3 +1,4 @@
+<link rel="stylesheet" type="text/css" href="<%=request.getContextPath()%>/resources/css/home.css">
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
@@ -12,6 +13,52 @@
 </h1>
 
 <P>  The time on the server is ${serverTime}. </P>
+
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="#">Navbar</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarColor02" aria-controls="navbarColor02" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarColor02">
+      <ul class="navbar-nav me-auto">
+        <li class="nav-item">
+          <a class="nav-link active" href="#">Follay!
+            <span class="visually-hidden">(current)</span>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Features</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Pricing</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">About</a>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">종이접기</a>
+          <div class="dropdown-menu">
+            <a class="dropdown-item" href="#">동물</a>
+            <a class="dropdown-item" href="#">식물</a>
+            <a class="dropdown-item" href="#">곤충</a>
+            <a class="dropdown-item" href="#">도형</a>
+            <a class="dropdown-item" href="#">가구</a>
+            <a class="dropdown-item" href="#">이동수단</a>
+            <a class="dropdown-item" href="#">기타</a>
+            <div class="dropdown-divider"></div>
+            <a class="dropdown-item" href="#">Separated link</a>
+          </div>
+        </li>
+      </ul>
+      <form class="d-flex">
+        <input class="form-control me-sm-2" type="text" placeholder="Search">
+        <button class="btn btn-secondary my-2 my-sm-0" type="submit">Search</button>
+      </form>
+    </div>
+  </div>
+</nav>
 
 <div>
 <button type="button" onclick="location.href='<%=request.getContextPath()%>/member/insert'">회원가입</button>

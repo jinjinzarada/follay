@@ -9,7 +9,7 @@ import kh.spring.follay.play.domain.Play;
 import kh.spring.follay.play.model.dao.PlayDao;
 
 @Service
-public class PlayServiceImpl {
+public class PlayServiceImpl implements PlayService{
 
 	@Autowired
 	private PlayDao dao;
@@ -40,6 +40,10 @@ public class PlayServiceImpl {
 	// 게시글 목록
 	public List<Play> selectPlayListAll() {
 		return dao.selectPlayListAll();
+	}
+	
+	public int deletePlay(List<String> play_no) {
+		return 0;
 	}
 	
 }

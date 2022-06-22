@@ -8,8 +8,9 @@
     font-family: Montserrat, -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
 }
 
+/* 메뉴바 배경 색깔 */
 .bg-dark {
-    background-color: #f3969a !important;
+/*     background-color: #f3969a !important; */
 }
 
 *, *::before, *::after {
@@ -98,6 +99,16 @@ li {
     padding-left: 0.5rem;
 }
 
+/*이미지 크기 조정*/
+.nav-item-image {
+	width:150px;
+}
+
+.nav-item-image-logo {
+/* 	width:300px; */
+/* 	height:200px; */
+}
+
 /* 드랍 다운 */
 
 .dropup, .dropend, .dropdown, .dropstart {
@@ -142,23 +153,23 @@ li {
     padding: 0.25rem 1rem;
     clear: both;
     font-weight: 400;
-    color: #212529;
     text-align: inherit;
     text-decoration: none;
     white-space: nowrap;
     background-color: transparent;
-    border: 0;
 }
 
-.dropdown-divider {
-    height: 0;
-    margin: 0.5rem 0;
-    overflow: hidden;
-    border-top: 1px solid rgba(0, 0, 0, 0.15);
-}
+/* .dropdown-divider { */
+/*     height: 0; */
+/*     margin: 0.5rem 0; */
+/*     overflow: hidden; */
+/*     border-top: 1px solid rgba(0, 0, 0, 0.15); */
+/* } */
 
 .dropdown-toggle {
     white-space: nowrap;
+    width:150px;
+    background-color: transparent;
 }
 
 [role="button"] {

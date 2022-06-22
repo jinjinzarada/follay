@@ -1,4 +1,3 @@
-<!-- <link rel="shortcut icon" type="image/x-icon" href="http://http://localhost:8090/follay/favicon.ico" /> -->
 <link rel="stylesheet" type="text/css" href="<%=request.getContextPath()%>/resources/css/common/reset.css">
 <link rel="stylesheet" type="text/css" href="<%=request.getContextPath()%>/resources/css/common/common.css">
 <link rel="stylesheet" type="text/css" href="<%=request.getContextPath()%>/resources/css/main.css">
@@ -11,22 +10,46 @@
 	<title>Follay!</title>
 </head>
 <body>
-	<img src="<%=request.getContextPath()%>/resources/image/main/jong2.png">
-	<img src="<%=request.getContextPath()%>/resources/image/main/ppom.png">
-	<img src="<%=request.getContextPath()%>/resources/image/main/noliteo.png">
-	<img src="<%=request.getContextPath()%>/resources/image/main/follay!.gif" style="width:-100%">
-	<img src="<%=request.getContextPath()%>/resources/image/main/login.png">
-	<img src="<%=request.getContextPath()%>/resources/image/main/hoewongaib.png">
-	<img src="<%=request.getContextPath()%>/resources/image/main/mypage.png">
+
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
   <div class="container-fluid">
-    <a class="navbar-brand" href="#">Navbar</a>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarColor02" aria-controls="navbarColor02" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
 
     <div class="collapse navbar-collapse" id="navbarColor02">
       <ul class="navbar-nav me-auto">
+    <li class="nav-item dropdown">
+	<img src="<%=request.getContextPath()%>/resources/image/main/jong2.png" class="nav-link dropdown-toggle" 
+	data-bs-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
+	<div class="dropdown-menu">
+            <a class="dropdown-item" href="#">동물</a>
+            <a class="dropdown-item" href="#">식물</a>
+            <a class="dropdown-item" href="#">곤충</a>
+            <a class="dropdown-item" href="#">도형</a>
+            <a class="dropdown-item" href="#">가구</a>
+            <a class="dropdown-item" href="#">이동수단</a>
+            <a class="dropdown-item" href="#">기타</a>
+          </div>
+	</li>
+	<li class="nav-item">
+	<img src="<%=request.getContextPath()%>/resources/image/main/ppom.png" class="nav-item-image">
+	</li>
+	<li class="nav-item">
+	<img src="<%=request.getContextPath()%>/resources/image/main/noliteo.png" class="nav-item-image"
+	onclick="location.href='<%=request.getContextPath()%>/play/list'">
+	</li>
+	<li class="nav-item">
+	<img src="<%=request.getContextPath()%>/resources/image/main/follay!.gif" class="nav-item-image-logo">
+	</li>
+	<li class="nav-item">
+	<img src="<%=request.getContextPath()%>/resources/image/main/login.png" class="nav-item-image"
+	onclick="location.href='<%=request.getContextPath()%>/member/login'">
+	</li>
+	<li class="nav-item">
+	<img src="<%=request.getContextPath()%>/resources/image/main/hoewongaib.png" class="nav-item-image"
+	onclick="location.href='<%=request.getContextPath()%>/member/insert'">
+	</li>
+	<li class="nav-item">
+	<img src="<%=request.getContextPath()%>/resources/image/main/mypage.png" class="nav-item-image">
+	</li>
         <li class="nav-item">
           <a class="nav-link active" href="#">Follay!
             <span class="visually-hidden">(current)</span>
@@ -51,15 +74,13 @@
             <a class="dropdown-item" href="#">가구</a>
             <a class="dropdown-item" href="#">이동수단</a>
             <a class="dropdown-item" href="#">기타</a>
-            <div class="dropdown-divider"></div>
-            <a class="dropdown-item" href="#">Separated link</a>
           </div>
         </li>
       </ul>
-      <form class="d-flex">
-        <input class="form-control me-sm-2" type="text" placeholder="Search">
-        <button class="btn btn-secondary my-2 my-sm-0" type="submit">Search</button>
-      </form>
+<!--       <form class="d-flex"> -->
+<!--         <input class="form-control me-sm-2" type="text" placeholder="Search"> -->
+<!--         <button class="btn btn-secondary my-2 my-sm-0" type="submit">Search</button> -->
+<!--       </form> -->
     </div>
   </div>
 </nav>

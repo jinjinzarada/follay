@@ -26,7 +26,8 @@
 	onclick="location.href='<%=request.getContextPath()%>/play/list'">
 	</li>
 	<li class="nav-item">
-		<img src="<%=request.getContextPath()%>/resources/image/main/follay!.gif" class="nav-item-image-logo">
+		<img src="<%=request.getContextPath()%>/resources/image/main/follay!.gif" class="nav-item-image-logo"
+	onclick="location.href='<%=request.getContextPath()%>/'">
 	</li>
 	<li class="nav-item">
 		<img src="<%=request.getContextPath()%>/resources/image/main/login.png" class="nav-item-image"

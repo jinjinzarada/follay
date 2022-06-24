@@ -15,16 +15,17 @@
 <body>
 
 <%@ include file="/WEB-INF/views/common/template_header.jsp" %>
-
-<div>
-<button type="button" onclick="location.href='<%=request.getContextPath()%>/member/list'">회원목록</button>
-</div>
-<div>
-<button type="button" onclick="location.href='<%=request.getContextPath()%>/play/write'">글쓰기</button>
-</div>
-<div>
-<button type="button" onclick="location.href='<%=request.getContextPath()%>/play/list'">글목록</button>
-</div>
+<img src="<%=request.getContextPath()%>/resources/image/main/follay_show_slide.png" class=""
+	onclick="location.href='<%=request.getContextPath()%>/'" width="100%;">
+<!-- <div> -->
+<%-- <button type="button" onclick="location.href='<%=request.getContextPath()%>/member/list'">회원목록</button> --%>
+<!-- </div> -->
+<!-- <div> -->
+<%-- <button type="button" onclick="location.href='<%=request.getContextPath()%>/play/write'">글쓰기</button> --%>
+<!-- </div> -->
+<!-- <div> -->
+<%-- <button type="button" onclick="location.href='<%=request.getContextPath()%>/play/list'">글목록</button> --%>
+<!-- </div> -->
 
 <%@ include file="/WEB-INF/views/common/template_footer.jsp" %>
 </body>

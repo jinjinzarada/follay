@@ -24,4 +24,5 @@ public class Member {
 				+ member_email + ", member_phone=" + member_phone + ", member_birth=" + member_birth + "]";
 	}
 
+
 }

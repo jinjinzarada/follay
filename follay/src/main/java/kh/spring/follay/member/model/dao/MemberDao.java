@@ -20,6 +20,11 @@ public class MemberDao {
 		return sqlSession.insert("Member.insertMember",member);
 		
 	}
+	
+	public Member selectLogin(Member member) {
+		return sqlSession.selectOne("Member.selectLogin", member);
+	}
+	
 	//회원목록
 	public List<Member> selectAllMember() {
 		return sqlSession.selectList("Member.selectAllMember");

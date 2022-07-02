@@ -18,6 +18,11 @@ public class MemberServiceImpl {
 		return dao.insertMember(member);
 		
 	}
+	
+	public Member selectLogin(Member member) {
+		return dao.selectLogin(member);
+	}
+	
 	//회원목록
 	public List<Member> selectAllMember() {
 		return dao.selectAllMember();

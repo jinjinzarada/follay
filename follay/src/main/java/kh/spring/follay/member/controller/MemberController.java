@@ -2,12 +2,21 @@ package kh.spring.follay.member.controller;
 
 import java.util.List;
 
+import javax.inject.Inject;
+import javax.servlet.http.HttpSession;
+
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
+import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import kh.spring.follay.member.domain.Member;
 import kh.spring.follay.member.model.service.MemberServiceImpl;
@@ -15,10 +24,13 @@ import kh.spring.follay.member.model.service.MemberServiceImpl;
 @Controller
 @RequestMapping("/member")
 public class MemberController {
-	
+	private static final Logger logger = LoggerFactory.getLogger(MemberController.class);
 	@Autowired
 	private MemberServiceImpl service;
 
+	@Inject
+	private BCryptPasswordEncoder pwdEncoding;
+	
 	@RequestMapping(value = "/insert", method = RequestMethod.GET)
 	public ModelAndView pageinsertMember(ModelAndView mv) {
 		mv.setViewName("member/insert");
@@ -34,6 +46,33 @@ public class MemberController {
 		return mv;
 		
 	}
+	
+	@GetMapping("/login")
+	public ModelAndView pageLogin(ModelAndView mv) {
+		mv.setViewName("member/login");
+		return mv;
+	}
+	@PostMapping("/login")
+	public ModelAndView selectLogin(ModelAndView mv
+			, Member member
+			, RedirectAttributes rttr
+			, HttpSession session
+			) {
+		Member result = service.selectLogin(member);
+		
+		if(result == null) {
+			rttr.addFlashAttribute("msg","로그인에 실패했습니다. 아이다와 패스워드를 다시 확인해 주세요.");
+			mv.setViewName("redirect:/member/login");
+			return mv;
+		}
+		
+			session.setAttribute("loginSsInfo", result);
+			rttr.addFlashAttribute("msg",result.getMember_id()+"로그인 되었습니다.");
+			mv.setViewName("redirect:/");
+			return mv;
+			
+	}
+		
 	@RequestMapping(value = "/list", method = RequestMethod.GET)
 	public ModelAndView selectAllMember(ModelAndView mv) {
 		List<Member> memberlist = service.selectAllMember();

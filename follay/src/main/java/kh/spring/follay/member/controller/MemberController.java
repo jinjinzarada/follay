@@ -72,7 +72,7 @@ public class MemberController {
 		Member result = service.selectLogin(member);
 		
 		if(result == null) {
-			rttr.addFlashAttribute("msg","로그인에 실패했습니다. 아이다와 패스워드를 다시 확인해 주세요.");
+			rttr.addFlashAttribute("msg","로그인에 실패했습니다. 아이디와 패스워드를 다시 확인해 주세요.");
 			mv.setViewName("redirect:/member/login");
 			return mv;
 		}

@@ -3,6 +3,7 @@ package kh.spring.follay.member.controller;
 import java.util.List;
 
 import javax.inject.Inject;
+import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 
 import org.slf4j.Logger;
@@ -31,20 +32,30 @@ public class MemberController {
 	@Inject
 	private BCryptPasswordEncoder pwdEncoding;
 	
-	@RequestMapping(value = "/insert", method = RequestMethod.GET)
-	public ModelAndView pageinsertMember(ModelAndView mv) {
+	@RequestMapping(value = "insert", method = RequestMethod.GET)
+	public ModelAndView pageInsert(ModelAndView mv) {
 		mv.setViewName("member/insert");
 		return mv;
 		
 	}
-	@RequestMapping(value = "/insert", method = RequestMethod.POST)
-	public ModelAndView insertMember(ModelAndView mv
+	@PostMapping("/insert")
+	public ModelAndView insert(ModelAndView mv
 			, Member member
+			, RedirectAttributes rttr
+			, HttpServletRequest req
 			) {
+		String t2 = req.getParameter("title");
+		if(t2==null) {
+			t2 = null;
+		}
 		int result = service.insertMember(member);
+		if(result < 1) {
+			rttr.addFlashAttribute("msg","가입에 실패했습니다. 다시 회원가입 시도해주세요.");
+			mv.setViewName("redirect:/member/enroll");
+			return mv;
+		}
 		mv.setViewName("redirect:/");
 		return mv;
-		
 	}
 	
 	@GetMapping("/login")

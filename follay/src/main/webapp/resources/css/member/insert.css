@@ -1,0 +1,172 @@
+@charset "UTF-8";
+
+/* 내 css 부분 */
+ a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* 회원가입 부분 */
+
+/* 회원가입 대문 */
+.flex{
+	width:100%;
+	margin: auto;
+	margin-left: 8%;
+}
+
+.l_all_wrap{
+	display: flex;
+	flex-direction: column;
+	
+	flex-wrap: wrap;
+	
+}
+
+.title{
+	font-size: 30px;
+	text-align: center;
+	padding-top: 60px;
+	padding-bottom: 50px;
+	border-bottom: 1px solid #F54748;
+	width: 70%;
+	margin-left: auto;
+	margin-right: auto;
+	margin-bottom: 2%;
+}    
+    
+.register{
+           
+        }
+        
+.register input{
+    width: 85%;
+    height: 35px;
+    outline: none;
+    padding: 10px;
+    border: 1px solid #707070;
+    transition: 0.3s;
+}
+
+.register input:valid, .register input:focus{
+    border: 1px solid #2b2e4a;
+}
+
+.register .center{
+    display: flex;
+    align-items: center;
+    width: fit-content;
+    
+}
+
+ .register .flex{
+     display: flex;
+     flex-direction: column;
+ }
+ 
+ .register .flex .container{
+     display: grid;
+     grid-template-columns: 1fr 3fr 1fr;
+     margin-bottom: 10px;
+     width: 80%;
+ }
+ 
+ .register .flex .container .item:first-child{
+    margin-right: 10px;
+ }
+ 
+ .register .flex .container .item .idcheck{
+     height: 100%;
+     width: 7vw;
+     margin-left: -5vw;
+     /* padding: 5px 15px; */
+    background: #fb9300;
+    border: 1px solid #fb9300;
+    color: white;
+    font-size: 18px;
+    transition: 0.3s;
+}
+
+.register .flex .container .item .idcheck:hover{
+    background: white;
+    color: #fb9300;
+}
+
+.register .flex .container .item:first-child{
+   margin-right: 10px;
+}
+
+.register .flex .container .item .emailcheck{
+    height: 100%;
+    width: 7vw;
+    margin-left: -5vw;
+    /* padding: 5px 15px; */
+    background: #fb9300;
+    border: 1px solid #fb9300;
+    color: white;
+    font-size: 18px;
+    transition: 0.3s;
+}
+
+.register .flex .container .item .emailcheck:hover{
+    background: white;
+    color: #fb9300;
+}
+
+.register .flex .container .item select{
+    height: 40px;
+    padding: 10px;
+    border: 1px solid #2b2e4a;
+}
+
+.register .button_submit{
+    width: 20vw;
+    height: 50px;
+    color: white;
+    border: none;
+    border: 1px solid #EE82EE;
+    background: #EE82EE;
+    transition: 0.3s;
+    font-size: 18px;
+    margin-left: 13vw;
+    margin-top: 1.8vw;
+}
+
+.register .flex .container:last-child{
+    margin: 0;
+}
+
+.register .button_submit:hover{
+    /* width: 220px;
+    height: 50px;
+    border: none; */
+    border: 1px solid #fb9300;
+    color: #fb9300;
+    background: white;
+}
+
+.register .cancel{
+    width: 20vw;
+    height: 50px;
+    color: white;
+    border: none;
+    border: 1px solid #fb9300;
+    background: #fb9300;
+    transition: 0.3s;
+    font-size: 18px;
+    margin-right: 11.2vw;
+    margin-top: 1.8vw;
+}
+
+.register .flex .container:last-child{
+    margin: 0;
+}
+
+.register .cancel:hover{
+    /* width: 220px;
+    height: 50px;
+    border: none; */
+    border: 1px solid #fb9300;
+    color: #fb9300;
+    background: white;
+}

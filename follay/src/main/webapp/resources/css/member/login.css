@@ -1,0 +1,124 @@
+@charset "UTF-8";
+
+.title{
+	font-size: 30px;
+	text-align: center;
+	padding-top: 80px;
+	padding-bottom: 50px;
+	border-bottom: 1px solid #F54748;
+	width: 1000px;
+	margin: auto;
+	margin-bottom: 75px;
+} 
+       
+.login_wrap {
+    height: 100%;
+    width: 100%;
+    background-position: center;
+    background-size: cover;
+    position: absolute;
+}
+
+.login_form-wrap {
+	height: 100%;
+    width: 100%;
+    position: relative;
+    margin: 3% auto;
+    background: #fff;
+    padding: 5px;
+    overflow: hidden;
+}
+
+/* .l_login_button-wrap { */
+/*     width: 600px; */
+/*     margin: 35px auto; */
+/*     margin-left: 20px; */
+/*     position: relative; */
+/*     box-shadow: 0 0 600px 9px #fff; */
+/*     border-radius: 30px; */
+/* } */
+
+/* 버튼탭글자부분설정 */
+.login_togglebtn {
+    padding: 10px 30px;
+    cursor: pointer;
+    background: transparent;
+    border: 0;
+    outline: none;
+    position: relative;
+    font-size: 24px;
+}
+
+/* 버튼탭자체설정 */
+#l_login_btn {
+    top: 0;
+    left: 0;
+    position: absolute;
+    width: 175px;
+    height: 100%;
+    background: #f5e6ca;
+    border-radius: 30px;
+    transition: .3s;
+}
+
+.login_input-group {
+    top: 130px;
+    position: absolute;
+    width: 280px;
+    transition: .3s;
+    margin-top: 30px;
+}
+
+.login_input-field {
+    width: 100%;
+    padding: 10px 0;
+    margin: 5px 0;
+    border: none;
+    border-bottom: 1px solid #999;
+    outline: none;
+    background: transparent;
+    font-size: 18px;
+}
+
+/* 로그인 아이디찾기 비밀번호 찾기 첫화면 버튼*/
+.login_first{
+	display :inline-block;
+}
+
+/* 회원가입제외한submit버튼부분 */
+.login_submit {
+    width: 80%;
+    padding: 10px 30px;
+    cursor: pointer;
+    display: block;
+    margin: auto;
+    margin-top: 60px;
+    background: #EE82EE;
+    border: 0;
+    outline: none;
+    border-radius: 30px;
+    font-size: 18px;
+}
+
+/* footer와 경계되는 경계선 */
+.contentfooter{
+    font-size: 30px;
+    text-align: center;
+    border-bottom: 1px solid #F54748;
+    width: 1000px;
+    margin: auto;
+    margin-top: 100px;
+}        
+
+
+/* 각버튼탭에대한내용위치지정 */
+#login_login {
+    left: 170px;
+}
+#login_idfind {
+    left: 300px;
+}
+#login_passwordfind {
+    left: 300px;
+}
+        

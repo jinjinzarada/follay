@@ -20,21 +20,21 @@
 <div class="login_wrap">
   <div class="login_form-wrap">
 	<form action="<%=request.getContextPath()%>/member/login" method="post" id="login_login" class="login_input-group">
-		<div>아이디:<input type="text" name="id" class="login_input-field" placeholder="아이디 입력하세요" required></div>
-		<div>비밀번호:<input type="password" name="pwd" class="login_input-field" name="passwd" placeholder="비밀번호 입력하세요" required></div>
-		<button type="submit" class="login_submit login_first">로그인</button> 
-		<button type="button" class="login_submit login_first" onclick="idfind()">아이디 찾기</button>
-        <button type="button" class="login_submit login_first" onclick="pwdfind()">비밀번호 찾기</button>
+		<div><input type="text" name="id" class="login_input-field" placeholder="아이디 입력하세요" required></div>
+		<div><input type="password" name="pwd" class="login_input-field" name="passwd" placeholder="비밀번호 입력하세요" required></div>
+		<button type="submit" class="login_submit">로그인</button> 
+		<button type="button" class="login_find" onclick="idfind()">아이디 찾기</button>
+        <button type="button" class="login_find" onclick="pwdfind()">비밀번호 찾기</button>
 	</form>
-	<form id="login_idfind" class="login_input-group">
-        <div>이메일:<input type="email" class="login_input-field" name="email_idfind" id="email_idfind" placeholder="이메일 주소 입력하세요" required>
-        <button class="login_submit" onclick="toidfind()">아이디 찾기</button>
-    </form>
-    <form id="login_passwordfind" action="<%=request.getContextPath()%>/pwdfind.lo" method="get" class="login_input-group">
-         <div>아이디:<input type="text" class="login_input-field" name="id_pwdfind" id="id_pwdfind" placeholder="아이디 입력하세요" required>
-         <div>이메일:<input type="email" class="login_input-field" name="email_pwdfind" id="email_pwdfind" placeholder="이메일 주소 입력하세요" required>
-         <button class="login_submit" onclick="topwdfind()">비밀번호 찾기</button>
-     </form>
+<!-- 	<form id="login_idfind" class="login_input-group"> -->
+<!--         <div>이메일:<input type="email" class="login_input-field" name="email_idfind" id="email_idfind" placeholder="이메일 주소 입력하세요" required> -->
+<!--         <button class="login_submit" onclick="toidfind()">아이디 찾기</button> -->
+<!--     </form> -->
+<%--     <form id="login_passwordfind" action="<%=request.getContextPath()%>/pwdfind.lo" method="get" class="login_input-group"> --%>
+<!--          <div>아이디:<input type="text" class="login_input-field" name="id_pwdfind" id="id_pwdfind" placeholder="아이디 입력하세요" required> -->
+<!--          <div>이메일:<input type="email" class="login_input-field" name="email_pwdfind" id="email_pwdfind" placeholder="이메일 주소 입력하세요" required> -->
+<!--          <button class="login_submit" onclick="topwdfind()">비밀번호 찾기</button> -->
+<!--      </form> -->
      
   </div>
 <%@ include file="/WEB-INF/views/common/template_footer.jsp" %>

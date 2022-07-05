@@ -12,7 +12,7 @@
 } 
        
 .login_wrap {
-    height: 100%;
+/*     height: 100%; */
     width: 100%;
     background-position: center;
     background-size: cover;
@@ -20,12 +20,12 @@
 }
 
 .login_form-wrap {
-	height: 100%;
+	height: 500px;
     width: 100%;
     position: relative;
-    margin: 3% auto;
-    background: #fff;
-    padding: 5px;
+/*     margin: 3% auto; */
+/*     background: #fff; */
+/*     padding: 5px; */
     overflow: hidden;
 }
 
@@ -71,24 +71,32 @@
     font-size: 18px;
 }
 
-/* 로그인 아이디찾기 비밀번호 찾기 첫화면 버튼*/
-.login_first{
-	display :inline-block;
-}
-
 /* 회원가입제외한submit버튼부분 */
 .login_submit {
-    width: 80%;
+/*     width: 80%; */
     padding: 10px 30px;
     cursor: pointer;
     display: block;
     margin: auto;
-    margin-top: 60px;
-    background: #EE82EE;
+    margin-top: 40px;
+    background: #FF69B4;
     border: 0;
     outline: none;
     border-radius: 30px;
     font-size: 18px;
+}
+
+.login_find{
+	margin:0px;
+	padding: 10px 16px;
+	cursor: pointer;
+	margin: auto;
+	margin-top: 10px;
+	background: #FFB6C1;
+	border: 0;
+	outline: none;
+	border-radius: 30px;
+	font-size: 18px;
 }
 
 /* footer와 경계되는 경계선 */
@@ -104,12 +112,13 @@
 
 /* 각버튼탭에대한내용위치지정 */
 #login_login {
-    left: 170px;
+    left: 620px; 
+    top: 100px;
 }
 #login_idfind {
-    left: 300px;
+    left: 600px;
 }
 #login_passwordfind {
-    left: 300px;
+    left: 600px;
 }
         

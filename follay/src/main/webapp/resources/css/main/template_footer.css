@@ -1,9 +1,9 @@
 @charset "UTF-8";
-/* footer */
-.p_footer_sns {
-	margin-right:10px;
-}
 
 .nav-item mb-2 {
     font-family: Montserrat, -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+}
+
+footer{
+	background-color:rgb(236,239,243)
 }

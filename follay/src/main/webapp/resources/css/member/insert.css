@@ -1,13 +1,5 @@
 @charset "UTF-8";
 
-/* 내 css 부분 */
- a {
-  text-decoration: none;
-  color: inherit;
-}
-
-/* 회원가입 부분 */
-
 /* 회원가입 대문 */
 .flex{
 	width:100%;
@@ -26,14 +18,13 @@
 .title{
 	font-size: 30px;
 	text-align: center;
-	padding-top: 60px;
-	padding-bottom: 50px;
-	border-bottom: 1px solid #F54748;
-	width: 70%;
-	margin-left: auto;
-	margin-right: auto;
-	margin-bottom: 2%;
-}    
+	padding-top: 30px;
+	padding-bottom: 30px;
+	border-bottom: 3px solid #8B008B;
+	width: 200px;
+	margin: auto;
+/* 	margin-bottom: 10px; */
+} 
     
 .register{
            

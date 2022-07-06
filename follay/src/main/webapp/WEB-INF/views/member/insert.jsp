@@ -12,8 +12,10 @@
 <title>회원가입</title>
 </head>
 <body>
-
 <%@ include file="/WEB-INF/views/common/template_header.jsp" %>
+<div>
+  <div class="title">회원가입</div>
+  <div>
 	<form action="<%=request.getContextPath()%>/member/insert" method="post">
 		<div>
 			아이디 : <input type="text" name="member_id"  placeholder="아이디 입력하세요" required>
@@ -36,6 +38,8 @@
 		</div>
 		<button type="submit" class="button_submit">회원가입</button>
 	</form>
+  </div>
+</div>
 <%@ include file="/WEB-INF/views/common/template_footer.jsp" %>
 </body>
 </html>

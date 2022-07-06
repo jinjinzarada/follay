@@ -18,6 +18,7 @@
 <body>
 <%@ include file="/WEB-INF/views/common/template_header.jsp" %>
 <div class="login_wrap">
+<div class="title">로그인</div>
   <div class="login_form-wrap">
 	<form action="<%=request.getContextPath()%>/member/login" method="post" id="login_login" class="login_input-group">
 		<div><input type="text" name="id" class="login_input-field" placeholder="아이디 입력하세요" required></div>

@@ -2,6 +2,7 @@
 <link rel="stylesheet" type="text/css" href="<%=request.getContextPath()%>/resources/css/common/common.css">
 <link rel="stylesheet" type="text/css" href="<%=request.getContextPath()%>/resources/css/main/template_header.css">
 <link rel="stylesheet" type="text/css" href="<%=request.getContextPath()%>/resources/css/main/template_footer.css">
+<link rel="stylesheet" type="text/css" href="<%=request.getContextPath()%>/resources/css/play/list.css">
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>   
@@ -13,6 +14,7 @@
 </head>
 <body>
 <%@ include file="/WEB-INF/views/common/template_header.jsp" %>
+<div class="title">놀이터</div>
 <script>
 	var msg="${msg}";
 	if(msg){

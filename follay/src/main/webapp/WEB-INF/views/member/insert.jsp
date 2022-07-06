@@ -13,33 +13,33 @@
 </head>
 <body>
 <%@ include file="/WEB-INF/views/common/template_header.jsp" %>
-<div>
+<div class="signup_cover">
   <div class="title">회원가입</div>
-  <div>
+  <div class="signup_form-cover">
 	<form action="<%=request.getContextPath()%>/member/insert" method="post">
 		<div>
-			아이디 : <input type="text" name="member_id"  placeholder="아이디 입력하세요" required>
+			<input type="text" name="member_id" class="signup_input-field" placeholder="아이디를 입력해주세요." required>
 			<button type="button" class="idcheck" onclick="id_check()">중복확인</button>
             <input type="hidden" id="idCheck_yn" value="">
 		</div>
 		<div>
-			비밀번호 : <input type="password" name="member_password" placeholder="영문자+숫자+특수문자 조합으로 8~12자리 입력" required>
+			<input type="password" name="member_password" class="signup_input-field" placeholder="영문자+숫자+특수문자 조합으로 8~12자리 입력해주세요." required>
 		</div>
 		<div>
-			이메일 : <input type="email" name="member_email" placeholder="이메일 주소 입력하세요" required>
+			<input type="email" name="member_email" class="signup_input-field" placeholder="이메일 주소를 입력해주세요." required>
 			<button type="button" class="emailcheck" onclick="email_check()">중복확인</button>
             <input type="hidden" id="emailCheck_yn" value="">
 		</div>
 		<div>
-			휴대폰 : <input type="tel" name="member_phone" placeholder="휴대폰 번호 입력하세요" required>
+			<input type="tel" name="member_phone" class="signup_input-field" placeholder="휴대폰 번호를 입력해주세요." required>
 		</div>
 		<div>
-			생년월일 : <input type="date" name="member_birth" required>
+			<input type="date" name="member_birth" class="signup_input-field" required>
 		</div>
-		<button type="submit" class="button_submit">회원가입</button>
+		<button type="submit" class="signup_submit">회원가입</button>
 	</form>
   </div>
-</div>
 <%@ include file="/WEB-INF/views/common/template_footer.jsp" %>
+</div>
 </body>
 </html>

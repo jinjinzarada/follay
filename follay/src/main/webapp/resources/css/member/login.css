@@ -10,23 +10,24 @@
 	margin: auto;
 /* 	margin-bottom: 10px; */
 } 
-       
-.login_wrap {
-/*     height: 100%; */
+
+/* 제일 바깥쪽 div */       
+.login_cover {
     width: 100%;
     background-position: center;
     background-size: cover;
     position: absolute;
 }
 
-.login_form-wrap {
+/* 두번째 div */
+.login_form-cover {
 	height: 500px;
     width: 100%;
     position: relative;
     overflow: hidden;
 }
 
-/* 버튼탭글자부분설정 */
+/* 버튼탭 글자부분설정 */
 .login_togglebtn {
     padding: 10px 30px;
     cursor: pointer;
@@ -37,18 +38,6 @@
     font-size: 24px;
 }
 
-/* 버튼탭자체설정 */
-#l_login_btn {
-    top: 0;
-    left: 0;
-    position: absolute;
-    width: 175px;
-    height: 100%;
-    background: #f5e6ca;
-    border-radius: 30px;
-    transition: .3s;
-}
-
 .login_input-group {
     top: 130px;
     position: absolute;
@@ -57,6 +46,7 @@
     margin-top: 30px;
 }
 
+/* 로그인 입력칸*/
 .login_input-field {
     width: 100%;
     padding: 10px 0;
@@ -76,7 +66,7 @@
     display: block;
     margin: auto;
     margin-top: 30px;
-    margin-bottom: 30px;
+    margin-bottom: 34px;
     color: white;
     background: #FF69B4;
     border: 0;
@@ -100,18 +90,13 @@
 	font-size: 20px;
 }
 
-/* footer와 경계되는 경계선 */
-.contentfooter{
-    font-size: 30px;
-    text-align: center;
-    border-bottom: 1px solid #F54748;
-    width: 1000px;
-    margin: auto;
-    margin-top: 100px;
-}        
+/* 아이디찾기 버튼 */
+.find_id {
+	padding: 10px 80px;
+}
 
 
-/* 각버튼탭에대한내용위치지정 */
+/* 로그인, 아이디비밀번호찾기 위치지정 */
 #login_login {
     left: 620px; 
     top: 50px;

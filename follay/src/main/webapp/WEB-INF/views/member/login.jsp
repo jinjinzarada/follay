@@ -17,14 +17,14 @@
 </head>
 <body>
 <%@ include file="/WEB-INF/views/common/template_header.jsp" %>
-<div class="login_wrap">
+<div class="login_cover">
 <div class="title">로그인</div>
-  <div class="login_form-wrap">
+  <div class="login_form-cover">
 	<form action="<%=request.getContextPath()%>/member/login" method="post" id="login_login" class="login_input-group">
-		<div><input type="text" name="id" class="login_input-field" placeholder="아이디 입력하세요" required></div>
-		<div><input type="password" name="pwd" class="login_input-field" name="passwd" placeholder="비밀번호 입력하세요" required></div>
+		<div><input type="text" name="id" class="login_input-field" placeholder="아이디를 입력해주세요." required></div>
+		<div><input type="password" name="pwd" class="login_input-field" name="passwd" placeholder="비밀번호를 입력해주세요." required></div>
 		<button type="submit" class="login_submit">로그인</button> 
-		<button type="button" class="login_find" onclick="idfind()">아이디 찾기</button>
+		<button type="button" class="login_find find_id" onclick="idfind()">아이디 찾기</button>
         <button type="button" class="login_find" onclick="pwdfind()">비밀번호 찾기</button>
 	</form>
 <!-- 	<form id="login_idfind" class="login_input-group"> -->

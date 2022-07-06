@@ -68,11 +68,12 @@
     margin-top: 30px;
     margin-bottom: 34px;
     color: white;
-    background: #FF69B4;
+    background: #FFBADD;
     border: 0;
     outline: none;
     border-radius: 30px;
     font-size: 20px;
+    transition: background-color 0.5s ease;
 }
 
 /*로그인화면 아이디찾기, 비밀번호찾기*/
@@ -82,12 +83,13 @@
 	display: block;
 	margin: auto;
 	margin-top: 20px;
-	color: #2F4F4F;
-	background: #FFB6C1;
+	color: white;
+	background: #FFBADD;
 	border: 0;
 	outline: none;
 	border-radius: 30px;
 	font-size: 20px;
+	transition: background-color 0.5s ease;
 }
 
 /* 아이디찾기 버튼 */
@@ -95,6 +97,14 @@
 	padding: 10px 80px;
 }
 
+/* 로그인, 아이디비번찾기 버튼 호버 */
+.login_submit:hover {
+	background-color: #FF69B4;
+}
+
+.login_find:hover {
+	background-color: #FF69B4;
+}
 
 /* 로그인, 아이디비밀번호찾기 위치지정 */
 #login_login {

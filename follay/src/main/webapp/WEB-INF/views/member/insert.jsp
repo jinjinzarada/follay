@@ -16,13 +16,14 @@
 <div class="signup_cover">
   <div class="title">회원가입</div>
   <div class="signup_form-cover">
-	<form action="<%=request.getContextPath()%>/member/insert" method="post">
+	<form action="<%=request.getContextPath()%>/member/insert" method="post" class="signup_input-group">
 		<div>
 			<input type="text" name="member_id" class="signup_input-field" placeholder="아이디를 입력해주세요." required>
 			<button type="button" class="idcheck" onclick="id_check()">중복확인</button>
             <input type="hidden" id="idCheck_yn" value="">
 		</div>
 		<div>
+			<div class="guide">비밀번호</div>
 			<input type="password" name="member_password" class="signup_input-field" placeholder="영문자+숫자+특수문자 조합으로 8~12자리 입력해주세요." required>
 		</div>
 		<div>
@@ -34,10 +35,11 @@
 			<input type="tel" name="member_phone" class="signup_input-field" placeholder="휴대폰 번호를 입력해주세요." required>
 		</div>
 		<div>
+			<div class="guide">생년월일</div>
 			<input type="date" name="member_birth" class="signup_input-field" required>
 		</div>
-		<button type="submit" class="signup_submit">회원가입</button>
 	</form>
+		<button type="submit" class="signup_submit">회원가입</button>
   </div>
 <%@ include file="/WEB-INF/views/common/template_footer.jsp" %>
 </div>

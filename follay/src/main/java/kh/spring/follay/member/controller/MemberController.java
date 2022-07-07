@@ -78,7 +78,7 @@ public class MemberController {
 		}
 		
 			session.setAttribute("loginSsInfo", result);
-			rttr.addFlashAttribute("msg",result.getMember_id()+"로그인 되었습니다.");
+			rttr.addFlashAttribute("msg",result.getMember_id()+"님 환영합니다.");
 			mv.setViewName("redirect:/");
 			return mv;
 			

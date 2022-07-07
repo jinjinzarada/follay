@@ -4,7 +4,6 @@
 <link rel="stylesheet" type="text/css" href="<%=request.getContextPath()%>/resources/css/main/template_footer.css">
 <!-- JSTL -->
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
-
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <link rel="stylesheet" type="text/css" href="<%=request.getContextPath()%>/resources/css/member/login.css">
@@ -21,8 +20,8 @@
 <div class="title">로그인</div>
   <div class="login_form-cover">
 	<form action="<%=request.getContextPath()%>/member/login" method="post" id="login_login" class="login_input-group">
-		<div><input type="text" name="id" class="login_input-field" placeholder="아이디를 입력해주세요." required></div>
-		<div><input type="password" name="pwd" class="login_input-field" name="passwd" placeholder="비밀번호를 입력해주세요." required></div>
+		<div><input type="text" name="member_id" class="login_input-field" placeholder="아이디를 입력해주세요." required></div>
+		<div><input type="password" name="member_password" class="login_input-field" name="passwd" placeholder="비밀번호를 입력해주세요." required></div>
 		<button type="submit" class="login_submit">로그인</button> 
 		<button type="button" class="login_find find_id" onclick="idfind()">아이디 찾기</button>
         <button type="button" class="login_find" onclick="pwdfind()">비밀번호 찾기</button>

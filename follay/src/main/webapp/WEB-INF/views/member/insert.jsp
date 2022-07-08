@@ -38,8 +38,8 @@
 			<div class="guide">생년월일</div>
 			<input type="date" name="member_birth" class="signup_input-field" required>
 		</div>
-	</form>
 		<button type="submit" class="signup_submit">회원가입</button>
+	</form>
   </div>
 <%@ include file="/WEB-INF/views/common/template_footer.jsp" %>
 </div>

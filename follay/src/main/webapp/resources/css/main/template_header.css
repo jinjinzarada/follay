@@ -34,15 +34,16 @@
 .navbar-expand-lg .navbar-collapse {
     display: flex !important;
     flex-basis: auto;
+/*     justify-content: center; */
 }
 
 .collapse:not(.show) {
     display: none;
 }
 
-.me-auto {
-    margin-right: auto !important;
-}
+/* .me-auto { */
+/*     margin-right: auto !important; */
+/* } */
 
 .navbar-nav {
     display: flex;
@@ -54,7 +55,7 @@
 .navbar-expand-lg .navbar-nav {
 /*     padding-right: 0.5rem; */
 /*     padding-left: 1rem; */
-	margin-left: 9rem;
+/* 	margin-left: 9rem; */
 }
 
 li {
@@ -68,6 +69,7 @@ li {
 
 .navbar-expand-lg .navbar-nav {
     flex-direction: row;
+    justify-centent:center;
 }
 
 /* .nav-link { */
@@ -91,7 +93,6 @@ li {
 }
 
 /* 드랍 다운 */
-
 .dropup, .dropend, .dropdown, .dropstart {
     position: relative;
 }

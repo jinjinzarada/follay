@@ -19,8 +19,14 @@ public class MemberServiceImpl {
 		
 	}
 	
+	//로그인
 	public Member selectLogin(Member member) {
 		return dao.selectLogin(member);
+	}
+	
+	//로그아웃
+	public Member selectLogout(Member member) {
+		return dao.selectLogout(member);
 	}
 	
 	//회원목록
@@ -32,5 +38,7 @@ public class MemberServiceImpl {
 	public int deleteMember(String member_id) {
 		return dao.deleteMember(member_id);
 	}
+
+	
 
 }

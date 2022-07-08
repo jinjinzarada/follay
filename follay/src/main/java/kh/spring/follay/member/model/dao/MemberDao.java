@@ -21,8 +21,14 @@ public class MemberDao {
 		
 	}
 	
+	//로그인
 	public Member selectLogin(Member member) {
 		return sqlSession.selectOne("Member.selectLogin", member);
+	}
+	
+	//로그아웃
+	public Member selectLogout(Member member) {
+		return sqlSession.selectOne("Member.selectLogout", member);
 	}
 	
 	//회원목록
@@ -35,5 +41,7 @@ public class MemberDao {
 		return sqlSession.delete("Member.deleteMember", member_id);
 		
 	}
+
+	
 
 }

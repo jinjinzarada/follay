@@ -7,3 +7,10 @@
 .layout_footer{
 	background-color:rgb(236,239,243)
 }
+
+div {
+    display: block;
+    margin: 0 auto;
+    width: 1200px;
+	
+}

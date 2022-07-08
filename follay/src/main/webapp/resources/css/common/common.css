@@ -44,10 +44,10 @@
         /* footer */
         footer{
         	/* header.css의 nav 설정과 비슷하게 함 */
-			width: 1200px;
-			max-width: 1200px;
-			margin: auto;
+/* 			width: 1200px; */
+/* 			max-width: 1200px; */
+/* 			margin: auto; */
             margin-top: 10px;
-            margin-bottom: 10px;
+/*             margin-bottom: 10px; */
         }
 

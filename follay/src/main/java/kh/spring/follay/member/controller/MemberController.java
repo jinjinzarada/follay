@@ -43,28 +43,49 @@ public class MemberController {
 			, Member member
 			, RedirectAttributes rttr
 			, HttpServletRequest req
+//			, HttpSession session
 			) {
 		String t2 = req.getParameter("title");
 		if(t2==null) {
 			t2 = null;
 		}
 		int result = service.insertMember(member);
+		
 		if(result < 1) {
-			rttr.addFlashAttribute("msg","°¡ÀÔ¿¡ ½ÇÆÐÇß½À´Ï´Ù. ´Ù½Ã È¸¿ø°¡ÀÔ ½ÃµµÇØÁÖ¼¼¿ä.");
-			mv.setViewName("redirect:/member/enroll");
+			rttr.addFlashAttribute("msg","ê°€ìž…ì— ì‹¤íŒ¨í–ˆìŠµë‹ˆë‹¤. ë‹¤ì‹œ íšŒì›ê°€ìž… ì‹œë„í•´ì£¼ì„¸ìš”.");
+			mv.setViewName("redirect:/member/insert");
 			return mv;
 		}
-		mv.setViewName("redirect:/");
+		rttr.addFlashAttribute("msg", "ê°€ìž…ì„ ì¶•í•˜ë“œë¦½ë‹ˆë‹¤. ë¡œê·¸ì¸ í•´ì£¼ì„¸ìš”.");
+		mv.setViewName("redirect:/member/login");
 		return mv;
 	}
+//			session.setAttribute("t2", result);
+//			rttr.addFlashAttribute("msg","ë‹˜ í™˜ì˜í•©ë‹ˆë‹¤!");
+//			mv.setViewName("redirect:/");
+//			return mv;
+//	}
 	
-	// ·Î±×ÀÎ
+	// ë¡œê·¸ì¸
+//	@RequestMapping("/login")
+//	public ModelAndView pageLogin(ModelAndView mv) {
+//		mv.setViewName("member/login");
+//		return mv;
+//        
+//    }
+	
+//	@RequestMapping(valueÂ =Â "login",Â methodÂ =Â RequestMethod.GET)Â Â Â Â 
+//	publicÂ ModelAndViewÂ pageLogin(ModelAndViewÂ mv)Â {Â Â Â Â Â Â Â Â 
+//		mv.setViewName("member/login");Â Â Â Â Â Â Â 
+//		returnÂ mv;Â Â Â Â 
+//	}
+	
 	@GetMapping("/login")
 	public ModelAndView pageLogin(ModelAndView mv) {
 		mv.setViewName("member/login");
 		return mv;
 	}
-	@PostMapping("/login")
+	@RequestMapping("/login")
 	public ModelAndView selectLogin(ModelAndView mv
 			, Member member
 			, RedirectAttributes rttr
@@ -73,26 +94,25 @@ public class MemberController {
 		Member result = service.selectLogin(member);
 		
 		if(result == null) {
-			rttr.addFlashAttribute("msg","·Î±×ÀÎ¿¡ ½ÇÆÐÇß½À´Ï´Ù. ¾ÆÀÌµð¿Í ÆÐ½º¿öµå¸¦ ´Ù½Ã È®ÀÎÇØ ÁÖ¼¼¿ä.");
+			rttr.addFlashAttribute("msg","ë¡œê·¸ì¸ì— ì‹¤íŒ¨í–ˆìŠµë‹ˆë‹¤. ì•„ì´ë””ì™€ íŒ¨ìŠ¤ì›Œë“œë¥¼ ë‹¤ì‹œ í™•ì¸í•´ ì£¼ì„¸ìš”.");
 			mv.setViewName("redirect:/member/login");
 			return mv;
 		}
 		
 			session.setAttribute("loginSsInfo", result);
-			rttr.addFlashAttribute("msg",result.getMember_id()+"´Ô È¯¿µÇÕ´Ï´Ù!");
+			rttr.addFlashAttribute("msg",result.getMember_id()+"ë‹˜ í™˜ì˜í•©ë‹ˆë‹¤!");
 			mv.setViewName("redirect:/");
 			return mv;
 			
 	}
 	
-	// ·Î±×¾Æ¿ô
-	@RequestMapping(value = "logout", method = RequestMethod.GET)
-    public ModelAndView pageLogout(ModelAndView mv
-    		, HttpServletRequest req 
-    		) {
-		mv.setViewName("member/logout");
-		HttpSession session = req.getSession();
-		session.invalidate();
+	// ë¡œê·¸ì•„ì›ƒ
+	@RequestMapping("/logout")
+    public ModelAndView pageLogout(HttpSession session) {
+//		MemberServiceImpl.selectLogout(session);
+		ModelAndView mv = new ModelAndView();
+		mv.setViewName("member/login");
+		mv.addObject("msg", "logout");
 		return mv;
         
     }
@@ -111,13 +131,13 @@ public class MemberController {
 //		Member result = service.selectLogout(member);
 		
 //		if(result == null) {
-//			rttr.addFlashAttribute("msg","·Î±×ÀÎ¿¡ ½ÇÆÐÇß½À´Ï´Ù. ¾ÆÀÌµð¿Í ÆÐ½º¿öµå¸¦ ´Ù½Ã È®ÀÎÇØ ÁÖ¼¼¿ä.");
+//			rttr.addFlashAttribute("msg","ë¡œê·¸ì¸ì— ì‹¤íŒ¨í–ˆìŠµë‹ˆë‹¤. ì•„ì´ë””ì™€ íŒ¨ìŠ¤ì›Œë“œë¥¼ ë‹¤ì‹œ í™•ì¸í•´ ì£¼ì„¸ìš”.");
 //			mv.setViewName("redirect:/member/login");
 //			return mv;
 //		}
 		
 //			session.setAttribute("loginSsInfo", result);
-//			rttr.addFlashAttribute("msg",result.getMember_id()+"´Ô È¯¿µÇÕ´Ï´Ù!");
+//			rttr.addFlashAttribute("msg",result.getMember_id()+"ë‹˜ í™˜ì˜í•©ë‹ˆë‹¤!");
 //			mv.setViewName("redirect:/");
 //			return mv;
 //			

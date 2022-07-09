@@ -55,9 +55,6 @@
 <%-- <button type="button" onclick="location.href='<%=request.getContextPath()%>/member/list'">회원목록</button> --%>
 <!-- </div> -->
 <!-- <div> -->
-<%-- <button type="button" onclick="location.href='<%=request.getContextPath()%>/play/write'">글쓰기</button> --%>
-<!-- </div> -->
-<!-- <div> -->
 <%-- <button type="button" onclick="location.href='<%=request.getContextPath()%>/play/list'">글목록</button> --%>
 <!-- </div> -->
 

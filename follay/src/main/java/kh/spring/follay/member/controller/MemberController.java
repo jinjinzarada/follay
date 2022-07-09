@@ -86,6 +86,7 @@ public class MemberController {
 		return mv;
 	}
 	@RequestMapping("/login")
+//	@PostMapping("/login")
 	public ModelAndView selectLogin(ModelAndView mv
 			, Member member
 			, RedirectAttributes rttr

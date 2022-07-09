@@ -65,7 +65,7 @@
 </c:otherwise>
 </c:choose>
 <div>
-	<button type="button" onclick="location.href='<%=request.getContextPath()%>/play/write'">글쓰기</button>
+	<button type="button" class="play_write" onclick="location.href='<%=request.getContextPath()%>/play/write'">글쓰기</button>
 </div>
 </div>
 <%@ include file="/WEB-INF/views/common/template_footer.jsp" %>

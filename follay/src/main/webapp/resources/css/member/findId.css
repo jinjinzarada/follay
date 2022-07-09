@@ -5,14 +5,14 @@
 	text-align: center;
 	padding-top: 30px;
 	padding-bottom: 30px;
-	border-bottom: 3px solid #FF8C00;
+	border-bottom: 3px solid #FF69B4;
 	width: 200px;
 	margin: auto;
 /* 	margin-bottom: 10px; */
 } 
 
 /* 제일 바깥쪽 div */       
-.play_cover {
+.findId_cover {
     width: 100%;
     background-position: center;
     background-size: cover;
@@ -20,28 +20,9 @@
 }
 
 /* 두번째 div */
-.play_form-cover {
+.findId_form-cover {
 	height: 500px;
     width: 100%;
     position: relative;
     overflow: hidden;
-}
-
-.play_insert{
-	padding: 10px 50px;
-	cursor: pointer;
-	display: block;
-	margin: auto;
-	margin-top: 20px;
-	color: white;
-	background: #ffb12f;
-	border: 0;
-	outline: none;
-	border-radius: 30px;
-	font-size: 20px;
-	transition: background-color 0.5s ease;
-}
-
-.play_insert:hover {
-	background-color: #FF8C00;
 }

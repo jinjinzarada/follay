@@ -31,6 +31,16 @@ public class MemberDao {
 		return sqlSession.selectOne("Member.selectLogout", member);
 	}
 	
+	//아이디찾기
+	public List<Member> findId(String memberemail){
+		return sqlSession.selectList("Member.findId", memberemail);
+		
+	}
+	
+	public int findIdCheck(String memberemail) {
+		return sqlSession.selectOne("Member.findIdCheck", memberemail);
+	}
+	
 	//회원목록
 	public List<Member> selectAllMember() {
 		return sqlSession.selectList("Member.selectAllMember");

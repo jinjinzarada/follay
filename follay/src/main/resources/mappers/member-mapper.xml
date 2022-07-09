@@ -11,6 +11,13 @@
 	select member_id,member_email,member_phone,member_birth from member where MEMBER_ID=#{member_id} and MEMBER_PASSWORD=#{member_password}
 </select>
 
+<select id="fidndId" parameterType="Member">
+	select * from member where MEMBER_EMAIL = #{member_email}
+</select>
+
+<select id="findIdCheck" parameterType="Member" resultType="int">
+	select count(*) from member where MEMBER_EMAIL = #{member_email}
+</select>
 <delete id="deleteMember" parameterType="string">
 	delete from member where member_id=#{member_id}
 </delete>

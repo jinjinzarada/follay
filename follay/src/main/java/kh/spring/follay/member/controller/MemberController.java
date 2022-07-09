@@ -143,7 +143,30 @@ public class MemberController {
 //			return mv;
 //			
 //	}
+	
+	//아이디찾기
+	@RequestMapping(value="/findIn" , method = RequestMethod.GET)
+	public ModelAndView findId(Member member
+			, ModelAndView mv
+			, RedirectAttributes rttr
+			, HttpSession session
+			, String memberemail
+			) {
+		List<Member> result = service.findId(memberemail);
+		logger.info("memberEmail"+member.getMember_email());
 		
+		if(result == null) {
+			rttr.addFlashAttribute("msg","이메일을 확인해주세요");
+			mv.setViewName("redirect:/member/findId");
+			return mv;
+		}
+		session.setAttribute("member",result);
+		mv.setViewName("redirect:/member/findId");
+		return mv;
+		
+	}
+	
+	//회원목록
 	@RequestMapping(value = "/list", method = RequestMethod.GET)
 	public ModelAndView selectAllMember(ModelAndView mv) {
 		List<Member> memberlist = service.selectAllMember();
@@ -152,6 +175,8 @@ public class MemberController {
 		return mv;
 		
 	}
+	
+	//회원삭제
 	@RequestMapping(value = "/delete", method = RequestMethod.POST)
 	public ModelAndView deleteMember(ModelAndView mv
 			, @RequestParam("id") String member_id

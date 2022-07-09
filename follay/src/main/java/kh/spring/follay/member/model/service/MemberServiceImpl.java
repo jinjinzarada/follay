@@ -29,6 +29,16 @@ public class MemberServiceImpl {
 		return dao.selectLogout(member);
 	}
 	
+	//아이디찾기
+	public List<Member> findId(String memberemail){
+		return dao.findId(memberemail);
+		
+	}
+	
+	public int findIdCheck(String memberemail) {
+		return dao.findIdCheck(memberemail);
+	}
+	
 	//회원목록
 	public List<Member> selectAllMember() {
 		return dao.selectAllMember();

@@ -29,7 +29,7 @@
 	onclick="location.href='<%=request.getContextPath()%>/play/list'">
 	</li>
 	<li class="nav-item">
-		<img src="<%=request.getContextPath()%>/resources/image/main/follay_logo.gif" class="nav-item-image-logo"
+		<img src="<%=request.getContextPath()%>/resources/image/main/follay!_logo.gif" class="nav-item-image-logo"
 	onclick="location.href='<%=request.getContextPath()%>/'">
 	</li>
 <c:if test="${empty sessionScope.member_id}">

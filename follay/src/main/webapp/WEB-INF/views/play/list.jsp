@@ -14,7 +14,10 @@
 </head>
 <body>
 <%@ include file="/WEB-INF/views/common/template_header.jsp" %>
+<div class="play_cover">
 <div class="title">놀이터</div>
+<div class="play_form-cover">
+<form action="<%=request.getContextPath()%>/play/list" method="post" id="play_play" class="play_input-group"></form>
 <script>
 	var msg="${msg}";
 	if(msg){
@@ -41,26 +44,31 @@
 			</tr>
 <c:forEach items="${playlist}" var="play">
 			<tr>
-				<td>${play.play_level }</td>	
-				<td>${play.play_ref }</td>	
-				<td>${play.play_reply_ref }</td>	
-				<td>${play.play_reply_seq }</td>			
+				<td>${play.play_level}</td>	
+				<td>${play.play_ref}</td>	
+				<td>${play.play_reply_ref}</td>	
+				<td>${play.play_reply_seq}</td>			
 				<td><a href="<%=request.getContextPath()%>/play/read?play_no=${board.board_num }">${play.play_no }</a></td>
 				<td>
-	<c:forEach begin="1" end="${play.play_level }">
+<c:forEach begin="1" end="${play.play_level}">
 				&#8627;
-	</c:forEach>
-				${play.play_title }
+</c:forEach>
+				${play.play_title}
 				</td>
-				<td>${play.play_date }</td>
-				<td>${play.play_writer }</td>
-				<td>${play.play_readcount }</td>
+				<td>${play.play_date}</td>
+				<td>${play.play_writer}</td>
+				<td>${play.play_readcount}</td>
 			</tr>
 </c:forEach>
 		</table>
 	</div>
 </c:otherwise>
 </c:choose>
+<div>
+	<button type="button" onclick="location.href='<%=request.getContextPath()%>/play/write'">글쓰기</button>
+</div>
+</div>
 <%@ include file="/WEB-INF/views/common/template_footer.jsp" %>
+</div>
 </body>
 </html>

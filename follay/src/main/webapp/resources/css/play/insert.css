@@ -27,6 +27,52 @@
     overflow: hidden;
 }
 
+/* 제목 입력칸 */
+.play_title{
+/* 	width: 23.3%; */
+    padding: 10px 0;
+    margin: 5px 0;
+    border: none;
+    border-bottom: 1px solid #999;
+    outline: none;
+    background: transparent;
+    font-size: 18px;
+}
+
+/* 내용 입력칸 */
+.play_content {
+/* 	width: 23.3%; */
+    padding: 10px 0;
+/*     margin: auto; */
+    margin: 5px 0;
+/*     border: none; */
+    border: 1px solid #999;
+    outline: none;
+    background: transparent;
+    font-size: 18px;
+}
+
+/* 파일 업로드 버튼 */
+label {
+	display: inline-block;
+	padding: .5em .75em;
+	color: white;
+	font-size: inherit;
+	line-height: normal;
+/* 	vertical-align: middle; */
+	background-color: #ffb12f;
+	cursor: pointer;
+	border: none;
+	border-radius: 30px;
+	transition: background-color 0.5s ease;
+}
+
+label:hover{
+	background-color: #FF8C00;
+}
+
+
+/* 글등록 버튼 */
 .play_insert{
 	padding: 10px 50px;
 	cursor: pointer;
@@ -42,6 +88,7 @@
 	transition: background-color 0.5s ease;
 }
 
+/* 글등록 버튼 호버*/
 .play_insert:hover {
 	background-color: #FF8C00;
 }

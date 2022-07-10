@@ -5,6 +5,7 @@
 <link rel="stylesheet" type="text/css" href="<%=request.getContextPath()%>/resources/css/play/insert.css">
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ page import="kh.spring.follay.play.domain.Play"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -15,16 +16,22 @@
 <%@ include file="/WEB-INF/views/common/template_header.jsp" %>
 <div class="play_cover">
 <div class="title">놀이터</div>
-<div class="play_form-cover">
-	<form action="<%=request.getContextPath()%>/play/write" method="post"
+<!-- <div class="play_form-cover"> -->
+<section>
+	<form action="<%=request.getContextPath()%>/play/write" method="post" id="play_write" 
 		enctype="multipart/form-data">
 		<input type="hidden" name="refnum" value="${refnum}">
-		<div>제목:<input type="text" name="play_title" required></div>
-		<div>내용:<input type="text" name="play_content" required></div>
-		<div>첨부파일:<input type="file" name="uploadfile"></div>
+		<div><input type="text" name="play_title" class="play_title" placeholder="제목를 적어주세요." required></div>
+		<div><input type="text" name="play_content" class="play_content" placeholder="내용을 적어주세요."required></div>
+		<div>
+		<label for ="play_uploadfile">사진 업로드</label>
+<!-- 		<input class="upload-name" value="파일선택" disabled="disabled" > -->
+		<input type="file" name="uploadfile" id="play_uploadfile" class="play_uploadfile">
+		</div>
 		<button type="submit" class="play_insert">글등록</button>
 	</form>
-</div>
+</section>	
+<!-- </div> -->
 <%@ include file="/WEB-INF/views/common/template_footer.jsp" %>
 </div>
 </body>

@@ -1,3 +1,8 @@
+<link rel="stylesheet" type="text/css" href="<%=request.getContextPath()%>/resources/css/common/reset.css">
+<link rel="stylesheet" type="text/css" href="<%=request.getContextPath()%>/resources/css/common/common.css">
+<link rel="stylesheet" type="text/css" href="<%=request.getContextPath()%>/resources/css/main/template_header.css">
+<link rel="stylesheet" type="text/css" href="<%=request.getContextPath()%>/resources/css/main/template_footer.css">
+<link rel="stylesheet" type="text/css" href="<%=request.getContextPath()%>/resources/css/play/read.css">
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
@@ -96,7 +101,12 @@
 		<div>첨부파일: ${play.play_original_filename }</div>
 		<div><img src="<%=request.getContextPath() %>/${play.play_rename_filename }" width="500"></div>
 	</c:if>
-		<div><button type="button" onclick="location.href='<%=request.getContextPath()%>/play/write?refnum=${play.play_no }'">답글쓰기</button></div>
+		<div>
+			<button type="button" class="btn-reply" onclick="location.href='<%=request.getContextPath()%>/play/write?refnum=${play.play_no}'">답글쓰기</button>
+		</div>
+		<div>
+			<input class="btn btn-gotolist" type="button" value="글목록" onClick="history.back()">
+		</div>
 	</div>
 </c:otherwise>
 </c:choose>

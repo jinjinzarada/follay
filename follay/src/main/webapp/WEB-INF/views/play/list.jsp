@@ -18,6 +18,7 @@
 <div class="title">놀이터</div>
 <div class="play_form-cover">
 <form action="<%=request.getContextPath()%>/play/list" method="post" id="play_play" class="play_input-group"></form>
+<section>
 <script>
 	var msg="${msg}";
 	if(msg){
@@ -67,6 +68,29 @@
 <div>
 	<button type="button" class="play_write" onclick="location.href='<%=request.getContextPath()%>/play/write'">글쓰기</button>
 </div>
+<!-- 페이징처리 -->
+<div class="p_section_container">
+	<nav aria-label="Page navigation example">
+		<ul class="pagination">
+		<c:if test="${startPage > 1}">
+		<li class="page-item">
+			<a class="page-link" href="event?pageNum=${startPage-1}" aria-label="Previous">
+			 <span aria-hidden="true">&laquo;</span>
+			</a></li>
+		</c:if>
+		<c:forEach begin="${startPage}" end="${endPage}" step="1" var="i">
+			<li class="page-item"><a class="page-link" href="list?pageNum=${i}">${i}</a></li>
+		</c:forEach>
+		<c:if test="${endPage < pageCnt}">
+		<li class="page-item">
+			<a class="page-link" href="list?pageNum=${endPage+1}" aria-label="Next">
+			<span aria-hidden="true">&raquo;</span>
+			</a></li>
+		</c:if>
+	</ul>
+	</nav>
+	</div>
+</section>
 </div>
 <%@ include file="/WEB-INF/views/common/template_footer.jsp" %>
 </div>

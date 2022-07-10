@@ -1,0 +1,27 @@
+@charset "UTF-8";
+
+/* 답글 쓰기 버튼*/
+.btn-reply {
+	margin-left: 50%;
+    background-color: #ffb12f !important;
+    border: none !important;	
+}
+
+/* 답글 쓰기 버튼 호버 효과*/
+.btn-reply:hover {
+	 background-color: #FF8C00;
+/*     border:none; */
+}
+
+/* 글목록 버튼 */
+.btn-gotolist {
+    margin-left: 50%;
+    background-color: #ffb12f !important;
+    border: none !important;
+}
+
+/* 글목록 버튼 호버 효과*/
+.btn-gotolist:hover{
+    background-color: #FF8C00;
+/*     border:none; */
+}

@@ -32,13 +32,13 @@
 		<img src="<%=request.getContextPath()%>/resources/image/main/follay!_logo.gif" class="nav-item-image-logo"
 	onclick="location.href='<%=request.getContextPath()%>/'">
 	</li>
-<c:if test="${empty sessionScope.member_id}">
+<c:if test="${empty sessionScope.Member}">
 	<li class="nav-item">
 		<img src="<%=request.getContextPath()%>/resources/image/main/login.png" class="nav-item-image"
 		onclick="location.href='<%=request.getContextPath()%>/member/login'">
 	</li>
 </c:if>
-<c:if test="${not empty sessionScope.member_id}">
+<c:if test="${not empty sessionScope.Member}">
 	<li class="nav-item">
 		<img src="<%=request.getContextPath()%>/resources/image/main/logout.png" class="nav-item-image"
 		onclick="location.href='<%=request.getContextPath()%>/member/logout'">

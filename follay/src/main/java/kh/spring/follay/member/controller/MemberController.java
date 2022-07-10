@@ -80,13 +80,14 @@ public class MemberController {
 //		return mv;    
 //	}
 	
+//	@RequestMapping(value = "member/login", method = RequestMethod.GET)
 	@GetMapping("/login")
 	public ModelAndView pageLogin(ModelAndView mv) {
 		mv.setViewName("member/login");
 		return mv;
 	}
-	@RequestMapping("/login")
-//	@PostMapping("/login")
+//	@RequestMapping("/login")
+	@PostMapping("/login")
 	public ModelAndView selectLogin(ModelAndView mv
 			, Member member
 			, RedirectAttributes rttr
@@ -94,12 +95,14 @@ public class MemberController {
 			) {
 		Member result = service.selectLogin(member);
 		
+		// 로그인 실패
 		if(result == null) {
 			rttr.addFlashAttribute("msg","로그인에 실패했습니다. 아이디와 패스워드를 다시 확인해 주세요.");
 			mv.setViewName("redirect:/member/login");
 			return mv;
 		}
 		
+		// 로그인 성공
 			session.setAttribute("loginSsInfo", result);
 			rttr.addFlashAttribute("msg",result.getMember_id()+"님 환영합니다!");
 			mv.setViewName("redirect:/");

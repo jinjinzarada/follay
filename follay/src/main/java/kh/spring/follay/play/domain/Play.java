@@ -28,6 +28,7 @@ public class Play {
 	private String play_original_filename;
 	private String play_rename_filename;
 	private Timestamp play_date;
+	private int play_level;
 	private int play_ref;
 	private int play_replay_ref;
 	private int play_reply_seq;
@@ -41,9 +42,11 @@ public class Play {
 	public String toString() {
 		return "Play [play_no=" + play_no + ", play_title=" + play_title + ", play_content=" + play_content
 				+ ", play_original_filename=" + play_original_filename + ", play_rename_filename="
-				+ play_rename_filename + ", play_date=" + play_date + ", play_ref=" + play_ref + ", play_replay_ref="
-				+ play_replay_ref + ", play_reply_seq=" + play_reply_seq + ", play_readcount=" + play_readcount
-				+ ", member_id=" + member_id + ", refnum=" + refnum + "]";
+				+ play_rename_filename + ", play_date=" + play_date + ", play_level=" + play_level + ", play_ref="
+				+ play_ref + ", play_replay_ref=" + play_replay_ref + ", play_reply_seq=" + play_reply_seq
+				+ ", play_readcount=" + play_readcount + ", member_id=" + member_id + ", refnum=" + refnum + "]";
 	}
+
+	
 
 }

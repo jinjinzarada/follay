@@ -6,6 +6,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>   
+<%@ page import="kh.spring.follay.play.domain.Play"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -33,23 +34,23 @@
 	<div>
 		<table border="1">
 			<tr>
-				<td>level</td>
-				<td>ref</td>
-				<td>rref</td>
-				<td>seq</td>
-				<td>번호</td>
-				<td>제목</td>
-				<td>작성일</td>
-				<td>작성자</td>
-				<td>조회수</td>
+				<th>level</th>
+				<th>ref</th>
+				<th>rref</th>
+				<th>seq</th>
+				<th>글번호</th>
+				<th>제목</th>
+				<th>작성일</th>
+				<th>작성자</th>
+				<th>조회수</th>
 			</tr>
 <c:forEach items="${playlist}" var="play">
 			<tr>
 				<td>${play.play_level}</td>	
 				<td>${play.play_ref}</td>	
-				<td>${play.play_reply_ref}</td>	
+				<td>${play.play_replay_ref}</td>	
 				<td>${play.play_reply_seq}</td>			
-				<td><a href="<%=request.getContextPath()%>/play/read?play_no=${board.board_num }">${play.play_no }</a></td>
+				<td><a href="<%=request.getContextPath()%>/play/read?play_no=${board.board_num}">${play.play_no }</a></td>
 				<td>
 <c:forEach begin="1" end="${play.play_level}">
 				&#8627;
@@ -57,7 +58,7 @@
 				${play.play_title}
 				</td>
 				<td>${play.play_date}</td>
-				<td>${play.play_writer}</td>
+				<td>${play.member_id}</td>
 				<td>${play.play_readcount}</td>
 			</tr>
 </c:forEach>

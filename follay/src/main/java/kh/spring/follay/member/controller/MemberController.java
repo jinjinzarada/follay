@@ -117,7 +117,7 @@ public class MemberController {
 		session.invalidate();
 		ModelAndView mv = new ModelAndView();
 		mv.setViewName("member/login");
-		mv.addObject("msg", "logout");
+		mv.addObject("msg", "로그아웃 되었습니다. 또 놀러오세요~!");
 		return mv;
         
     }

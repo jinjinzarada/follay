@@ -8,7 +8,7 @@
 	, play_title, member_id, play_content, play_original_filename, play_rename_filename
 	, play_date
 	, play_level
-	, play_ref, play_reply_ref
+	, play_ref, play_replay_ref
 	, play_reply_seq
 	, play_readcount)
 	values 
@@ -36,7 +36,7 @@
 	, play_title, member_id, play_content, play_original_filename, play_rename_filename
 	, play_date
 	, play_level
-	, play_ref, play_reply_ref
+	, play_ref, play_replay_ref
 	, play_reply_seq
 	, play_readcount)
 	values
@@ -58,7 +58,7 @@
 		, play_title, member_id, play_content, play_original_filename, play_rename_filename
 		, play_date
 		, play_level
-		, play_ref, play_reply_ref
+		, play_ref, play_replay_ref
 		, play_reply_seq
 		, play_readcount)
 	select (select nvl(max(PLAY_NO),0)+1 from play)

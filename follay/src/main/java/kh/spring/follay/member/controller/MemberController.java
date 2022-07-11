@@ -107,13 +107,14 @@ public class MemberController {
 			rttr.addFlashAttribute("msg",result.getMember_id()+"님 환영합니다!");
 			mv.setViewName("redirect:/");
 			return mv;
-			
 	}
 	
 	// 로그아웃
 	@RequestMapping("/logout")
     public ModelAndView pageLogout(HttpSession session) {
 //		MemberServiceImpl.selectLogout(session);
+		// 세션 닫기
+		session.invalidate();
 		ModelAndView mv = new ModelAndView();
 		mv.setViewName("member/login");
 		mv.addObject("msg", "logout");

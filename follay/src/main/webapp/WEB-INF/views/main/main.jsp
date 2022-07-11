@@ -7,13 +7,12 @@
     pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%@ taglib uri = "http://java.sun.com/jsp/jstl/functions" prefix = "fn" %>
-<%@ page session="false" %>
+<%-- <%@ page session="false" %> --%>
 <html>
 <head>
 	<title>Follay!</title>
 </head>
 <body>
-
 <%@ include file="/WEB-INF/views/common/template_header.jsp" %>
 <div class="wrap section">
 <section>

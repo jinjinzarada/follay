@@ -72,7 +72,7 @@ public class PlayController {
 			}
 		}
 		int result = service.insertPlay(play);
-		mv.setViewName("redirect:/");
+		mv.setViewName("redirect:/play/list");
 		return mv;
 		
 	}

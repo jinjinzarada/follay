@@ -122,32 +122,6 @@ public class MemberController {
         
     }
 	
-//	@GetMapping("/logout")
-//	public ModelAndView pageLogout(ModelAndView mv) {
-//		mv.setViewName("member/logout");
-//		return mv;
-//	}
-//	@PostMapping("/logout")
-//	public ModelAndView selectLogout(ModelAndView mv
-//			, Member member
-//			, RedirectAttributes rttr
-//			, HttpSession session
-//			) {
-//		Member result = service.selectLogout(member);
-		
-//		if(result == null) {
-//			rttr.addFlashAttribute("msg","로그인에 실패했습니다. 아이디와 패스워드를 다시 확인해 주세요.");
-//			mv.setViewName("redirect:/member/login");
-//			return mv;
-//		}
-		
-//			session.setAttribute("loginSsInfo", result);
-//			rttr.addFlashAttribute("msg",result.getMember_id()+"님 환영합니다!");
-//			mv.setViewName("redirect:/");
-//			return mv;
-//			
-//	}
-	
 	//아이디찾기
 	@RequestMapping(value="/findIn" , method = RequestMethod.GET)
 	public ModelAndView findId(Member member

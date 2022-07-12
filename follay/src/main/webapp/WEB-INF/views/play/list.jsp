@@ -6,6 +6,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>   
+<%@ taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn" %>  
 <%@ page import="kh.spring.follay.play.domain.Play"%>
 <!DOCTYPE html>
 <html>
@@ -31,13 +32,13 @@
 	<div>작성된 글이 없습니다.</div>
 </c:when>
 <c:otherwise>
-	<div>
+	<div class="list_div">
 		<table border="1">
 			<tr>
-				<th>level</th>
-				<th>ref</th>
-				<th>rref</th>
-				<th>seq</th>
+<!-- 				<th>level</th> -->
+<!-- 				<th>ref</th> -->
+<!-- 				<th>rref</th> -->
+<!-- 				<th>seq</th> -->
 				<th>글번호</th>
 				<th>제목</th>
 				<th>작성일</th>
@@ -46,18 +47,19 @@
 			</tr>
 <c:forEach items="${playlist}" var="play">
 			<tr>
-				<td>${play.play_level}</td>	
-				<td>${play.play_ref}</td>	
-				<td>${play.play_replay_ref}</td>	
-				<td>${play.play_reply_seq}</td>			
-				<td><a href="<%=request.getContextPath()%>/play/read?play_no=${board.board_num}">${play.play_no }</a></td>
-				<td>
-<c:forEach begin="1" end="${play.play_level}">
-				&#8627;
-</c:forEach>
-				${play.play_title}
+<%-- 				<td>${play.play_level}</td>	 --%>
+<%-- 				<td>${play.play_ref}</td>	 --%>
+<%-- 				<td>${play.play_replay_ref}</td>	 --%>
+<%-- 				<td>${play.play_reply_seq}</td>			 --%>
+				<td>${play.play_no}</td>
+				<td id="playlist_title">
+<%-- <c:forEach begin="1" end="${play.play_level}"> --%>
+<!-- 				&#8627; -->
+<%-- </c:forEach> --%>
+<a href="<%=request.getContextPath()%>/play/read?play_content=${play.play_content}">
+				${play.play_title}</a>
 				</td>
-				<td>${play.play_date}</td>
+				<td>${fn:substring(play.play_date,0,16)}</td>
 				<td>${play.member_id}</td>
 				<td>${play.play_readcount}</td>
 			</tr>
@@ -70,7 +72,7 @@
 	<button type="button" class="play_write" onclick="location.href='<%=request.getContextPath()%>/play/write'">글쓰기</button>
 </div>
 <!-- 페이징처리 -->
-<div class="p_section_container">
+<div class="section_container">
 	<nav aria-label="Page navigation example">
 		<ul class="pagination">
 		<c:if test="${startPage > 1}">

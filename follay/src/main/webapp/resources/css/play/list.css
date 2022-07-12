@@ -8,8 +8,10 @@
 	border-bottom: 3px solid #FF8C00;
 	width: 200px;
 	margin: auto;
+	color: #424242;
 /* 	margin-bottom: 10px; */
 } 
+
 
 /* 제일 바깥쪽 div */       
 .play_cover {
@@ -21,25 +23,59 @@
 
 /* 두번째 div */
 .play_form-cover {
-	height: 500px;
+/* 	height: 500px; */
     width: 100%;
     position: relative;
     overflow: hidden;
 }
 
+th {
+	border-top: 1px solid #bbb;
+	border-bottom:1px solid #bbb;
+	padding:8px 10px;
+	color: #333;
+}
+
+td {
+	text-align: center;
+	padding:10px 10px;
+	font-size: 17px;
+	color: #333;
+	border-bottom:1px solid #e6e6e6;
+}
+
+a {
+	text-decoration: none;
+	color:inherit;
+}
+/* play_list 제목 부분 */
+#playlist_title{
+	text-align: left;
+}
+
+#playlist_title:hover {
+	background-color: #fce5cd;
+}
+
+.list_div{
+	margin-top: 70px;
+	padding-left:250px;
+	
+}
+
 /* 글쓰기 버튼 */
 .play_write{
-	padding: 10px 50px;
+	padding: 7px 20px;
 	cursor: pointer;
 	display: block;
 	margin: auto;
-	margin-top: 20px;
+	margin-top: 50px;
 	color: white;
 	background: #ffb12f;
 	border: 0;
 	outline: none;
 	border-radius: 30px;
-	font-size: 20px;
+	font-size: 16px;
 	transition: background-color 0.5s ease;
 }
 
@@ -49,27 +85,17 @@
 }
 
 /* 페이징 처리 */
-.p_section_container {
+.section_container {
 	margin-left: 80.500px;
 	margin-right: 80.500px;
 	margin-top: 80.500px;
 	margin-bottom: 80.500px;
 }
-.p_section_head {
-	color: #343f56;
-}
-
-.p_evtable {
-	text-decoration: none;
-	color: inherit;
-}
-.p_evtable:hover {
-	color: #f54748;
-}
 
 .pagination {
   margin-left: 43%;
 }
-a.page-link {
+.page-link {
   color: #FF8C00;
 }
+

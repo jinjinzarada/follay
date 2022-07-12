@@ -14,15 +14,16 @@
 <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
 </head>
 <body>
+<%@ include file="/WEB-INF/views/common/template_header.jsp" %>
 <script>
 	var msg="${msg}";
 	if(msg){
 		alert(msg);
 	}
 </script>
-<div><button type="button" onclick="location.href='<%=request.getContextPath() %>/'">홈</button></div>
+<%-- <div><button type="button" onclick="location.href='<%=request.getContextPath() %>/'">홈</button></div> --%>
 <c:choose>
-<c:when test="${empty board }">
+<c:when test="${empty play }">
 	<script>
 		alert("해당글이 없습니다. 글목록으로 이동합니다. ");
 		location.href="<%=request.getContextPath()%>/play/list";
@@ -30,7 +31,7 @@
 </c:when>
 <c:otherwise>
 
-<c:if test="${play.play_writer eq loginSsInfo.id}">
+<c:if test="${play.member_id eq loginSsInfo.id}">
 	<div>
 		<form id="frmNum">
 		<!-- post방식일때 form 태그 사용한다.	-->
@@ -74,10 +75,10 @@
 	<div>
 		<table border="1">
 			<tr>
-				<td>level</td>
-				<td>ref</td>
-				<td>rref</td>
-				<td>seq</td>
+<!-- 				<td>level</td> -->
+<!-- 				<td>ref</td> -->
+<!-- 				<td>rref</td> -->
+<!-- 				<td>seq</td> -->
 				<td>번호</td>
 				<td>제목</td>
 				<td>작성일</td>
@@ -85,21 +86,21 @@
 				<td>조회수</td>
 			</tr>
 			<tr>
-				<td>${play.play_level }</td>	
-				<td>${play.play_ref }</td>	
-				<td>${play.play_reply_ref }</td>	
-				<td>${play.play_reply_seq }</td>			
-				<td>${play.play_no }</td>
-				<td>${play.play_title }</td>
-				<td>${play.play_date }</td>
-				<td>${play.play_writer }</td>
-				<td>${play.play_readcount }</td>
+<%-- 				<td>${play.play_level }</td>	 --%>
+<%-- 				<td>${play.play_ref }</td>	 --%>
+<%-- 				<td>${play.play_reply_ref }</td>	 --%>
+<%-- 				<td>${play.play_reply_seq }</td>			 --%>
+				<td>${play.play_no}</td>
+				<td>${play.play_title}</td>
+				<td>${play.play_date}</td>
+				<td>${play.member_id}</td>
+				<td>${play.play_readcount}</td>
 			</tr>
 		</table>
 		<div>내용: ${play.play_content }</div>
-	<c:if test="${not empty play.play_original_filename }">
-		<div>첨부파일: ${play.play_original_filename }</div>
-		<div><img src="<%=request.getContextPath() %>/${play.play_rename_filename }" width="500"></div>
+	<c:if test="${not empty play.play_original_filename}">
+		<div>첨부파일: ${play.play_original_filename}</div>
+		<div><img src="<%=request.getContextPath() %>/${play.play_rename_filename}" width="500"></div>
 	</c:if>
 		<div>
 			<button type="button" class="btn-reply" onclick="location.href='<%=request.getContextPath()%>/play/write?refnum=${play.play_no}'">답글쓰기</button>
@@ -110,5 +111,6 @@
 	</div>
 </c:otherwise>
 </c:choose>
+<%@ include file="/WEB-INF/views/common/template_footer.jsp" %>
 </body>
 </html>

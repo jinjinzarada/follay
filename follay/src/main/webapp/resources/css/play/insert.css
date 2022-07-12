@@ -2,12 +2,14 @@
 
 .title{
 	font-size: 30px;
+	font-weight: 700;
 	text-align: center;
-	padding-top: 30px;
+	padding-top: 50px;
 	padding-bottom: 30px;
 	border-bottom: 3px solid #FF8C00;
 	width: 200px;
 	margin: auto;
+	color: #FF8C00;
 /* 	margin-bottom: 10px; */
 } 
 
@@ -16,6 +18,7 @@
     width: 100%;
     background-position: center;
     background-size: cover;
+    background-color: #FFF0E7;
     position: absolute;
 }
 
@@ -37,6 +40,11 @@
     outline: none;
     background: transparent;
     font-size: 18px;
+}
+
+/* form */
+#play_write {
+	padding-left:400px;
 }
 
 /* 내용 입력칸 */
@@ -79,6 +87,7 @@ label:hover{
 	display: block;
 	margin: auto;
 	margin-top: 20px;
+	margin-left:120px;
 	color: white;
 	background: #ffb12f;
 	border: 0;

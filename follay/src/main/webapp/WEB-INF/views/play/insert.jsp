@@ -16,7 +16,7 @@
 <%@ include file="/WEB-INF/views/common/template_header.jsp" %>
 <div class="play_cover">
 <div class="title">놀이터</div>
-<!-- <div class="play_form-cover"> -->
+<div class="play_form-cover">
 <section>
 	<form action="<%=request.getContextPath()%>/play/write" method="post" id="play_write" 
 		enctype="multipart/form-data">
@@ -31,7 +31,7 @@
 		<button type="submit" class="play_insert">글등록</button>
 	</form>
 </section>	
-<!-- </div> -->
+</div>
 <%@ include file="/WEB-INF/views/common/template_footer.jsp" %>
 </div>
 </body>

@@ -2,13 +2,14 @@
 
 .title{
 	font-size: 30px;
+	font-weight: 700;
 	text-align: center;
-	padding-top: 30px;
+	padding-top: 50px;
 	padding-bottom: 30px;
 	border-bottom: 3px solid #FF69B4;
 	width: 200px;
 	margin: auto;
-	color: #424242;
+	color: #FF69B4;
 /* 	margin-bottom: 10px; */
 } 
 
@@ -17,6 +18,7 @@
     width: 100%;
     background-position: center;
     background-size: cover;
+    background-color: #FBEFF2;
     position: absolute;
 }
 

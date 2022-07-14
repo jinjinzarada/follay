@@ -28,10 +28,10 @@
 	
 	<!-- Application Loggers -->
 	<logger name="kh.spring.follay.member">
-		<level value="info" />
+		<level value="trace" />
 	</logger>
 	<logger name="kh.spring.follay.play">
-		<level value="info" />
+		<level value="trace" />
 	</logger>
 	
 	<logger name="kh.spring.follay.common">

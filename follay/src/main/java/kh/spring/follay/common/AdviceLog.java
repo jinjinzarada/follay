@@ -28,12 +28,12 @@ public class AdviceLog {
 		Object ro = null;
 		
 //		System.out.println("aroundDao:"+pjp.getThis()+pjp.getSignature().getName());
-		logger.debug("\t\t["+pjp.getTarget()+":"+pjp.getSignature().getName()+"]");
+		logger.debug("\t\t¢º¢º¢º["+pjp.getTarget()+":"+pjp.getSignature().getName()+"]");
 		
 		Object[] args = pjp.getArgs();
 		for(int i=0; i<pjp.getArgs().length; i++) {
 //			System.out.println("args:"+pjp.getArgs()[i]);
-			logger.debug("\t\t--args["+i+"] "+args[i]);
+			logger.debug("\t\t¢º¢ºargs["+i+"] "+args[i]);
 		}
 		StopWatch stopWatch = new StopWatch();
 		stopWatch.start();
@@ -42,7 +42,7 @@ public class AdviceLog {
 		
 		stopWatch.stop();
 		
-		logger.info("\t\t[DAO Ret:"+stopWatch.getTotalTimeMillis()+"ms] "+ ro);
+		logger.info("\t\t¢º¢º¢º[DAO Ret:"+stopWatch.getTotalTimeMillis()+"ms] "+ ro);
 		
 		return ro;
 	}

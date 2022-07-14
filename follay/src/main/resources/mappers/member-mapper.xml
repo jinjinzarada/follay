@@ -12,7 +12,7 @@
 </select>
 
 <select id="fidndId" parameterType="Member">
-	select * from member where MEMBER_EMAIL = #{member_email}
+	select member_email from member where MEMBER_EMAIL = #{member_email}
 </select>
 
 <select id="findIdCheck" parameterType="Member" resultType="int">

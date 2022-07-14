@@ -23,7 +23,7 @@
 </script>
 <%-- <div><button type="button" onclick="location.href='<%=request.getContextPath() %>/'">홈</button></div> --%>
 <c:choose>
-<c:when test="${empty play }">
+<c:when test="${empty play}">
 	<script>
 		alert("해당글이 없습니다. 글목록으로 이동합니다. ");
 		location.href="<%=request.getContextPath()%>/play/list";
@@ -35,7 +35,7 @@
 	<div>
 		<form id="frmNum">
 		<!-- post방식일때 form 태그 사용한다.	-->
-			<input type="hidden" name="play_no" value="${play.play_no}">
+			<input type="hidden" name="play_title" value="${play.play_content}">
 			<button type="button" class="btn update">수정</button>	
 			<button type="button" class="btn delete">삭제</button>	
 		</form>

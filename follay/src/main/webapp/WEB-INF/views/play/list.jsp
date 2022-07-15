@@ -57,7 +57,7 @@
 <%-- <c:forEach begin="1" end="${play.play_level}"> --%>
 <!-- 				&#8627; -->
 <%-- </c:forEach> --%>
-<a href="<%=request.getContextPath()%>/play/read?play_title=${play.play_no}">
+<a href="<%=request.getContextPath()%>/play/read?play_no=${play.play_no}">
 				<span class="list_title-span">${play.play_title}</span></a>
 				</td>
 				<td id="playlist_date">${fn:substring(play.play_date,0,16)}</td>

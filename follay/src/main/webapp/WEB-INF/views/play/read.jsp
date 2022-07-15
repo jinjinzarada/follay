@@ -75,26 +75,28 @@
 		</script>
 	</div>
 </c:if>
-	<div>
-		<table border="1">
+	<div class="read_table">
+		<table>
 			<tr>
 				<th>${play.play_title}</th>
 			</tr>
+		</table>
+		<table>
 			<tr>
-				<td>${play.member_id}</td>
-				<td>${play.play_readcount}</td>
-				<td>${fn:substring(play.play_date,0,16)}</td>
+				<td id="read_memberid">${play.member_id}</td>
+				<td id="read_playreadcount">조회 ${play.play_readcount}</td>
+				<td id="read_playdate">${fn:substring(play.play_date,0,16)}</td>
 			</tr>
 		</table>
-		<div>${play.play_content}</div>
+		<div class="read_content">${play.play_content}</div>
 	<c:if test="${not empty play.play_original_filename}">
 		<div>첨부파일: ${play.play_original_filename}</div>
 		<div><img src="<%=request.getContextPath() %>/${play.play_rename_filename}" width="500"></div>
 	</c:if>
+	</div>
 		<div>
 			<button type="button" class="gotolist" onClick="history.back()">글목록</button>
 		</div>
-	</div>
 </c:otherwise>
 </c:choose>
 </div>

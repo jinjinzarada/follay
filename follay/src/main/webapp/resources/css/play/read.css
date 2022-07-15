@@ -30,30 +30,55 @@
     overflow: hidden;
 }
 
+/* 글읽기 제목 table div */
+.read_table {
+	margin-top: 70px;
+	padding-left:400px;
+}
+
 th {
-	border-bottom:1px solid #bbb;
-	padding:8px 10px;
+/* 	border-bottom:1px solid #bbb; */
+	padding:10px 10px;
 	color: #333;
-	font-weight: bold;
-	font-size:large;
+	font-weight: 400;
+	font-size:21px;
 }
 
 td {
 	text-align: center;
 	padding:10px 10px;
-	font-size: 17px;
+	font-size: 14px;
 	color: #333;
-	border-bottom:1px solid #e6e6e6;
+/* 	border-bottom:1px solid #bbb; */
+}
+
+/* 글읽기 내용부분 */
+.read_content {
+	padding:20px 10px;
+	font-size:17px;
+	margin-bottom:100;
+}
+
+/* /* 제목 제외 div */ */
+/* .read_writer { */
+/* 	position: relative; */
+/* 	display: flex; */
+/* } */
+
+/* 작성자 부분 */
+#read_memberid {
+/* 	float:left; */
+/* 	text-align: center; */
 }
 
 /* 글목록 버튼 */
 .gotolist {
-/*     margin-left: 50%; */
-    padding: 7px 20px;
+    	padding: 7px 20px;
 	cursor: pointer;
 	display: block;
 	margin: auto;
 	margin-top: 50px;
+	margin-bottom: 50px;
 	color: white;
 	background: #ffb12f;
 	border: 0;

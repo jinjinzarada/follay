@@ -73,27 +73,30 @@
 	<button type="button" class="play_write" onclick="location.href='<%=request.getContextPath()%>/play/write'">글쓰기</button>
 </div>
 <!-- 페이징처리 -->
-<div class="section_container">
-	<nav aria-label="Page navigation example">
-		<ul class="pagination">
-		<c:if test="${startPage > 1}">
-		<li class="page-item">
-			<a class="page-link" href="event?pageNum=${startPage-1}" aria-label="Previous">
-			 <span aria-hidden="true">&laquo;</span>
-			</a></li>
-		</c:if>
-		<c:forEach begin="${startPage}" end="${endPage}" step="1" var="i">
-			<li class="page-item"><a class="page-link" href="list?pageNum=${i}">${i}</a></li>
-		</c:forEach>
-		<c:if test="${endPage < pageCnt}">
-		<li class="page-item">
-			<a class="page-link" href="list?pageNum=${endPage+1}" aria-label="Next">
-			<span aria-hidden="true">&raquo;</span>
-			</a></li>
-		</c:if>
-	</ul>
-	</nav>
-	</div>
+<table>
+<tr>
+	<td colspan="5" align="center">
+   		<ul class="pagination pagination-sm">
+     			
+ 				<!-- 이전버튼 활성화 여부 -->
+ 				<c:if test="${pageVO.prev }">
+         			<li><a href="list.play?pageNum=${pageVO.startPage - 1}&amount=${pageVO.amount}">이전</a></li>
+				</c:if>
+				                        		
+           		<!-- 페이지번호 처리 -->
+           		<c:forEach var="num" begin="${pageVO.startPage}" end="${pageVO.endPage}">
+            		<li  class="${pageVO.pageNum eq num ? 'active' : '' }">
+            		<a href="list.play?pageNum=${num }&amount=${pageVO.amount}">${num}</a></li>
+           		</c:forEach>
+           		
+           		<!-- 다음버튼 활성화 여부 -->
+           		<c:if test="${pageVO.next }">
+           			<li><a href="list.play?pageNum=${pageVO.endPage + 1}&amount=${pageVO.amount}">다음</a></li>
+           		</c:if>
+   		</ul>
+	</td>
+</tr>
+</table>
 </section>
 </div>
 <%@ include file="/WEB-INF/views/common/template_footer.jsp" %>

@@ -1,7 +1,9 @@
 package kh.spring.follay.play.model.dao;
 
+import java.util.ArrayList;
 import java.util.List;
 
+import org.apache.ibatis.session.RowBounds;
 import org.apache.ibatis.session.SqlSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
@@ -42,6 +44,15 @@ public class PlayDao {
 	
 	public int deletePlay(String play_no) {
 		return sqlsession.delete("Play.deletePlay",play_no);
+	}
+	
+	// 페이징 처리
+	public int selectTotalCnt() {
+		return sqlsession.selectOne("Play.selectTotalCnt");
+	}
+	
+	public List<Play> selectPlayList(int currentPage, int pageSize) {
+		return sqlsession.selectList("Play.selectPlayList", null, new RowBounds((currentPage-1)*pageSize , pageSize));
 	}
 
 }

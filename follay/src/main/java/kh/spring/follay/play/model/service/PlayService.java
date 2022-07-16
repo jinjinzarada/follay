@@ -32,6 +32,8 @@ public interface PlayService {
 	
 	public Play selectPlay(String play_no);
 	public List<Play> selectPlayListAll();
+	public int selectTotalCnt();
+	public List<Play> selectPlayList(int currentPage, int pageSize);
 	
 	/**
 	 * @param pageNum 읽을 페이지

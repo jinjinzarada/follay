@@ -42,6 +42,17 @@ public class PlayServiceImpl implements PlayService{
 		return dao.selectPlayListAll();
 	}
 	
+	//페이징 처리
+	public int selectTotalCnt() {
+		return dao.selectTotalCnt();
+	}
+	
+	public List<Play> selectPlayList(int currentPage, int pageSize){
+		return dao.selectPlayList(currentPage, pageSize);
+	}
+	
+	
+	
 	public int deletePlay(List<String> play_no) {
 		return 0;
 	}

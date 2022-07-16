@@ -1,5 +1,7 @@
 package kh.spring.follay.play.controller;
 
+import java.util.List;
+
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 
@@ -19,7 +21,7 @@ import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 import kh.spring.follay.common.FileUpload;
 import kh.spring.follay.member.domain.Member;
 import kh.spring.follay.play.domain.Play;
-import kh.spring.follay.play.model.service.PlayServiceImpl;
+import kh.spring.follay.play.model.service.PlayService;
 
 
 @Controller
@@ -28,7 +30,7 @@ public class PlayController {
 	private static final Logger logger = LoggerFactory.getLogger(PlayController.class);
 
 	@Autowired
-	private PlayServiceImpl service;
+	private PlayService service;
 	
 	@Autowired
 	private FileUpload commonFile;
@@ -77,12 +79,40 @@ public class PlayController {
 		
 	}
 	@GetMapping("/list")
-	public ModelAndView selectList(ModelAndView mv) {
+	public ModelAndView list(@RequestParam(name="page", defaultValue = "1") int currentPage
+			, ModelAndView mv
+			, @RequestParam(name = "test1", defaultValue = "1") int test1
+			, @RequestParam(name = "test2", defaultValue = "2") int test2
+			, @RequestParam(name = "test5", defaultValue = "5") int test5
+			, HttpServletRequest req) {
+		System.out.println(req.getParameter("test5"));
 		
+		final int pageSize = 5;
+		final int pageBlock = 3;
+		int totalCnt = service.selectTotalCnt();
+		
+		//paging 처리 
+		int pageCnt = (totalCnt / pageSize) + (totalCnt % pageSize == 0 ? 0 :1);
+		int startPage = 1;
+		int endPage = 1;
+		if (currentPage % pageBlock == 0) {
+			startPage = ((currentPage / pageBlock) - 1) * pageBlock + 1;
+		}
+		endPage = startPage + pageBlock - 1;
+		if (endPage > pageCnt) {
+			endPage = pageCnt;
+		}
+		
+		List<Play> playlist = service.selectPlayList(currentPage, pageSize);
 		mv.addObject("playlist", service.selectPlayListAll());
+		mv.addObject("startPage", startPage);
+		mv.addObject("endPage", endPage);
+		mv.addObject("pageCnt", pageCnt);
+		mv.addObject("currentPage", currentPage);
 		mv.setViewName("play/list");
 		return mv;
 	}
+
 	@GetMapping("/read")
 	public ModelAndView selectPlay(ModelAndView mv
 			, @RequestParam(name="play_no", required = false) String play_no

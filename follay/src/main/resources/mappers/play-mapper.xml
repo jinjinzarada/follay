@@ -7,11 +7,15 @@
 </select>
 <select id="selectPlayList" resultMap="PlayResultMap">
 		<![CDATA[
-		select play.*, re_comment.*, (select count(*) from re_comment r where r.play_no= play.play_no) reCommentCnt
-		from play 
-		left outer join re_comment on play.play_no = re_comment.play_no
-		order by play.play_date desc, re_comment.play_date desc
-		]]>
+ 		select play.*, playcomment.*, (select count(*) from playcomment pc where pc.play_no= play.play_no) play_commentcnt 
+ 		from play  
+ 		left outer join playcomment on play.play_no = playcomment.play_no 
+		order by play.play_date desc, playcomment.pc_date desc 
+ 		]]> 
+</select>
+<select id="selectPlayAndReComment" resultMap="PlayAndReCommentResultMap" parameterType="_int">
+	select * from (select * from play where play_no=#{play_no}) t1 
+        left outer join (select * from playcomment where play_no=#{play_no}) t2 using (play_no)
 </select>
 <insert id="insertPlay" parameterType="Play">
 	insert into play 

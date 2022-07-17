@@ -21,14 +21,14 @@ public interface PlayService {
 	 * @param play_no 삭제할 글번호 하나
 	 * @return 삭제된 글의 갯수
 	 */
-	public int deletePlay(String play_no);
+//	public int deletePlay(String play_no);
 	
 	/**
 	 * @param play_no 삭제할 글번호 리스트
 	 * @return 삭제된 글의 갯수
 	 * 
 	 */
-	public int deletePlay(List<String> play_no);
+//	public int deletePlay(List<String> play_no);
 	
 	public Play selectPlay(String play_no);
 	public List<Play> selectPlayListAll();

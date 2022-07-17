@@ -23,15 +23,16 @@ public class PlayServiceImpl implements PlayService{
 			return dao.insertPlay(play);
 		}
 	}
+	
 	// 게시글 수정
 	public int updatePlay(Play play) {
 		return dao.updatePlay(play);
 	}
 	
 	// 게시글 삭제
-	public int deletePlay(String play_no) {
-		return dao.deletePlay(play_no);
-	}
+//	public int deletePlay(String play_no) {
+//		return dao.deletePlay(play_no);
+//	}
 	
 	public Play selectPlay(String play_no) {
 		return dao.selectPlay(play_no);
@@ -47,14 +48,16 @@ public class PlayServiceImpl implements PlayService{
 		return dao.selectTotalCnt();
 	}
 	
+	//페이징 처리
 	public List<Play> selectPlayList(int currentPage, int pageSize){
 		return dao.selectPlayList(currentPage, pageSize);
 	}
-	
-	
-	
-	public int deletePlay(List<String> play_no) {
-		return 0;
+
+	// 댓글
+	public Play selectPlayAndPlayComment(int play_no){
+		return dao.selectPlayAndPlayComment(play_no);
 	}
-	
-}
+
+
+
+}	

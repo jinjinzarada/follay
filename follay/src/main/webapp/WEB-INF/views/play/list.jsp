@@ -48,17 +48,13 @@
 			</tr>
 <c:forEach items="${playlist}" var="play">
 			<tr id="play_td">
-<%-- 				<td>${play.play_level}</td>	 --%>
-<%-- 				<td>${play.play_ref}</td>	 --%>
-<%-- 				<td>${play.play_replay_ref}</td>	 --%>
-<%-- 				<td>${play.play_reply_seq}</td>			 --%>
 				<td id="playlist_no">${play.play_no}</td>
 				<td id="playlist_title">
 <%-- <c:forEach begin="1" end="${play.play_level}"> --%>
 <!-- 				&#8627; -->
 <%-- </c:forEach> --%>
 <a href="<%=request.getContextPath()%>/play/read?play_no=${play.play_no}">
-				<span class="list_title-span">${play.play_title}</span></a>
+				<span class="list_title-span">${play.play_title} [${play.play_commentcnt}]</span></a>
 				</td>
 				<td id="playlist_date">${fn:substring(play.play_date,0,16)}</td>
 				<td id="playlist_write">${play.member_id}</td>

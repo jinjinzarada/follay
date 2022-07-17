@@ -22,6 +22,7 @@ import kh.spring.follay.common.FileUpload;
 import kh.spring.follay.member.domain.Member;
 import kh.spring.follay.play.domain.Play;
 import kh.spring.follay.play.model.service.PlayService;
+import kh.spring.follay.play.model.service.PlayServiceImpl;
 
 
 @Controller
@@ -78,6 +79,7 @@ public class PlayController {
 		return mv;
 		
 	}
+	
 	@GetMapping("/list")
 	public ModelAndView list(@RequestParam(name="page", defaultValue = "1") int currentPage
 			, ModelAndView mv
@@ -92,11 +94,13 @@ public class PlayController {
 		int totalCnt = service.selectTotalCnt();
 		
 		//paging 처리 
-		int pageCnt = (totalCnt / pageSize) + (totalCnt % pageSize == 0 ? 0 :1);
+		int pageCnt = (totalCnt / pageSize) + (totalCnt % pageSize == 0 ? 0 : 1);
 		int startPage = 1;
 		int endPage = 1;
 		if (currentPage % pageBlock == 0) {
 			startPage = ((currentPage / pageBlock) - 1) * pageBlock + 1;
+		} else {
+			startPage = (currentPage / pageBlock) * pageBlock + 1;
 		}
 		endPage = startPage + pageBlock - 1;
 		if (endPage > pageCnt) {
@@ -104,7 +108,7 @@ public class PlayController {
 		}
 		
 		List<Play> playlist = service.selectPlayList(currentPage, pageSize);
-		mv.addObject("playlist", service.selectPlayListAll());
+		mv.addObject("playlist", playlist);
 		mv.addObject("startPage", startPage);
 		mv.addObject("endPage", endPage);
 		mv.addObject("pageCnt", pageCnt);
@@ -170,20 +174,20 @@ public class PlayController {
 		mv.setViewName("redirect:/play/list");
 		return mv;
 	}
-	@PostMapping(value="/delete", produces = "text/plain;charset=UTF-8")
-	@ResponseBody
-	public String deletPlay(
-			@RequestParam(name="play_no",required = false) String play_no
-			) {
-		int result = service.deletePlay(play_no);
-		String msg="";
-		if(result > 0) {
-			msg="게시글"+play_no+"번 삭제되었습니다. ";
-		}else {
-			msg="게시글이 삭제되지 못했습니다. 다시 확인하고 삭제해 주세요.";
-		}
-		return msg;
-		
-	}
+//	@PostMapping(value="/delete", produces = "text/plain;charset=UTF-8")
+//	@ResponseBody
+//	public String deletPlay(
+//			@RequestParam(name="play_no",required = false) String play_no
+//			) {
+//		int result = service.deletePlay(play_no);
+//		String msg="";
+//		if(result > 0) {
+//			msg="게시글"+play_no+"번 삭제되었습니다. ";
+//		}else {
+//			msg="게시글이 삭제되지 못했습니다. 다시 확인하고 삭제해 주세요.";
+//		}
+//		return msg;
+//		
+//	}
 	
 }

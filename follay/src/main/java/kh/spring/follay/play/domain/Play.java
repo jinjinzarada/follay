@@ -1,6 +1,7 @@
 package kh.spring.follay.play.domain;
 
 import java.sql.Timestamp;
+import java.util.List;
 
 import org.springframework.stereotype.Component;
 
@@ -33,10 +34,13 @@ public class Play {
 	private int play_replay_ref;
 	private int play_reply_seq;
 	private int play_readcount;
-	
 	private String member_id;
 	
 	private int refnum;
+	
+	private int play_commentcnt;
+	
+	private List<PlayComment> play_commentlist;
 
 	@Override
 	public String toString() {

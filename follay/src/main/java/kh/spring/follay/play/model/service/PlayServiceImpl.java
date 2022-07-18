@@ -30,9 +30,9 @@ public class PlayServiceImpl implements PlayService{
 	}
 	
 	// 게시글 삭제
-//	public int deletePlay(String play_no) {
-//		return dao.deletePlay(play_no);
-//	}
+	public int deletePlay(int play_no) {
+		return dao.deletePlay(play_no);
+	}
 	
 	public Play selectPlay(String play_no) {
 		return dao.selectPlay(play_no);

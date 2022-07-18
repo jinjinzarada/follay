@@ -36,10 +36,6 @@
 	<div class="list_div">
 		<table border="1">
 			<tr>
-<!-- 				<th>level</th> -->
-<!-- 				<th>ref</th> -->
-<!-- 				<th>rref</th> -->
-<!-- 				<th>seq</th> -->
 				<th>글번호</th>
 				<th>제목</th>
 				<th>작성일</th>

@@ -48,7 +48,9 @@ public class Play {
 				+ ", play_original_filename=" + play_original_filename + ", play_rename_filename="
 				+ play_rename_filename + ", play_date=" + play_date + ", play_level=" + play_level + ", play_ref="
 				+ play_ref + ", play_replay_ref=" + play_replay_ref + ", play_reply_seq=" + play_reply_seq
-				+ ", play_readcount=" + play_readcount + ", member_id=" + member_id + ", refnum=" + refnum + "]";
+				+ ", play_readcount=" + play_readcount + ", member_id=" + member_id + ", refnum=" + refnum
+				+ ", play_commentcnt=" + play_commentcnt + ", play_commentlist=" + play_commentlist + "]";
 	}
+
 
 }

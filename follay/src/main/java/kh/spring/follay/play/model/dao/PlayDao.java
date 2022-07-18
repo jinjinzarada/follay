@@ -43,9 +43,9 @@ public class PlayDao {
 		return sqlsession.update("Play.updatePlay",play);
 	}
 	
-//	public int deletePlay(String play_no) {
-//		return sqlsession.delete("Play.deletePlay",play_no);
-//	}
+	public int deletePlay(int play_no) {
+		return sqlsession.delete("Play.deletePlay",play_no);
+	}
 	
 	// 페이징 처리
 	public int selectTotalCnt() {
@@ -60,7 +60,7 @@ public class PlayDao {
 	// 댓글
 	public Play selectPlayAndPlayComment(int play_no) {
 		Play play = sqlsession.selectOne("Play.selectPlay", play_no);
-		play.setPlay_commentlist(sqlsession.selectList("Play.selectPlay_commentlist", play_no));
+		play.setPlay_commentlist(sqlsession.selectList("Play.selectPlayCommentList", play_no));
 		return play;
 	}
 

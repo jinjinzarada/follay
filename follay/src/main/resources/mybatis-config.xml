@@ -8,6 +8,7 @@
 	<typeAliases>
 		<typeAlias type="kh.spring.follay.member.domain.Member" alias="Member"/>
 		<typeAlias type="kh.spring.follay.play.domain.Play" alias="Play"/>
+		<typeAlias type="kh.spring.follay.play.domain.PlayComment" alias="PlayComment"/>
 	</typeAliases>
 	
 	<mappers>

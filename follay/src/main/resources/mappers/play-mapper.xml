@@ -1,13 +1,56 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
 <mapper namespace="Play">
+	<resultMap type="Play" id="PlayResultMap">
+		<id column="play_no" property="play_no"/>
+		<result column="play_title" property="play_title"/>
+		<result column="play_content" property="play_content"/>
+		<result column="play_original_filename" property="play_original_filename"/>
+		<result column="play_rename_filename" property="play_rename_filename"/>
+		<result column="play_date" property="play_date"/>
+		<result column="play_level" property="play_level"/>
+		<result column="play_ref" property="play_ref"/>
+		<result column="play_replay_ref" property="play_replay_ref"/>
+		<result column="play_reply_seq" property="play_reply_seq"/>
+		<result column="play_readcount" property="play_readcount"/>
+		<result column="member_id" property="member_id"/>
+		<result column="refnum" property="refnum"/>
+		<result column="play_commentcnt" property="play_commentcnt"/>
+		<collection property="play_commentlist" resultMap="PlayCommentResultMap"/>
+	</resultMap>
+	
+	<resultMap type="Play" id="PlayAndReCommentResultMap">
+		<id column="play_no" property="play_no"/>
+		<result column="play_title" property="play_title"/>
+		<result column="play_content" property="play_content"/>
+		<result column="play_original_filename" property="play_original_filename"/>
+		<result column="play_rename_filename" property="play_rename_filename"/>
+		<result column="play_date" property="play_date"/>
+		<result column="play_level" property="play_level"/>
+		<result column="play_ref" property="play_ref"/>
+		<result column="play_replay_ref" property="play_replay_ref"/>
+		<result column="play_reply_seq" property="play_reply_seq"/>
+		<result column="play_readcount" property="play_readcount"/>
+		<result column="member_id" property="member_id"/>
+		<result column="refnum" property="refnum"/>
+		<result column="play_commentcnt" property="play_commentcnt"/>
+		<collection property="play_commentlist" resultMap="PlayCommentResultMap"/>
+	</resultMap>
+	
+	<resultMap type="PlayComment" id="PlayCommentResultMap">
+		<id column="pc_no" property="pc_no"/>
+		<result column="pc_content" property="pc_content"/>
+		<result column="pc_date" property="pc_date"/>
+		<result column="play_no" property="play_no"/>
+		<result column="member_id" property="member_id"/>
+	</resultMap>
 
 <select id="selectTotalCnt" resultType="_int">
 	select count(*) from play
 </select>
 <select id="selectPlayList" resultMap="PlayResultMap">
 		<![CDATA[
- 		select play.*, playcomment.*, (select count(*) from playcomment pc where pc.play_no= play.play_no) play_commentcnt 
+ 		select play.*, playcomment.*, (select count(*) from playcomment pc where pc.play_no= play.play_no) playcommentcnt 
  		from play  
  		left outer join playcomment on play.play_no = playcomment.play_no 
 		order by play.play_date desc, playcomment.pc_date desc 
@@ -102,6 +145,10 @@
 ]]>
 </select>
 
+<select id="selectPlayCommentList" resultMap="PlayCommentResultMap" parameterType="_int">
+		select * from playcomment where play_no=#{play_no}
+</select>
+	
 <update id="updatePlay" parameterType="Play">
 	update play set
 		  play_title = #{play_title}
@@ -111,7 +158,7 @@
 	where play_no=#{play_no}
 </update>
 
-<delete id="deletePlay" parameterType="string">
+<delete id="deletePlay" parameterType="_int">
 	delete from play where play_no=#{play_no}
 </delete>
 </mapper>

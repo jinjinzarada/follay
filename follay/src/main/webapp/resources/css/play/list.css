@@ -69,6 +69,17 @@ a {
 	padding-left:260px;
 	
 }
+/* 페이징 */
+.paging_div {
+	margin-top: 30px;
+	padding-left: 562px;
+}
+
+#paging_no {
+	font-weight: 500;
+	font-size: 17px;
+	color: #ff9f00;	
+}
 
 /* 글쓰기 버튼 */
 .play_write{
@@ -76,7 +87,8 @@ a {
 	cursor: pointer;
 	display: block;
 	margin: auto;
-	margin-top: 50px;
+	margin-top: 30px;
+	margin-bottom: 30px;
 	color: white;
 	background: #ffb12f;
 	border: 0;

@@ -75,6 +75,7 @@
 		</script>
 	</div>
 </c:if>
+<section>
 	<div class="read_table">
 		<table>
 			<tr>
@@ -94,9 +95,22 @@
 		<div><img src="<%=request.getContextPath() %>/${play.play_rename_filename}" width="500"></div>
 	</c:if>
 	</div>
-		<div>
-			<button type="button" class="gotolist" onClick="history.back()">글목록</button>
-		</div>
+	<form action="playcomment" method="post" class="playcomment">
+		<input type="hidden" name="play_no" value="${play.play_no}">
+		<input type="text" name="play_content" placeholder= "예쁜말 고운말로 댓글 적어주세요." class="comment_content">
+		<button type="submit" class="comment_submit">댓글등록</button>
+	</form>
+<hr>
+	<c:forEach items="${play.play_commentlist}" var="playcomment">
+			<p>작성자: ${playcomment.member_id}</p>
+			<p>작성일:${playcomment.pc_date}</p>
+			<p>글내용:${playcomment.pc_content}</p>
+			<hr>
+	</c:forEach>
+	<div>
+		<button type="button" class="gotolist" onClick="history.back()">글목록</button>
+	</div>
+</section>
 </c:otherwise>
 </c:choose>
 </div>

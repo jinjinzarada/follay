@@ -59,21 +59,56 @@ td {
 	margin-bottom:100;
 }
 
-/* /* 제목 제외 div */ */
-/* .read_writer { */
-/* 	position: relative; */
-/* 	display: flex; */
-/* } */
-
 /* 작성자 부분 */
 #read_memberid {
 /* 	float:left; */
 /* 	text-align: center; */
 }
 
+/* 댓글 */
+.playcomment {
+	background-size: cover;
+	background-color: #ffe3d5;
+	width: 100%;
+}
+
+.comment_content {
+	width: 40%;
+    padding: 10px 0;
+    margin: 5px 0;
+    margin-left: 355px;
+    border: none;
+    border-bottom: 1px solid #999;
+    outline: none;
+    background: transparent;
+    font-size: 18px;
+}
+
+/* 댓글 버튼 */
+.comment_submit {
+	padding: 7px 20px;
+	cursor: pointer;
+/* 	display: block; */
+	margin: auto;
+	margin-top: 50px;
+	margin-bottom: 50px;
+	color: white;
+	background: #ffb12f;
+	border: 0;
+	outline: none;
+	border-radius: 30px;
+	font-size: 16px;
+	transition: background-color 0.5s ease;
+}
+
+.comment_submit:hover{
+    background-color: #FF8C00;
+/*     border:none; */
+}
+
 /* 글목록 버튼 */
 .gotolist {
-    	padding: 7px 20px;
+    padding: 7px 20px;
 	cursor: pointer;
 	display: block;
 	margin: auto;

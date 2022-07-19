@@ -33,6 +33,7 @@ public interface PlayService {
 	public List<Play> selectPlayListAll();
 	public int selectTotalCnt();
 	public List<Play> selectPlayList(int currentPage, int pageSize);
+	public Play selectPlayAndPlayComment(int play_no);
 	
 	/**
 	 * @param pageNum 읽을 페이지

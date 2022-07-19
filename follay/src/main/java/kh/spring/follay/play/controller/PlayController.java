@@ -55,12 +55,14 @@ public class PlayController {
 	public ModelAndView insert(ModelAndView mv
 			, Play play
 			, HttpSession session
+//			, RedirectAttributes rttr
 			, @RequestParam(name="uploadfile", required = false) MultipartFile uploadfile
 			, HttpServletRequest req
 			) {
 		
 		Member member = (Member) session.getAttribute("loginSsInfo");
 		if (member == null) {
+//			rttr.addFlashAttribute("msg", "로그인 후 글작성 해주세요.");
 			mv.setViewName("redirect:/member/login");
 			return mv;
 		}
@@ -89,7 +91,7 @@ public class PlayController {
 			, HttpServletRequest req) {
 		System.out.println(req.getParameter("test5"));
 		
-		final int pageSize = 5;
+		final int pageSize = 10;
 		final int pageBlock = 3;
 		int totalCnt = service.selectTotalCnt();
 		

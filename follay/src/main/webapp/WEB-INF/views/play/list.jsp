@@ -61,23 +61,29 @@
 	</div>
 </c:otherwise>
 </c:choose>
+<!-- 페이징처리 -->
+<div class="paging_div">
+		<c:if test="${startPage > 1 }">
+			<a href="list?page=${startPage-1}"><span>&laquo;</span></a>&nbsp;&nbsp;&nbsp;
+		</c:if>
+		
+		<c:forEach begin="${startPage}" end="${endPage}" step="1" var="i"> 
+			<c:if test="${currentPage eq i}">
+				<a href="list?page=${i}"><span id="paging_no">${i}</span></a>&nbsp;&nbsp;&nbsp;
+			</c:if>
+			
+			<c:if test="${currentPage ne i}">
+				<a href="list?page=${i}">${i}</a>&nbsp;&nbsp;&nbsp;
+			</c:if>
+		</c:forEach>
+		
+		<c:if test="${endPage < pageCnt}">
+			<a href="list?page=${endPage+1}"><span>&raquo;</span></a>&nbsp;&nbsp;&nbsp;
+		</c:if>
+</div>
 <div>
 	<button type="button" class="play_write" onclick="location.href='<%=request.getContextPath()%>/play/write'">글쓰기</button>
 </div>
-<!-- 페이징처리 -->
-<table>	
-	<tr>
-		<c:if test="${startPage > 1 }">
-			<td><a href="list?page=${startPage-1}"><span>이전</span></a>&nbsp;&nbsp;&nbsp;</td>
-		</c:if>
-		<c:forEach begin="${startPage}" end="${endPage}" var="i"> 
-			<td><a href="list?page=${i}"><span>${i}</span></a>&nbsp;&nbsp;&nbsp;</td>
-		</c:forEach>
-		<c:if test="${endPage < pageCnt}">
-			<td><a href="list?page=${endPage+1}"><span>다음</span></a>&nbsp;&nbsp;&nbsp;</td>
-		</c:if>
-	</tr>
-</table>
 </section>
 </div>
 <%@ include file="/WEB-INF/views/common/template_footer.jsp" %>

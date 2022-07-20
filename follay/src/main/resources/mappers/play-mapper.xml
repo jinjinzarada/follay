@@ -140,12 +140,12 @@
 </select>
 <select id="selectPlay" resultType="Play" parameterType="string">
 <![CDATA[
-	select * from play
+	select play_no, play_content, play_date, member_id from play
 	where play_no=#{play_no}
 ]]>
 </select>
 
-<select id="selectPlayCommentList" resultMap="PlayCommentResultMap" parameterType="_int">
+<select id="selectPlayCommentList" resultMap="PlayCommentResultMap" parameterType="string">
 		select * from playcomment where play_no=#{play_no}
 </select>
 	

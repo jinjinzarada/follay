@@ -81,8 +81,8 @@
 			<tr>
 				<th>${play.play_title}</th>
 			</tr>
-		</table>
-		<table>
+<!-- 		</table> -->
+<!-- 		<table> -->
 			<tr>
 				<td id="read_memberid">${play.member_id}</td>
 				<td id="read_playreadcount">조회 ${play.play_readcount}</td>
@@ -95,11 +95,35 @@
 		<div><img src="<%=request.getContextPath() %>/${play.play_rename_filename}" width="500"></div>
 	</c:if>
 	</div>
-	<form action="playcomment" method="post" class="playcomment">
+	<form id="frmComment">
 		<input type="hidden" name="play_no" value="${play.play_no}">
 		<input type="text" name="play_content" placeholder= "예쁜말 고운말로 댓글 적어주세요." class="comment_content">
-		<button type="submit" class="comment_submit">댓글등록</button>
+		<button type="button" class="comment_submit">댓글등록</button>
 	</form>
+	<script>
+	$(".comment_submit").click(function(){
+		console.log($("#frmComment").serialize());
+		$.ajax({
+			url:"<%=request.getContextPath()%>/play/writecomment,
+			type:"post",
+			data:$("#frmComment").serialize(),
+			dataType:"json",
+			success:function(result){
+				console.log(result);
+				if(result){
+					alert(result);
+				}
+				var html = "";
+			},
+			error:function(errcode){
+				console.log(errcode);
+			}			
+		});
+		
+	});
+	
+	
+	</script>
 <hr>
 	<c:forEach items="${play.play_commentlist}" var="playcomment">
 			<p>작성자: ${playcomment.member_id}</p>

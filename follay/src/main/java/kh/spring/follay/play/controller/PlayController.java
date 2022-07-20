@@ -2,6 +2,7 @@ package kh.spring.follay.play.controller;
 
 import java.util.List;
 
+import javax.inject.Inject;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 
@@ -12,6 +13,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.multipart.MultipartFile;
@@ -21,6 +23,7 @@ import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 import kh.spring.follay.common.FileUpload;
 import kh.spring.follay.member.domain.Member;
 import kh.spring.follay.play.domain.Play;
+import kh.spring.follay.play.domain.PlayComment;
 import kh.spring.follay.play.model.service.PlayService;
 import kh.spring.follay.play.model.service.PlayServiceImpl;
 
@@ -30,6 +33,9 @@ import kh.spring.follay.play.model.service.PlayServiceImpl;
 public class PlayController {
 	private static final Logger logger = LoggerFactory.getLogger(PlayController.class);
 
+//	@Inject
+//	private PlayComment playcomment;
+	
 	@Autowired
 	private PlayService service;
 	
@@ -75,12 +81,16 @@ public class PlayController {
 				play.setPlay_rename_filename(rename_filename);
 				
 			}
+//			mv.addObject("List<PlayComment>", service.selectPlayCommentList(play_no)); 
+//			mv.setViewName("play/writecomment");
+//			mv.addObject("playcomment",playcomment);
+//			return mv;
 		}
 		int result = service.insertPlay(play);
 		mv.setViewName("redirect:/play/list");
 		return mv;
 		
-	}
+		}
 	
 	@GetMapping("/list")
 	public ModelAndView list(@RequestParam(name="page", defaultValue = "1") int currentPage
@@ -119,8 +129,10 @@ public class PlayController {
 		return mv;
 	}
 
-	@GetMapping("/read")
+//	@GetMapping("/read")
+	@RequestMapping(value="/read", method = RequestMethod.GET)
 	public ModelAndView selectPlay(ModelAndView mv
+			, PlayComment playcomment
 			, @RequestParam(name="play_no", required = false) String play_no
 			, RedirectAttributes rttr
 			) {
@@ -128,11 +140,41 @@ public class PlayController {
 			rttr.addFlashAttribute("msg", "읽을 글번호가 없습니다. 읽을 글을 다시 선택해 주세요");
 			mv.setViewName("redirect:/play/list");
 		}
-		mv.addObject("play", service.selectPlay(play_no));
+		
+//		mv.addObject("play", service.selectPlay(play_no));  // 게시글만 읽기
+		mv.addObject("play", service.selectPlayAndPlayComment(play_no)); // 게시글+댓글 읽기
 		mv.setViewName("play/read");
+		
+//		mv.addObject(service.selectPlayCommentList(play_no));
+		mv.addObject("playcomment",playcomment);
 		return mv;
-	
 	}
+	
+//	@GetMapping("/playcomment")
+//	public ModelAndView selectPlayAndPlayComment(ModelAndView mv
+//			, Play play
+//			, @RequestParam(name="play_no", required = false) int play_no
+//			) {
+//		mv.addObject("play", service.selectPlayAndPlayComment(play_no));
+//		mv.setViewName("play/playcomment");
+//		return mv;
+//	}
+//	
+//	@PostMapping("/playcomment")
+//	public ModelAndView insert(ModelAndView mv
+//			, Play play
+//			, HttpSession session
+//			, @RequestParam(name="play_no", required = false) int play_no
+//			, HttpServletRequest req
+//			) {
+//		
+//		Member member = (Member) session.getAttribute("loginSsInfo");
+//		if (member == null) {
+//			mv.setViewName("redirect:/member/login");
+//			return mv;
+//		}
+//		return mv;
+//}
 	
 	@PostMapping("/update")
 	public ModelAndView pageupdatePlay(ModelAndView mv
@@ -176,20 +218,20 @@ public class PlayController {
 		mv.setViewName("redirect:/play/list");
 		return mv;
 	}
-//	@PostMapping(value="/delete", produces = "text/plain;charset=UTF-8")
-//	@ResponseBody
-//	public String deletPlay(
-//			@RequestParam(name="play_no",required = false) String play_no
-//			) {
-//		int result = service.deletePlay(play_no);
-//		String msg="";
-//		if(result > 0) {
-//			msg="게시글"+play_no+"번 삭제되었습니다. ";
-//		}else {
-//			msg="게시글이 삭제되지 못했습니다. 다시 확인하고 삭제해 주세요.";
-//		}
-//		return msg;
-//		
-//	}
+	@PostMapping(value="/delete", produces = "text/plain;charset=UTF-8")
+	@ResponseBody
+	public String deletPlay(
+			@RequestParam(name="play_no",required = false) int play_no
+			) {
+		int result = service.deletePlay(play_no);
+		String msg="";
+		if(result > 0) {
+			msg="게시글"+play_no+"번 삭제되었습니다. ";
+		}else {
+			msg="게시글이 삭제되지 못했습니다. 다시 확인하고 삭제해 주세요.";
+		}
+		return msg;
+		
+	}
 	
 }

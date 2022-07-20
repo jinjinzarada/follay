@@ -8,6 +8,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
 import kh.spring.follay.play.domain.Play;
+import kh.spring.follay.play.domain.PlayComment;
 
 @Repository
 public class PlayDao {
@@ -34,10 +35,11 @@ public class PlayDao {
 	public List<Play> selectPlayListAll(){
 		return sqlsession.selectList("Play.selectPlayListAll");
 	}
-	
+
+	// 게시글 읽기 
 	public Play selectPlay(String play_no){
-		return sqlsession.selectOne("Play.selectPlay", play_no);
-	}
+		Play play = sqlsession.selectOne("Play.selectPlay", play_no);
+		return play;}
 		
 	public int updatePlay(Play play) {
 		return sqlsession.update("Play.updatePlay",play);
@@ -57,11 +59,16 @@ public class PlayDao {
 		return sqlsession.selectList("Play.selectPlayList", null, new RowBounds((currentPage-1)*pageSize , pageSize));
 	}
 
-	// 댓글
-	public Play selectPlayAndPlayComment(int play_no) {
+	// 게시글 읽기 + 댓글
+	public Play selectPlayAndPlayComment(String play_no) {
 		Play play = sqlsession.selectOne("Play.selectPlay", play_no);
 		play.setPlay_commentlist(sqlsession.selectList("Play.selectPlayCommentList", play_no));
 		return play;
+	}
+	
+	// 댓글만 읽기
+	public List<PlayComment> selectPlayCommentList(int play_no) {
+		return sqlsession.selectList("Play.selectPlayCommentList", play_no);
 	}
 
 }

@@ -13,7 +13,7 @@
 /* 	margin-bottom: 10px; */
 } 
 
-/* ¡¶¿œ πŸ±˘¬  div */       
+/* Ï†úÏùº Î∞îÍπ•Ï™Ω div */       
 .mypage_cover {
     width: 100%;
     background-position: center;
@@ -22,19 +22,43 @@
     position: absolute;
 }
 
-/* µŒπ¯¬∞ div */
+/* ÎëêÎ≤àÏß∏ div */
 .mypage_frmcover {
-	height: 500px;
+	height: 350px;
     width: 100%;
     position: relative;
     overflow: hidden;
+    margin-left: 485px;
 }
 
 .mypage_my {
-	font-size: 20px;
+	font-size: 25px;
 	font-weight: 500;
 	color: #007bf7;
-	padding-top: 50px;
-	padding-bottom: 30px;
+	padding-top: 70px;
+	padding-bottom: 20px;
+	padding-left: 60px;
 }
+
+.mypage_table {
+	border-top:1px solid #007bf7;
+}
+
+th {
+/* 	border-top: 1px solid #bbb; */
+/* 	border-top: 1px solid #007bf7; */
+	border-bottom:1px solid #007bf7;
+	border-right:1px solid #007bf7;
+	padding:8px 10px;
+	color: #333;
+}
+
+td {
+	text-align: center;
+	padding:10px 10px;
+	font-size: 17px;
+	color: #333;
+	border-bottom:1px solid #007bf7;
+}
+
 

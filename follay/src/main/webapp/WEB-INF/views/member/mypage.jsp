@@ -22,9 +22,8 @@
 	<section>
 	<form action="<%=request.getContextPath()%>/member/mypage" method="post" id="login_login" class="login_input-group">
 		<div class="">
-			<h4 class="mypage_my">나의</h4>
-			<table class="table table-borderless" style="width=30%">
-				<tbody>
+			<h4 class="mypage_my">회원 정보</h4>
+			<table class="mypage_table">
 					<tr>
 						<th scope="row"><b>아이디</b></th>
 						<td>${member.member_id}</td>
@@ -41,7 +40,6 @@
 						<th scope="row"><b>전화번호</b></th>
 						<td>${member.member_phone}</td>
 					</tr>
-				</tbody>
 			</table>
 <!-- 			<input class="btn btn-primary" type="submit" value="메인으로"> -->
 		</div>

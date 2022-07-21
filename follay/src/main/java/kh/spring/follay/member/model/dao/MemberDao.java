@@ -52,6 +52,10 @@ public class MemberDao {
 		
 	}
 
+	//마이페이지
+	public Member selectMypage(Member member) {
+		return sqlSession.selectOne("Member.selectMypage", member);
+	}
 	
 
 }

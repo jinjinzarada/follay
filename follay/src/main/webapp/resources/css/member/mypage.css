@@ -6,9 +6,35 @@
 	text-align: center;
 	padding-top: 50px;
 	padding-bottom: 30px;
-	border-bottom: 3px solid #FF69B4;
+	border-bottom: 3px solid #007bf7;
 	width: 200px;
 	margin: auto;
-	color: #FF69B4;
+	color: #007bf7;
 /* 	margin-bottom: 10px; */
 } 
+
+/* 제일 바깥쪽 div */       
+.mypage_cover {
+    width: 100%;
+    background-position: center;
+    background-size: cover;
+    background-color: #e1f0ff;
+    position: absolute;
+}
+
+/* 두번째 div */
+.mypage_frmcover {
+	height: 500px;
+    width: 100%;
+    position: relative;
+    overflow: hidden;
+}
+
+.mypage_my {
+	font-size: 20px;
+	font-weight: 500;
+	color: #007bf7;
+	padding-top: 50px;
+	padding-bottom: 30px;
+}
+

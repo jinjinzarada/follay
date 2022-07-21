@@ -49,6 +49,10 @@ public class MemberServiceImpl {
 		return dao.deleteMember(member_id);
 	}
 
-	
+	//마이페이지
+	public Member selectMypage(Member member) {
+		return dao.selectMypage(member);
+		
+	}
 
 }

@@ -26,11 +26,11 @@
 	</li>
 	<li class="nav-item">
 		<img src="<%=request.getContextPath()%>/resources/image/main/noliteo.png" class="nav-item-image"
-	onclick="location.href='<%=request.getContextPath()%>/play/list'">
+		onclick="location.href='<%=request.getContextPath()%>/play/list'">
 	</li>
 	<li class="nav-item">
 		<img src="<%=request.getContextPath()%>/resources/image/main/follay!_logo.gif" class="nav-item-image-logo"
-	onclick="location.href='<%=request.getContextPath()%>/'">
+		onclick="location.href='<%=request.getContextPath()%>/'">
 	</li>
 <c:if test="${empty loginSsInfo}">
 	<li class="nav-item">
@@ -46,10 +46,11 @@
 </c:if>
 	<li class="nav-item">
 		<img src="<%=request.getContextPath()%>/resources/image/main/hoewongaib.png" class="nav-item-image"
-	onclick="location.href='<%=request.getContextPath()%>/member/insert'">
+		onclick="location.href='<%=request.getContextPath()%>/member/insert'">
 	</li>
 	<li class="nav-item">
-		<img src="<%=request.getContextPath()%>/resources/image/main/mypage.png" class="nav-item-image">
+		<img src="<%=request.getContextPath()%>/resources/image/main/mypage.png" class="nav-item-image"
+		onclick="location.href='<%=request.getContextPath()%>/member/mypage'">
 	</li>
       </ul>
     </div>

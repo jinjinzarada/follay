@@ -164,5 +164,22 @@ public class MemberController {
 		return mv;
 		
 	}
+	
+	//마이페이지
+	@RequestMapping(value = "/mypage", method = RequestMethod.GET)
+	public ModelAndView selectMypage(ModelAndView mv
+			, RedirectAttributes rttr
+			, HttpSession session
+			) {
+		Member member = (Member) session.getAttribute("loginSsInfo");
+		if(member == null) {
+			rttr.addFlashAttribute("msg","로그인이 필요한 페이지입니다. 로그인을 해주세요.");
+			mv.setViewName("redirect:/member/login");
+			return mv;
+		}
+		mv.addObject("member", member);
+		mv.setViewName("member/mypage");
+		return mv;
+	}
 		
 }

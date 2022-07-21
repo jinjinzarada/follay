@@ -4,6 +4,7 @@
 <link rel="stylesheet" type="text/css" href="<%=request.getContextPath()%>/resources/css/main/template_footer.css">
 <link rel="stylesheet" type="text/css" href="<%=request.getContextPath()%>/resources/css/member/mypage.css">
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn" %>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <!DOCTYPE html>
@@ -15,16 +16,35 @@
 </head>
 <body>
 <%@ include file="/WEB-INF/views/common/template_header.jsp" %>
-<div class="login_cover">
+<div class="mypage_cover">
 <div class="title">마이페이지</div>
-  <div class="login_form-cover">
-	 <section>
+  <div class="mypage_frmcover">
+	<section>
 	<form action="<%=request.getContextPath()%>/member/mypage" method="post" id="login_login" class="login_input-group">
-		<div><input type="text" name="member_id" class="login_input-field" placeholder="아이디를 입력해주세요." required></div>
-		<div><input type="password" name="member_password" class="login_input-field" name="passwd" placeholder="비밀번호를 입력해주세요." required></div>
-		<button type="submit" class="login_submit">로그인</button> 
-		<button type="button" class="login_find find_id" onclick="location.href='<%=request.getContextPath()%>/member/findId'">아이디 찾기</button>
-        <button type="button" class="login_find" onclick="location.href='<%=request.getContextPath()%>/member/findPw'">비밀번호 찾기</button>
+		<div class="">
+			<h4 class="mypage_my">나의</h4>
+			<table class="table table-borderless" style="width=30%">
+				<tbody>
+					<tr>
+						<th scope="row"><b>아이디</b></th>
+						<td>${member.member_id}</td>
+					</tr>
+					<tr>
+						<th scope="row"><b>생년월일</b></th>
+						<td>${fn:substring(member.member_birth,0,10)}</td>
+					</tr>
+					<tr>
+						<th scope="row"><b>이메일</b></th>
+						<td>${member.member_email}</td>
+					</tr>
+					<tr>
+						<th scope="row"><b>전화번호</b></th>
+						<td>${member.member_phone}</td>
+					</tr>
+				</tbody>
+			</table>
+<!-- 			<input class="btn btn-primary" type="submit" value="메인으로"> -->
+		</div>
 	</form>
    </section>
   </div>

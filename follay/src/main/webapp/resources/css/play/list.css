@@ -32,8 +32,10 @@
 }
 
 th {
-	border-top: 1px solid #bbb;
-	border-bottom:1px solid #bbb;
+/* 	border-top: 1px solid #bbb; */
+/* 	border-bottom:1px solid #bbb; */
+	border-top: 1px solid #FF8C00;
+	border-bottom:1px solid #FF8C00;
 	padding:8px 10px;
 	color: #333;
 }
@@ -43,7 +45,8 @@ td {
 	padding:10px 10px;
 	font-size: 17px;
 	color: #333;
-	border-bottom:1px solid #e6e6e6;
+/* 	border-bottom:1px solid #e6e6e6; */
+	border-bottom:1px solid #ffbf71;
 }
 
 a {

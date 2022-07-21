@@ -3,6 +3,7 @@
     
 <div class="wrap footer">
 <footer class="layout_footer">
+<br>
 	<div>
 		<ul>
 			<li class="footer_content"

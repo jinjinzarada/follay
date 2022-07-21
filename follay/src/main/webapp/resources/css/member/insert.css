@@ -34,10 +34,9 @@
 
 /* form */
 .signup_input-group {
-    position: absolute;
+/*     position: absolute; */
 /*     width: 1200px; */
     margin-top: 30px;
-    left: 500px;
 }
 
 /* 회원가입 입력칸 */
@@ -50,10 +49,12 @@
     outline: none;
     background: transparent;
     font-size: 18px;
+    margin-left: 340px;
 }
 
 .guide {
 	margin-top:10px;
+	margin-left: 340px;
 }
 
 /* 중복확인 */
@@ -83,7 +84,7 @@
     display: block;
 /*     margin: auto; */
     margin-top: 30px;
-	margin-left: 200px;
+	margin-left: 530px;
     color: white;
     background: #DA70D6;
     border: 0;

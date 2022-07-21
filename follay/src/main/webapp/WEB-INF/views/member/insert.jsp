@@ -16,6 +16,7 @@
 <div class="signup_cover">
   <div class="title">회원가입</div>
   <div class="signup_form-cover">
+  <section>
 	<form action="<%=request.getContextPath()%>/member/insert" method="post" class="signup_input-group">
 		<div>
 			<input type="text" name="member_id" class="signup_input-field" placeholder="아이디를 입력해주세요." required>
@@ -40,6 +41,7 @@
 		</div>
 		<button type="submit" class="signup_submit">회원가입</button>
 	</form>
+	</section>
   </div>
 <%@ include file="/WEB-INF/views/common/template_footer.jsp" %>
 </div>

@@ -1,0 +1,14 @@
+@charset "UTF-8";
+
+.title{
+	font-size: 30px;
+	font-weight: 700;
+	text-align: center;
+	padding-top: 50px;
+	padding-bottom: 30px;
+	border-bottom: 3px solid #FF69B4;
+	width: 200px;
+	margin: auto;
+	color: #FF69B4;
+/* 	margin-bottom: 10px; */
+} 

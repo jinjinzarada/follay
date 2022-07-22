@@ -1,0 +1,31 @@
+@charset "UTF-8";
+
+.title{
+	font-size: 30px;
+	font-weight: 700;
+	text-align: center;
+	padding-top: 50px;
+	padding-bottom: 30px;
+	border-bottom: 3px solid #FF8C00;
+	width: 200px;
+	margin: auto;
+	color: #FF8C00;
+/* 	margin-bottom: 10px; */
+} 
+
+/* 제일 바깥쪽 div */       
+.work_cover {
+    width: 100%;
+    background-position: center;
+    background-size: cover;
+    background-color: #FFF0E7;
+    position: absolute;
+}
+
+/* 두번째 div */
+.work_frmcover {
+/* 	height: 500px; */
+    width: 100%;
+    position: relative;
+    overflow: hidden;
+}

@@ -39,7 +39,8 @@ public class PlayDao {
 	// 게시글 읽기 
 	public Play selectPlay(String play_no){
 		Play play = sqlsession.selectOne("Play.selectPlay", play_no);
-		return play;}
+		return play;
+	}
 		
 	public int updatePlay(Play play) {
 		return sqlsession.update("Play.updatePlay",play);
@@ -69,6 +70,11 @@ public class PlayDao {
 	// 댓글만 읽기
 	public List<PlayComment> selectPlayCommentList(int play_no) {
 		return sqlsession.selectList("Play.selectPlayCommentList", play_no);
+	}
+	
+	//조회수
+	public int updatePlayCount(int play_readcount) {
+		return sqlsession.update("Play.updatePlayCount", play_readcount);
 	}
 
 }

@@ -16,7 +16,7 @@ public class PlayServiceImpl implements PlayService{
 	private PlayDao dao;
 	
 	// 글쓰기
-	@Override
+//	@Override
 	public int insertPlay(Play play) {
 		if(play.getRefnum() > 0) {
 			dao.updatePlayReplySeq(play);
@@ -27,52 +27,57 @@ public class PlayServiceImpl implements PlayService{
 	}
 	
 	// 게시글 수정
-	@Override
+//	@Override
 	public int updatePlay(Play play) {
 		return dao.updatePlay(play);
 	}
 	
 	// 게시글 삭제
-	@Override
+//	@Override
 	public int deletePlay(int play_no) {
 		return dao.deletePlay(play_no);
 	}
 	
 	// 게시글만 읽기
-	@Override
+//	@Override
 	public Play selectPlay(String play_no) {
 		return dao.selectPlay(play_no);
 	}
 	
 	// 게시글 목록
-	@Override
+//	@Override
 	public List<Play> selectPlayListAll() {
 		return dao.selectPlayListAll();
 	}
 	
 	//페이징 처리
-	@Override
+//	@Override
 	public int selectTotalCnt() {
 		return dao.selectTotalCnt();
 	}
 	
 	//페이징 처리
-	@Override
+//	@Override
 	public List<Play> selectPlayList(int currentPage, int pageSize){
 		return dao.selectPlayList(currentPage, pageSize);
 	}
 
 	// 게시글 + 댓글 읽기
-	@Override
+//	@Override
 	public Play selectPlayAndPlayComment(String play_no){
 		return dao.selectPlayAndPlayComment(play_no);
 	}
 	
 	// 댓글만 읽기
-	@Override
+//	@Override
 	public List<PlayComment> selectPlayCommentList(int play_no) {
 		return dao.selectPlayCommentList(play_no);
 	}
 	
+//	@Override
+	//조회수
+	public int updatePlayCount(int play_readcount) {
+		return dao.updatePlayCount(play_readcount);
+	}
 
 }	

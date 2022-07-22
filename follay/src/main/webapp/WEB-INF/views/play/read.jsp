@@ -78,9 +78,9 @@
 <section>
 	<div class="read_table">
 		<table>
-			<tr>
-				<th>${play.play_title}</th>
-			</tr>
+<!-- 			<tr> -->
+				<div id="read_playtitle">${play.play_title}</div>
+<!-- 			</tr> -->
 <!-- 		</table> -->
 <!-- 		<table> -->
 			<tr>

@@ -140,7 +140,7 @@
 </select>
 <select id="selectPlay" resultType="Play" parameterType="string">
 <![CDATA[
-	select play_no, play_content, play_date, member_id from play
+	select play_no, play_title, play_content, play_date, member_id, play_readcount from play
 	where play_no=#{play_no}
 ]]>
 </select>
@@ -155,10 +155,15 @@
 		, play_content = #{play_content}
 		, play_original_filename = #{play_original_filename}
 		, play_rename_filename = #{play_rename_filename}
-	where play_no=#{play_no}
+	where play_no={play_no}
 </update>
 
 <delete id="deletePlay" parameterType="_int">
 	delete from play where play_no=#{play_no}
 </delete>
+
+<update id="updatePlayCount" parameterType="_int">
+	update play set play_readcount = play_readcount + 1
+	where member_id = #{member_id}
+</update>
 </mapper>

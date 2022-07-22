@@ -144,10 +144,21 @@ public class PlayController {
 //		mv.addObject("play", service.selectPlay(play_no));  // 게시글만 읽기
 		mv.addObject("play", service.selectPlayAndPlayComment(play_no)); // 게시글+댓글 읽기
 		mv.setViewName("play/read");
-		
-//		mv.addObject(service.selectPlayCommentList(play_no));
 		mv.addObject("playcomment",playcomment);
 		return mv;
+	}
+	
+	@PostMapping("/read")
+	public ModelAndView updatePlayCount(ModelAndView mv
+			, @RequestParam(name="member_id",required = false) int play_readcount
+			) {
+		mv.addObject("play", service.updatePlayCount(play_readcount));
+		return mv;
+		
+//		if(member_id == null || !(member_id.equals(member_id))) {
+//			dao.updatePlayCount(play_no);
+//			play = play.selectPlay(play_no);
+//		}
 	}
 	
 //	@GetMapping("/playcomment")

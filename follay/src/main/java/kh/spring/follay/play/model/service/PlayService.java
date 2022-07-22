@@ -49,4 +49,10 @@ public interface PlayService {
 	/**
 	 *  @param 댓글
 	 */
+	
+	public int updatePlayCount(int play_readcount);
+	
+	/**
+	 * @param 조회수
+	 */
 }

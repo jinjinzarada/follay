@@ -64,7 +64,7 @@
 <!-- 페이징처리 -->
 <div class="paging_div">
 		<c:if test="${startPage > 1 }">
-			<a href="list?page=${startPage-1}"><span>&laquo;</span></a>&nbsp;&nbsp;&nbsp;
+			<a href="list?page=${startPage-1}" aria-label="Previous"><span aria-hidden="true">&laquo;</span></a>&nbsp;&nbsp;&nbsp;
 		</c:if>
 		
 		<c:forEach begin="${startPage}" end="${endPage}" step="1" var="i"> 
@@ -78,7 +78,7 @@
 		</c:forEach>
 		
 		<c:if test="${endPage < pageCnt}">
-			<a href="list?page=${endPage+1}"><span>&raquo;</span></a>&nbsp;&nbsp;&nbsp;
+			<a href="list?page=${endPage+1}" aria-label="Next" aria-hidden="true"><span>&raquo;</span></a>&nbsp;&nbsp;&nbsp;
 		</c:if>
 </div>
 <div>

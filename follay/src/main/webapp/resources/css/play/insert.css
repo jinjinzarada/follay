@@ -24,7 +24,7 @@
 
 /* 두번째 div */
 .play_form-cover {
-	height: 500px;
+	height: 540px;
     width: 100%;
     position: relative;
     overflow: hidden;
@@ -32,8 +32,8 @@
 
 /* 제목 입력칸 */
 .play_title{
-/* 	width: 23.3%; */
-    padding: 10px 0;
+	width: 400px;
+    padding: 10px 5px;
     margin: 5px 0;
     border: none;
     border-bottom: 1px solid #999;
@@ -44,13 +44,15 @@
 
 /* form */
 #play_write {
-	padding-left:400px;
+	margin-top: 20px;
+	padding-left: 400px;
 }
 
 /* 내용 입력칸 */
 .play_content {
-/* 	width: 23.3%; */
-    padding: 10px 0;
+	width: 400px;
+    height: 250px;
+    padding: 10px 5px;
 /*     margin: auto; */
     margin: 5px 0;
 /*     border: none; */
@@ -58,11 +60,12 @@
     outline: none;
     background: transparent;
     font-size: 18px;
+    resize: none;
 }
 
 /* 파일 업로드 버튼 */
-label {
-	display: inline-block;
+.filebox label {
+    display: inline-block;
 	padding: .5em .75em;
 	color: white;
 	font-size: inherit;
@@ -70,15 +73,72 @@ label {
 /* 	vertical-align: middle; */
 	background-color: #ffb12f;
 	cursor: pointer;
-	border: none;
+/* 	border: 1px solid #999; */
 	border-radius: 30px;
 	transition: background-color 0.5s ease;
 }
 
-label:hover{
+.filebox label:hover{
 	background-color: #FF8C00;
 }
 
+.upload-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip:rect(0,0,0,0);
+  border: 0;
+}
+
+/* named upload */
+.filebox .upload-name {
+  display: inline-block;
+  padding: .5em .75em;  /* label의 패딩값과 일치 */
+  font-size: inherit;
+  font-family: inherit;
+  line-height: normal;
+  vertical-align: middle;
+  background-color: #ffe3d5;
+  border: none;
+  border-radius: .25em;
+  -webkit-appearance: none; /* 네이티브 외형 감추기 */
+  -moz-appearance: none;
+  appearance: none;
+}
+
+
+/* imaged preview */
+.filebox .upload-display {
+  margin-bottom: 5px;
+}
+
+@media(min-width: 768px) {
+  .filebox .upload-display {
+    display: inline-block;
+    margin-right: 5px;
+/*     margin-bottom: 0; */
+  }
+}
+
+.filebox .upload-thumb-wrap {
+  display: inline-block;
+  width: 54px;
+  padding: 2px;
+  vertical-align: middle;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  background-color: #fff;
+}
+
+.filebox .upload-display img {
+  display: block;
+  max-width: 100%;
+  width: 100%;
+  height: auto;
+}
 
 /* 글등록 버튼 */
 .play_insert{
@@ -86,7 +146,7 @@ label:hover{
 	cursor: pointer;
 	display: block;
 	margin: auto;
-	margin-top: 20px;
+	margin-top: 40px;
 	margin-left:120px;
 	color: white;
 	background: #ffb12f;

@@ -19,7 +19,7 @@
 	<div class="slideshow-container">
 		<div class="mySlides fade">
 		  <img src="<%=request.getContextPath()%>/resources/image/main/follay_work_slide.png"
-			onclick="location.href='<%=request.getContextPath()%>/'" width="100%;">
+			onclick="location.href='<%=request.getContextPath()%>/work/list'" width="100%;">
 		</div>
 		<div class="mySlides fade">
 		  <img src="<%=request.getContextPath()%>/resources/image/main/follay_show_slide.png"

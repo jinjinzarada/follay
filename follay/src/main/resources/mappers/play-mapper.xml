@@ -50,17 +50,20 @@
 </select>
 <select id="selectPlayList" resultMap="PlayResultMap">
 		<![CDATA[
- 		select play.*, playcomment.*, (select count(*) from playcomment pc where pc.play_no= play.play_no) playcommentcnt 
+ 		select play.*, playcomment.*, (select count(*) from playcomment pc where pc.play_no= play.play_no) play_commentcnt 
  		from play  
  		left outer join playcomment on play.play_no = playcomment.play_no 
 		order by play.play_date desc, playcomment.pc_date desc 
  		]]> 
 </select>
 <select id="selectPlayAndReComment" resultMap="PlayAndReCommentResultMap" parameterType="_int">
-	select * from (select * from play where play_no=#{play_no}) t1 
+		<![CDATA[
+		select * from (select * from play where play_no=#{play_no}) t1 
         left outer join (select * from playcomment where play_no=#{play_no}) t2 using (play_no)
+		]]> 
 </select>
 <insert id="insertPlay" parameterType="Play">
+	<![CDATA[
 	insert into play 
 	(play_no
 	, play_title, member_id, play_content, play_original_filename, play_rename_filename
@@ -78,7 +81,7 @@
 	, DEFAULT
 	, DEFAULT
 	)
-	
+	]]>
 </insert>
 <update id="updatePlayReplySeq" parameterType="Play">
 <![CDATA[
@@ -131,7 +134,6 @@
 ]]>
 </insert>
 
-
 <select id="selectPlayListAll" resultType="Play">
 <![CDATA[
 	select * from play
@@ -146,7 +148,9 @@
 </select>
 
 <select id="selectPlayCommentList" resultMap="PlayCommentResultMap" parameterType="string">
+<![CDATA[
 		select * from playcomment where play_no=#{play_no}
+]]>
 </select>
 	
 <update id="updatePlay" parameterType="Play">

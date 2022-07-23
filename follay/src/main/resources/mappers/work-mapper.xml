@@ -1,4 +1,47 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
 <mapper namespace="Work">
+	<resultMap type="Work" id="WorkResultMap">
+		<id column="play_no" property="play_no"/>
+		<result column="work_name" property="work_name"/>
+		<result column="work_category" property="work_category"/>
+		<result column="work_content" property="work_content"/>
+		<collection property="work_commentlist" resultMap="WorkCommentResultMap"/>
+	</resultMap>
+	
+	<resultMap type="WorkComment" id="WorkCommentResultMap">
+		<id column="wc_no" property="wc_no"/>
+		<result column="wc_content" property="wc_content"/>
+		<result column="wc_date" property="wc_date"/>
+		<result column="work_no" property="work_no"/>
+		<result column="member_id" property="member_id"/>
+	</resultMap>
+
+<select id="selectWork" resultType="Work" parameterType="string">
+<![CDATA[
+	select work_no, work_name, work_category, work_content from work
+	where work_no=#{work_no}
+]]>
+</select>
+
+<select id="selectWorkList" resultMap="WorkResultMap">
+		<![CDATA[
+ 		select work.*, workcomment.*, (select count(*) from workcomment wc where wc.work_no= work.work_no) workcommentcnt 
+ 		from work  
+ 		left outer join workcomment on work.work_no = workcomment.work_no 
+		order by workcomment.wc_date desc 
+ 		]]> 
+</select>
+
+<select id="selectWorkCommentList" resultMap="WorkCommentResultMap" parameterType="string">
+<![CDATA[
+		select * from workcomment where work_no=#{work_no}
+]]>
+</select>
+
+<select id="selectTotalCnt" resultType="_int">
+	select count(*) from work
+</select>
 </mapper>
+
+

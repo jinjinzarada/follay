@@ -11,6 +11,7 @@
 	width: 200px;
 	margin: auto;
 	color: #8B008B;
+	font-family: 'Nanum Gothic', sans-serif;
 /* 	margin-bottom: 10px; */
 } 
 
@@ -50,6 +51,7 @@
     outline: none;
     background: transparent;
     font-size: 18px;
+    font-family: 'Nanum Gothic', sans-serif;
     margin-left: 340px;
 }
 
@@ -70,6 +72,7 @@
     outline: none;
     border-radius: 30px;
     font-size: 15px;
+    font-family: 'Nanum Gothic', sans-serif;
     transition: background-color 0.5s ease;
 }
 
@@ -92,6 +95,7 @@
     outline: none;
     border-radius: 30px;
     font-size: 20px;
+    font-family: 'Nanum Gothic', sans-serif;
     transition: background-color 0.5s ease;
 /*     justify-centent:center; */
 }

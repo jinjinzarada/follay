@@ -8,18 +8,9 @@
   <div class="container-fluid">
     <div class="collapse navbar-collapse" id="navbarColor02">
       <ul class="navbar-nav me-auto">
-    <li class="nav-item dropdown">
-		<img src="<%=request.getContextPath()%>/resources/image/main/jong2.png" class="nav-link dropdown-toggle" 
-		data-bs-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
-			<div class="dropdown-menu">
-	            <a class="dropdown-item" href="#">동물</a>
-	            <a class="dropdown-item" href="#">식물</a>
-	            <a class="dropdown-item" href="#">곤충</a>
-	            <a class="dropdown-item" href="#">도형</a>
-	            <a class="dropdown-item" href="#">가구</a>
-	            <a class="dropdown-item" href="#">이동수단</a>
-	            <a class="dropdown-item" href="#">기타</a>
-	        </div>
+    <li class="nav-item">
+		<img src="<%=request.getContextPath()%>/resources/image/main/jong2.png" class="nav-item-image" 
+		onclick="location.href='<%=request.getContextPath()%>/work/list'">
 	</li>
 	<li class="nav-item">
 		<img src="<%=request.getContextPath()%>/resources/image/main/ppom.png" class="nav-item-image">

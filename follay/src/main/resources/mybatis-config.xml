@@ -11,12 +11,15 @@
 		<typeAlias type="kh.spring.follay.play.domain.PlayComment" alias="PlayComment"/>
 		<typeAlias type="kh.spring.follay.work.domain.Work" alias="Work"/>
 		<typeAlias type="kh.spring.follay.work.domain.WorkComment" alias="WorkComment"/>
+		<typeAlias type="kh.spring.follay.show.domain.Show" alias="Show"/>
+		<typeAlias type="kh.spring.follay.show.domain.ShowComment" alias="ShowComment"/>
 	</typeAliases>
 	
 	<mappers>
 		<mapper resource="mappers/member-mapper.xml"/>
 		<mapper resource="mappers/play-mapper.xml"/>
 		<mapper resource="mappers/work-mapper.xml"/>
+		<mapper resource="mappers/show-mapper.xml"/>
 	</mappers>
 	
 </configuration>

@@ -15,12 +15,12 @@ public class WorkServiceImpl implements WorkService{
 	@Autowired
 	private WorkDao dao;
 	
-	// °Ô½Ã±Û 
+	// ê²Œì‹œê¸€ 
 	public Work selectWork(String work_no) {
 		return dao.selectWork(work_no);
 	}
 	
-	// ÆäÀÌÂ¡ Ã³¸®
+	// í˜ì´ì§• ì²˜ë¦¬
 	public List<Work> selectWorkList(int currentPage, int pageSize) {
 		return dao.selectWorkList(currentPage, pageSize);
 	}
@@ -29,4 +29,7 @@ public class WorkServiceImpl implements WorkService{
 		return dao.selectTotalCnt();
 	}
 	
+	public int insertWork(Work work) {
+		return dao.insertWork(work);
+		}
 }

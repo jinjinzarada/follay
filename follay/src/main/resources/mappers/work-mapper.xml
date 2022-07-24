@@ -26,7 +26,7 @@
 
 <select id="selectWorkList" resultMap="WorkResultMap">
 		<![CDATA[
- 		select work.*, workcomment.*, (select count(*) from workcomment wc where wc.work_no= work.work_no) workcommentcnt 
+ 		select work.*, workcomment.*, (select count(*) from workcomment wc where wc.work_no= work.work_no) work_commentcnt 
  		from work  
  		left outer join workcomment on work.work_no = workcomment.work_no 
 		order by workcomment.wc_date desc 

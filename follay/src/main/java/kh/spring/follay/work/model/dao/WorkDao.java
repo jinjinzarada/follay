@@ -15,19 +15,23 @@ public class WorkDao {
 	@Autowired
 	private SqlSession sqlsession;
 
-	// °Ô½Ã±Û 
+	// ê²Œì‹œê¸€ 
 	public Work selectWork(String work_no) {
 		Work work = sqlsession.selectOne("Work.selectWork", work_no);
 		return work;
 	}
 	
-	// ÆäÀÌÂ¡ Ã³¸®
+	// í˜ì´ì§• ì²˜ë¦¬
 	public List<Work> selectWorkList(int currentPage, int pageSize) {
 		return sqlsession.selectList("Work.selectWorkList", null, new RowBounds((currentPage-1)*pageSize , pageSize));
 	}
 
 	public int selectTotalCnt() {
 		return sqlsession.selectOne("Work.selectTotalCnt");
+	}
+
+	public int insertWork(Work work) {
+		return sqlsession.insert("Work.insertWork",work);
 	}
 
 }

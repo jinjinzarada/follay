@@ -13,6 +13,7 @@
 <head>
 <meta charset="UTF-8">
 <title>종이접기</title>
+<script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
 </head>
 <body>
 <%@ include file="/WEB-INF/views/common/template_header.jsp" %>
@@ -24,21 +25,45 @@
 	<article id="article1">
 		<!-- 컨셉버튼 -->
 		<div class="category_btn_wrap">
+			<button type="button" class="category_btn" id="total" 
+				<c:if test="${work_category eq '8'}"></c:if>>전체</button>
 			<button type="button" class="category_btn" id="animal"
-				<c:if test="${work_category eq '1'}">style="background-color : #F54748; color : white;"</c:if>>동물</button>
+				<c:if test="${work_category eq '1'}"></c:if>>동물</button>
 			<button type="button" class="category_btn" id="plant"
-				<c:if test="${work_category eq '2'}">style="background-color : #F54748; color : white;"</c:if>>식물</button>
+				<c:if test="${work_category eq '2'}"></c:if>>식물</button>
 			<button type="button" class="category_btn" id="bug"
-				<c:if test="${work_category eq '3'}">style="background-color : #F54748; color : white;"</c:if>>곤충</button>
+				<c:if test="${work_category eq '3'}"></c:if>>곤충</button>
 			<button type="button" class="category_btn" id="transportation"
-				<c:if test="${work_category eq '4'}">style="background-color : #F54748; color : white;"</c:if>>이동수단</button>
+				<c:if test="${work_category eq '4'}"></c:if>>이동수단</button>
 			<button type="button" class="category_btn" id="figure"
-				<c:if test="${work_category eq '5'}">style="background-color : #F54748; color : white;"</c:if>>도형</button>
+				<c:if test="${work_category eq '5'}"></c:if>>도형</button>
 			<button type="button" class="category_btn" id="furniture"
-				<c:if test="${work_category eq '6'}">style="background-color : #F54748; color : white;"</c:if>>가구</button>
+				<c:if test="${work_category eq '6'}"></c:if>>가구</button>
 			<button type="button" class="category_btn" id="etc"
-				<c:if test="${work_category eq '7'}">style="background-color : #F54748; color : white;"</c:if>>기타</button>
+				<c:if test="${work_category eq '7'}"></c:if>>기타</button>
 		</div>
+	</article>
+	<article id="article2">
+			<button type="button" id="write_btn"
+				onclick="location.href='<%=request.getContextPath()%>/work/write'">글쓰기</button>
+	</article>
+	<article id="article3">
+			<!--db받아온 ntpcVolist를 vo에 담아서 반복문 돌리기  -->
+<%-- 				<% --%>
+<!-- // 					for (NtPlatingListVo vo : ntpcVolist) { -->
+<%-- 				%> --%>
+<!-- 			<div id="contentItem"> -->
+<%-- 				<div class="article3_img_id"><%=vo.getMemberId()%></div> --%>
+<!-- 					<div class="article3_img"> -->
+<%-- 						<img src=<%=vo.getPiFile()%> --%>
+<%-- 							onclick="location.href='ntpcdetail?work_no=<%=vo.getWork_no()%>';" --%>
+<!-- 							id="img_item"> -->
+<!-- 					</div> -->
+<%-- 				<div class="article3_text"><%=vo.getWork_name()%></div> --%>
+<!-- 			</div> -->
+<%-- 				<% --%>
+<!-- // 					} -->
+<%-- 				%> --%>
 	</article>
 	<!-- 페이징처리 -->
 	<article id="article4">
@@ -68,6 +93,10 @@
 </div>
 <script>
 		//컨셉별 화면 조회
+		$("#total").on("click", function() {
+			location.href = "/follay/work/list?work_category=8";
+		});
+		
 		$("#animal").on("click", function() {
 			location.href = "/follay/work/list?work_category=1";
 		});

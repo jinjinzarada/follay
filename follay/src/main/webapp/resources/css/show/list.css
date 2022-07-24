@@ -6,35 +6,34 @@
 	text-align: center;
 	padding-top: 50px;
 	padding-bottom: 30px;
-	border-bottom: 3px solid #FF8C00;
+	border-bottom: 3px solid rgb(34, 155, 223);
 	width: 200px;
 	margin: auto;
-	color: #FF8C00;
+	color: rgb(34, 155, 223);
 	font-family: 'Nanum Gothic', sans-serif;
-/* 	margin-bottom: 10px; */
+	margin-bottom: 20px;
 } 
 
-
 /* 제일 바깥쪽 div */       
-.play_cover {
+.show_cover {
     width: 100%;
     background-position: center;
     background-size: cover;
-    background-color: #FFF0E7;
+    background-color: #ecf7fd;
     position: absolute;
 }
 
 /* 두번째 div */
-.play_form-cover {
-/* 	height: 500px; */
+.show_frmcover {
+	height: 100%;
     width: 100%;
     position: relative;
     overflow: hidden;
 }
 
 th {
-	border-top: 1px solid #FF8C00;
-	border-bottom:1px solid #FF8C00;
+	border-top: 1px solid rgb(34, 155, 223);
+	border-bottom:1px solid rgb(34, 155, 223);
 	padding:8px 10px;
 	color: #333;
 	font-family: 'Nanum Gothic', sans-serif;
@@ -45,7 +44,7 @@ td {
 	padding:10px 10px;
 	font-size: 17px;
 	color: #333;
-	border-bottom:1px solid #ffbf71;
+	border-bottom:1px solid #72c0eb;
 	font-family: 'Nanum Gothic', sans-serif;
 }
 
@@ -53,15 +52,10 @@ a {
 	text-decoration: none;
 	color:inherit;
 }
-/* play_list 제목 부분 */
-#playlist_title{
+/* work_list 제목 부분 */
+#worklist_title{
 	text-align: left;
 }
-
-/* list 호버시 효과 */
-/* #playlist_title:hover { */
-/* 	text-decoration: underline; */
-/* } */
 
 .list_title-span:hover {
 	text-decoration: underline;
@@ -81,12 +75,12 @@ a {
 #paging_no {
 	font-weight: 500;
 	font-size: 17px;
-	color: #FF8C00;	
+	color: rgb(34, 155, 223);	
 	font-family: 'Nanum Gothic', sans-serif;
 }
 
 /* 글쓰기 버튼 */
-.play_write{
+.work_write{
 	padding: 7px 20px;
 	cursor: pointer;
 	display: block;
@@ -94,7 +88,7 @@ a {
 	margin-top: 30px;
 	margin-bottom: 40px;
 	color: white;
-	background: #ffb12f;
+	background: #72c0eb;
 	border: 0;
 	outline: none;
 	border-radius: 30px;
@@ -104,8 +98,8 @@ a {
 }
 
 /* 글쓰기 버튼 호버시 효과 */
-.play_write:hover {
-	background-color: #FF8C00;
+.work_write:hover {
+	background-color: rgb(34, 155, 223);
 }
 
 /* 페이징 처리 */
@@ -120,6 +114,5 @@ a {
   margin-left: 43%;
 }
 .page-link {
-  color: #FF8C00;
+  color: rgb(34, 155, 223);
 }
-

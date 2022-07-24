@@ -13,7 +13,8 @@
 		onclick="location.href='<%=request.getContextPath()%>/work/list'">
 	</li>
 	<li class="nav-item">
-		<img src="<%=request.getContextPath()%>/resources/image/main/ppom.png" class="nav-item-image">
+		<img src="<%=request.getContextPath()%>/resources/image/main/ppom.png" class="nav-item-image"
+		onclick="location.href='<%=request.getContextPath()%>/show/list'">
 	</li>
 	<li class="nav-item">
 		<img src="<%=request.getContextPath()%>/resources/image/main/noliteo.png" class="nav-item-image"

@@ -23,7 +23,7 @@
 		</div>
 		<div class="mySlides fade">
 		  <img src="<%=request.getContextPath()%>/resources/image/main/follay_show_slide.png"
-			onclick="location.href='<%=request.getContextPath()%>/'" width="100%;">
+			onclick="location.href='<%=request.getContextPath()%>/show/list'" width="100%;">
 		</div>
 		<div class="mySlides fade">
 		  <img src="<%=request.getContextPath()%>/resources/image/main/follay_play_slide.png"
@@ -43,13 +43,6 @@
 		</div>
 	</div>
 </section>
-<!-- <div> -->
-<%-- <button type="button" onclick="location.href='<%=request.getContextPath()%>/member/list'">회원목록</button> --%>
-<!-- </div> -->
-<!-- <div> -->
-<%-- <button type="button" onclick="location.href='<%=request.getContextPath()%>/play/list'">글목록</button> --%>
-<!-- </div> -->
-
 <%@ include file="/WEB-INF/views/common/template_footer.jsp" %>
 <script>
 // 	let slideIndex = 1;

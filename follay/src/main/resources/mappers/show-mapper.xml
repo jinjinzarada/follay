@@ -1,4 +1,46 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
 <mapper namespace="Show">
+<resultMap type="Show" id="ShowResultMap">
+		<id column="show_no" property="show_no"/>
+		<result column="show_name" property="show_name"/>
+		<result column="show_category" property="show_category"/>
+		<result column="show_content" property="show_content"/>
+		<collection property="show_commentlist" resultMap="ShowCommentResultMap"/>
+	</resultMap>
+	
+	<resultMap type="ShowComment" id="ShowCommentResultMap">
+		<id column="sc_no" property="sc_no"/>
+		<result column="sc_content" property="sc_content"/>
+		<result column="sc_date" property="sc_date"/>
+		<result column="show_no" property="show_no"/>
+		<result column="member_id" property="member_id"/>
+	</resultMap>
+
+<select id="selectShow" resultType="Show" parameterType="string">
+<![CDATA[
+	select show_no, show_name, show_category, show_content from show
+	where show_no=#{show_no}
+]]>
+</select>
+
+<select id="selectShowList" resultMap="ShowResultMap">
+		<![CDATA[
+ 		select show.*, showcomment.*, (select count(*) from showcomment sc where sc.show_no= show.show_no) show_commentcnt 
+ 		from show
+ 		left outer join showcomment on show.show_no = showcomment.show_no 
+		order by showcomment.sc_date desc 
+ 		]]> 
+</select>
+
+<select id="selectShowCommentList" resultMap="ShowCommentResultMap" parameterType="string">
+<![CDATA[
+		select * from showcomment where show_no=#{show_no}
+]]>
+</select>
+
+<select id="selectTotalCnt" resultType="_int">
+	select count(*) from show
+</select>
+
 </mapper>

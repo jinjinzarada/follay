@@ -1,6 +1,8 @@
 package kh.spring.follay.work.domain;
 
 
+import java.sql.Timestamp;
+
 import org.springframework.stereotype.Component;
 
 import lombok.Data;
@@ -17,7 +19,7 @@ public class WorkComment {
 	
 	private int wc_no;
 	private String wc_content;
-	private String wc_date;
+	private Timestamp wc_date;
 	private int work_no;
 	private String member_id;
 	
@@ -26,6 +28,7 @@ public class WorkComment {
 		return "WorkComment [wc_no=" + wc_no + ", wc_content=" + wc_content + ", wc_date=" + wc_date + ", work_no="
 				+ work_no + ", member_id=" + member_id + "]";
 	}
+	
 	
 	
 }

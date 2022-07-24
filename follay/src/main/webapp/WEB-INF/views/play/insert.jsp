@@ -18,7 +18,7 @@
 <%@ include file="/WEB-INF/views/common/template_header.jsp" %>
 <div class="play_cover">
 <div class="title">놀이터</div>
-<div class="play_form-cover">
+<div class="play_frmcover">
 <section>
 	<form action="<%=request.getContextPath()%>/play/write" method="post" id="play_write" 
 		enctype="multipart/form-data">
@@ -27,7 +27,7 @@
 			<input type="text" name="play_title" class="play_title" placeholder="제목를 적어주세요." required>
 		</div>
 		<div>
-			<textarea type="text" name="play_content" class="play_content" placeholder="내용을 적어주세요."required></textarea>
+			<textarea name="play_content" class="play_content" placeholder="내용을 적어주세요." required></textarea>
 		</div>
 		<div class="filebox bs3-primary preview-image">
               <label for="input_file">사진 업로드</label> 

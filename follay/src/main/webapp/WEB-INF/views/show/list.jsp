@@ -22,6 +22,25 @@
 <div class="show_frmcover">
 <form action="<%=request.getContextPath()%>/show/list" method="post" id="show_show" class="show_input-group"></form>
 <section>
+	<article id="article1">
+		<!-- 컨셉버튼 -->
+		<div class="category_btn_wrap">
+			<button type="button" class="category_btn" id="total" 
+				<c:if test="${work_category eq '7'}"></c:if>>전체</button>
+			<button type="button" class="category_btn" id="animal"
+				<c:if test="${work_category eq '1'}"></c:if>>동물</button>
+			<button type="button" class="category_btn" id="plant"
+				<c:if test="${work_category eq '2'}"></c:if>>식물</button>
+			<button type="button" class="category_btn" id="bug"
+				<c:if test="${work_category eq '3'}"></c:if>>곤충</button>
+			<button type="button" class="category_btn" id="transportation"
+				<c:if test="${work_category eq '4'}"></c:if>>이동수단</button>
+			<button type="button" class="category_btn" id="figure"
+				<c:if test="${work_category eq '5'}"></c:if>>도형</button>
+			<button type="button" class="category_btn" id="etc"
+				<c:if test="${work_category eq '6'}"></c:if>>기타</button>
+		</div>
+	</article>
 <script>
 	var msg="${msg}";
   	if(msg){ 
@@ -35,13 +54,12 @@
 	<c:otherwise>
 	<div class="list_div">
 		<table border="1">
-			<tr>
-				<th>글번호</th>
-				<th>제목</th>
-				<th>작성일</th>
-				<th>작성자</th>
-				<th>조회수</th>
-			</tr>
+<!-- 			<tr> -->
+<!-- 				<th>제목</th> -->
+<!-- 				<th>작성일</th> -->
+<!-- 				<th>작성자</th> -->
+<!-- 				<th>조회수</th> -->
+<!-- 			</tr> -->
 <c:forEach items="${showlist}" var="show">
 			<tr id="show_td">
 				<td id="showlist_no">${show.show_no}</td>

@@ -87,7 +87,7 @@ a {
 
 /* 글쓰기 버튼 */
 .play_write{
-	padding: 7px 20px;
+	padding: 10px 30px;
 	cursor: pointer;
 	display: block;
 	margin: auto;
@@ -98,7 +98,7 @@ a {
 	border: 0;
 	outline: none;
 	border-radius: 30px;
-	font-size: 16px;
+	font-size: 19px;
 	transition: background-color 0.4s ease;
 	font-family: 'Nanum Gothic', sans-serif;
 }

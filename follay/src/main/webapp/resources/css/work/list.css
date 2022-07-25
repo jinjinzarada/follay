@@ -36,7 +36,7 @@
 }
 
 .category_btn_wrap {
-	padding-left:340px;
+	padding-left: 337px;
 }
 
 /* 카테고리 버튼*/
@@ -55,4 +55,25 @@
 
 .category_btn:hover {
 	background-color: #f46076;
+}
+
+.work_write{
+	padding: 10px 30px;
+	cursor: pointer;
+	display: block;
+	margin: auto;
+	margin-top: 30px;
+	margin-bottom: 40px;
+	color: white;
+	background: #f894a3;
+	border: 0;
+	outline: none;
+	border-radius: 30px;
+	font-size: 19px;
+	transition: background-color 0.4s ease;
+	font-family: 'Nanum Gothic', sans-serif;
+}
+
+.work_write:hover {
+	background: rgb(243, 90, 113);
 }

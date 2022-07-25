@@ -14,7 +14,7 @@
 /* 	margin-bottom: 60px; */
 } 
 
-/* Á¦ÀÏ ¹Ù±ùÂÊ div */       
+/* ì œì¼ ë°”ê¹¥ìª½ div */       
 .show_cover {
     width: 100%;
     background-position: center;
@@ -23,7 +23,7 @@
     position: absolute;
 }
 
-/* µÎ¹øÂ° div */
+/* ë‘ë²ˆì§¸ div */
 .show_frmcover {
 	height: 100%;
     width: 100%;
@@ -35,7 +35,7 @@
 	padding-bottom: 10px;
 }
 
-/* Á¦¸ñ ÀÔ·ÂÄ­ */
+/* ì œëª© ì…ë ¥ì¹¸ */
 .show_title{
 	width: 500px;
     padding: 10px 5px;
@@ -47,7 +47,7 @@
     font-size: 18px;
 }
 
-/* ³»¿ë ÀÔ·ÂÄ­ */
+/* ë‚´ìš© ì…ë ¥ì¹¸ */
 .show_content {
 	width: 500px;
     height: 300px;
@@ -69,12 +69,12 @@
 
 #show_write {
 	margin-top: 80px;
-	padding-left: 500px;
+	padding-left: 350px;
 }
 
-/* ±Ûµî·Ï ¹öÆ° */
+/* ê¸€ë“±ë¡ ë²„íŠ¼ */
 .show_insert{
-	padding: 7px 20px;
+	padding: 10px 30px;
 	cursor: pointer;
 	display: block;
 	margin: auto;
@@ -86,11 +86,11 @@
 	border: 0;
 	outline: none;
 	border-radius: 30px;
-	font-size: 16px;
+	font-size: 19px;
 	transition: background-color 0.4s ease;
 }
 
-/* ±Ûµî·Ï ¹öÆ° È£¹ö*/
+/* ê¸€ë“±ë¡ ë²„íŠ¼ í˜¸ë²„*/
 .show_insert:hover {
 	background-color: rgb(34, 155, 223);
 }

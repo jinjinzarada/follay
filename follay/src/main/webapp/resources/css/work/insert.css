@@ -31,14 +31,19 @@
     overflow: hidden;
 }
 
+.tablewr {
+	padding-bottom: 10px;
+}
+
 #work_write{
 	margin-top: 50px;
 	padding-left: 100px;
 }
 
+
 /* 제목 입력칸 */
 .work_title{
-	width: 400px;
+	width: 500px;
     padding: 10px 5px;
     margin: 5px 0;
     border: none;
@@ -46,4 +51,51 @@
     outline: none;
     background: transparent;
     font-size: 18px;
+}
+
+/* 내용 입력칸 */
+.work_content {
+	width: 500px;
+    height: 300px;
+    padding: 10px 5px;
+/*     margin: auto; */
+    margin: 5px 0;
+/*     border: none; */
+    border: 1px solid #999;
+    outline: none;
+    background: transparent;
+    font-size: 18px;
+    resize: none;
+}
+
+#category {
+	color: #717171;
+	font-family: 'Nanum Gothic', sans-serif;
+}
+
+#work_write {
+	margin-top: 80px;
+	padding-left: 350px;
+}
+
+/* 글등록 버튼 */
+.work_insert{
+	padding: 10px 30px;
+	cursor: pointer;
+	display: block;
+	margin: auto;
+	margin-top: 40px;
+	margin-bottom: 40px;
+	color: white;
+	background: #f894a3;
+	border: 0;
+	outline: none;
+	border-radius: 30px;
+	font-size: 19px;
+	transition: background-color 0.4s ease;
+}
+
+/* 글등록 버튼 호버*/
+.work_insert:hover {
+	background-color: rgb(243, 90, 113);
 }

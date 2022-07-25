@@ -6,14 +6,14 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn" %>
 <%@ page import="kh.spring.follay.work.domain.Work"%>
-<script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="UTF-8">
 <title>종이접기</title>
-<script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+<!-- <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script> -->
 </head>
 <body>
 <%@ include file="/WEB-INF/views/common/template_header.jsp" %>
@@ -41,11 +41,41 @@
 				<c:if test="${work_category eq '6'}"></c:if>>기타</button>
 		</div>
 	</article>
-	<article id="article2">
-			<button type="button" id="write_btn"
-				onclick="location.href='<%=request.getContextPath()%>/work/write'">글쓰기</button>
-	</article>
-	<article id="article3">
+<script>
+	var msg="${msg}";
+  	if(msg){ 
+ 		alert(msg); 
+ 	} 
+</script>
+<c:choose>
+ <c:when test="${empty showlist}"> 
+ 	<div>작성된 글이 없습니다.</div> 
+ </c:when> 
+	<c:otherwise>
+	<div class="list_div">
+		<table border="1">
+<!-- 			<tr> -->
+<!-- 				<th>제목</th> -->
+<!-- 				<th>작성일</th> -->
+<!-- 				<th>작성자</th> -->
+<!-- 				<th>조회수</th> -->
+<!-- 			</tr> -->
+<c:forEach items="${worklist}" var="work">
+			<tr id="work_td">
+				<td id="worklist_no">${work.work_no}</td>
+				<td id="worklist_title">
+<a href="<%=request.getContextPath()%>/work/read?show_no=${work.work_no}">
+				<span class="list_title-span">${work.work_title} [${work.work_commentcnt}]</span></a>
+				</td>
+				<td id="worklist_date">${fn:substring(work.work_date,0,16)}</td>
+				<td id="worklist_write">${play.member_id}</td>
+			</tr>
+</c:forEach>
+		</table>
+	</div>
+</c:otherwise>
+</c:choose>
+<!-- 	<article id="article2"> -->
 			<!--db받아온 ntpcVolist를 vo에 담아서 반복문 돌리기  -->
 <%-- 				<% --%>
 <!-- // 					for (NtPlatingListVo vo : ntpcVolist) { -->
@@ -62,9 +92,9 @@
 <%-- 				<% --%>
 <!-- // 					} -->
 <%-- 				%> --%>
-	</article>
+<!-- 	</article> -->
 	<!-- 페이징처리 -->
-	<article id="article4">
+	<article id="article3">
 		<div class="paging_div">
 			<c:if test="${startPage > 1 }">
 				<a href="list?page=${startPage-1}" aria-label="Previous"><span aria-hidden="true">&laquo;</span></a>&nbsp;&nbsp;&nbsp;
@@ -85,6 +115,9 @@
 			</c:if>
 		</div>
 	</article>
+  <div>
+	<button type="button" class="work_write" onclick="location.href='<%=request.getContextPath()%>/work/write'">글쓰기</button>
+  </div>
 </section>
 </div>
 <%@ include file="/WEB-INF/views/common/template_footer.jsp" %>

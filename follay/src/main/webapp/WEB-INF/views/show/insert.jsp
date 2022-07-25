@@ -16,9 +16,9 @@
 <div class="show_cover">
 <div class="title">뽐내기</div>
 <div class="show_frmcover">
+<section>
 	<form action="<%=request.getContextPath()%>/show/write" method="post" id="show_write" 
 		enctype="multipart/form-data">
-<section>
 	<table>
 		<tr>
 			<td class="tablewr"><input type="radio"
@@ -36,8 +36,8 @@
 				required="required"><span id="category">기타&nbsp;&nbsp;</span></td>
 		</tr>
 		<tr>
-			<td class="tablewr"><input type="text"
-				class="show_title" name="pbTitle" placeholder="제목을 입력해주세요."
+			<td><input type="text"
+				class="show_title" name="show_title" placeholder="제목을 입력해주세요."
 				required="required"></td>
 		</tr>
 
@@ -63,8 +63,8 @@
 			</th>
 		</tr>
 	</table>
-</section>
 </form>
+</section>
 </div>
 <%@ include file="/WEB-INF/views/common/template_footer.jsp" %>
 </div>

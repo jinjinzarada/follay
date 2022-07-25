@@ -53,7 +53,7 @@ a {
 	color:inherit;
 }
 /* work_list 제목 부분 */
-#worklist_title{
+#showlist_title{
 	text-align: left;
 }
 
@@ -79,26 +79,8 @@ a {
 	font-family: 'Nanum Gothic', sans-serif;
 }
 
-/* 글쓰기 버튼 */
-.work_write{
-	padding: 7px 20px;
-	cursor: pointer;
-	display: block;
-	margin: auto;
-	margin-top: 30px;
-	margin-bottom: 40px;
-	color: white;
-	background: #72c0eb;
-	border: 0;
-	outline: none;
-	border-radius: 30px;
-	font-size: 16px;
-	transition: background-color 0.4s ease;
-	font-family: 'Nanum Gothic', sans-serif;
-}
-
 /* 글쓰기 버튼 호버시 효과 */
-.work_write:hover {
+.show_write:hover {
 	background-color: rgb(34, 155, 223);
 }
 
@@ -115,4 +97,25 @@ a {
 }
 .page-link {
   color: rgb(34, 155, 223);
+}
+
+.show_write{
+	padding: 7px 20px;
+	cursor: pointer;
+	display: block;
+	margin: auto;
+	margin-top: 30px;
+	margin-bottom: 40px;
+	color: white;
+	background: #68bcea;
+	border: 0;
+	outline: none;
+	border-radius: 30px;
+	font-size: 16px;
+	transition: background-color 0.4s ease;
+	font-family: 'Nanum Gothic', sans-serif;
+}
+
+.show_write:hover {
+	background: rgb(34, 155, 223);
 }

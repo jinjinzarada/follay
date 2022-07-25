@@ -26,7 +26,7 @@
 		<!-- 컨셉버튼 -->
 		<div class="category_btn_wrap">
 			<button type="button" class="category_btn" id="total" 
-				<c:if test="${work_category eq '8'}"></c:if>>전체</button>
+				<c:if test="${work_category eq '7'}"></c:if>>전체</button>
 			<button type="button" class="category_btn" id="animal"
 				<c:if test="${work_category eq '1'}"></c:if>>동물</button>
 			<button type="button" class="category_btn" id="plant"
@@ -37,10 +37,8 @@
 				<c:if test="${work_category eq '4'}"></c:if>>이동수단</button>
 			<button type="button" class="category_btn" id="figure"
 				<c:if test="${work_category eq '5'}"></c:if>>도형</button>
-			<button type="button" class="category_btn" id="furniture"
-				<c:if test="${work_category eq '6'}"></c:if>>가구</button>
 			<button type="button" class="category_btn" id="etc"
-				<c:if test="${work_category eq '7'}"></c:if>>기타</button>
+				<c:if test="${work_category eq '6'}"></c:if>>기타</button>
 		</div>
 	</article>
 	<article id="article2">
@@ -94,7 +92,7 @@
 <script>
 		//컨셉별 화면 조회
 		$("#total").on("click", function() {
-			location.href = "/follay/work/list?work_category=8";
+			location.href = "/follay/work/list?work_category=7";
 		});
 		
 		$("#animal").on("click", function() {
@@ -117,13 +115,10 @@
 			location.href = "/follay/work/list?work_category=5";
 		});
 		
-		$("#furniture").on("click", function() {
+		$("#etc").on("click", function() {
 			location.href = "/follay/work/list?work_category=6";
 		});
 		
-		$("#etc").on("click", function() {
-			location.href = "/follay/work/list?work_category=7";
-		});
 </script>
 </body>
 </html>

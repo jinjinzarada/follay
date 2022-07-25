@@ -1,1 +1,97 @@
 @charset "UTF-8";
+
+.title{
+	font-size: 30px;
+	font-weight: 700;
+	text-align: center;
+	padding-top: 50px;
+	padding-bottom: 30px;
+	border-bottom: 3px solid rgb(34, 155, 223);
+	width: 200px;
+	margin: auto;
+	color: rgb(34, 155, 223);
+	font-family: 'Nanum Gothic', sans-serif;
+/* 	margin-bottom: 60px; */
+} 
+
+/* 제일 바깥쪽 div */       
+.show_cover {
+    width: 100%;
+    background-position: center;
+    background-size: cover;
+    background-color: #ecf7fd;
+    position: absolute;
+}
+
+/* 두번째 div */
+.show_frmcover {
+	height: 100%;
+    width: 100%;
+    position: relative;
+    overflow: hidden;
+}
+
+.tablewr {
+	padding-bottom: 10px;
+}
+
+/* 제목 입력칸 */
+.show_title{
+	width: 500px;
+    padding: 10px 5px;
+    margin: 5px 0;
+    border: none;
+    border-bottom: 1px solid #999;
+    outline: none;
+    background: transparent;
+    font-size: 18px;
+}
+
+/* 내용 입력칸 */
+.show_content {
+	width: 500px;
+    height: 300px;
+    padding: 10px 5px;
+/*     margin: auto; */
+    margin: 5px 0;
+/*     border: none; */
+    border: 1px solid #999;
+    outline: none;
+    background: transparent;
+    font-size: 18px;
+    resize: none;
+}
+
+#category {
+	color: #717171;
+	font-family: 'Nanum Gothic', sans-serif;
+}
+
+#show_write {
+	margin-top: 80px;
+	padding-left: 500px;
+}
+
+/* 글등록 버튼 */
+.show_insert{
+	padding: 7px 20px;
+	cursor: pointer;
+	display: block;
+	margin: auto;
+	margin-top: 40px;
+	margin-bottom: 40px;
+/* 	margin-left:120px; */
+	color: white;
+	background: #68bcea;
+	border: 0;
+	outline: none;
+	border-radius: 30px;
+	font-size: 16px;
+	transition: background-color 0.4s ease;
+}
+
+/* 글등록 버튼 호버*/
+.show_insert:hover {
+	background-color: rgb(34, 155, 223);
+}
+

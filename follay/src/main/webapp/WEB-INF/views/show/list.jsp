@@ -8,12 +8,12 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn" %>
 <%@ page import="kh.spring.follay.show.domain.Show"%>
+<%@ page import="kh.spring.follay.show.domain.ShowImage"%>
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="UTF-8">
 <title>뽐내기</title>
-<!-- <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script> -->
 </head>
 <body>
 <%@ include file="/WEB-INF/views/common/template_header.jsp" %>
@@ -62,13 +62,15 @@
 <!-- 			</tr> -->
 <c:forEach items="${showlist}" var="show">
 			<tr id="show_td">
+			<td id="show_image">
+<a id="show_image" href="<%=request.getContextPath()%>/show/read?show_no=${show.show_no}">
+				<span class="list_title-span">${show.show_file}</span></a></td>
+<%-- 				<td id="show_image">${showImage.si_file}</td> --%>
 				<td id="showlist_no">${show.show_no}</td>
 				<td id="showlist_title">
 <a href="<%=request.getContextPath()%>/show/read?show_no=${show.show_no}">
-				<span class="list_title-span">${show.show_title} [${show.show_commentcnt}]</span></a>
+				<span class="list_title-span">${show.show_name}</span></a>
 				</td>
-				<td id="showlist_date">${fn:substring(show.show_date,0,16)}</td>
-				<td id="showlist_write">${play.member_id}</td>
 			</tr>
 </c:forEach>
 		</table>

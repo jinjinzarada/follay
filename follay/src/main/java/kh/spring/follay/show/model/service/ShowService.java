@@ -20,6 +20,17 @@ public interface ShowService {
 	 * @return
 	 */
 	public List<Show> selectShowList(int currentPage, int pageSize);
-	
+	/**
+	 * 
+	 * @param show_no
+	 * @return
+	 */
+	public Show selectShow(String show_no);
+	/**
+	 * 
+	 * @param show_readcount
+	 * @return
+	 */
+	public int updateShowCount(int show_readcount);
 
 }

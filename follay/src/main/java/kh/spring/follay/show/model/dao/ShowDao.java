@@ -27,4 +27,13 @@ public class ShowDao {
 	public List<Show> selectShowList(int currentPage, int pageSize) {
 		return sqlsession.selectList("Show.selectShowList", null, new RowBounds((currentPage-1)*pageSize , pageSize));
 	}
+
+	public Show selectShow(String show_no) {
+		Show show = sqlsession.selectOne("Show.selectShow", show_no);
+		return show;
+	}
+
+	public int updateShowCount(String string, int show_readcount) {
+		return sqlsession.update("Show.updateShowCount", show_readcount);
+	}
 }

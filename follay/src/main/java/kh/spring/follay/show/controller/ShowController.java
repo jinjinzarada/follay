@@ -12,13 +12,16 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.servlet.ModelAndView;
+import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import kh.spring.follay.common.FileUpload;
 import kh.spring.follay.member.domain.Member;
 import kh.spring.follay.show.domain.Show;
+import kh.spring.follay.show.domain.ShowComment;
 import kh.spring.follay.show.model.service.ShowService;
 import kh.spring.follay.work.domain.Work;
 
@@ -118,5 +121,32 @@ public class ShowController {
 		mv.addObject("currentPage", currentPage);
 		mv.setViewName("show/list");
 		return mv;
+	}
+	
+	@RequestMapping(value="/read", method = RequestMethod.GET)
+	public ModelAndView selectShow(ModelAndView mv
+			, ShowComment showcomment
+			, @RequestParam(name="show_no", required = false) String show_no
+			, RedirectAttributes rttr
+			) {
+		if(show_no == null) {
+			rttr.addFlashAttribute("msg", "읽을 글번호가 없습니다. 읽을 글을 다시 선택해 주세요");
+			mv.setViewName("redirect:/play/list");
+		}
+		
+		mv.addObject("show", service.selectShow(show_no));  // 게시글만 읽기
+//		mv.addObject("show", service.selectShowAndShowComment(show_no)); // 게시글+댓글 읽기
+		mv.setViewName("show/read");
+		mv.addObject("showcomment",showcomment);
+		return mv;
+	}
+	
+	@PostMapping("/read")
+	public ModelAndView updatePlayCount(ModelAndView mv
+			, @RequestParam(name="member_id",required = false) int show_readcount
+			) {
+		mv.addObject("show", service.updateShowCount(show_readcount));
+		return mv;
+		
 	}
 }

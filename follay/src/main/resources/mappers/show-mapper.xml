@@ -6,6 +6,9 @@
 		<result column="show_name" property="show_name"/>
 		<result column="show_category" property="show_category"/>
 		<result column="show_content" property="show_content"/>
+		<result column="member_id" property="member_id"/>
+		<result column="show_file" property="show_file"/>
+		<result column="show_readcount" property="show_readcount"/>
 		<collection property="show_commentlist" resultMap="ShowCommentResultMap"/>
 	</resultMap>
 	
@@ -35,12 +38,34 @@
 
 <select id="selectShowCommentList" resultMap="ShowCommentResultMap" parameterType="string">
 <![CDATA[
-		select * from showcomment where show_no=#{show_no}
+		select show_no, show_name, show_category, show_content, member_id, show_file, show_readcount 
+		from showcomment where show_no=#{show_no}
 ]]>
 </select>
 
 <select id="selectTotalCnt" resultType="_int">
 	select count(*) from show
 </select>
+
+<insert id="insertShow" parameterType="Show">
+	<![CDATA[
+	insert into show 
+	(show_no
+	, show_name, show_category, member_id, show_file, show_content
+	, show_readcount)
+	values 
+	(	(select nvl(max(SHOW_NO),0)+1 from show)
+	, #{show_name}, #{show_category}, #{member_id}, #{show_file}, #{show_content}
+	, DEFAULT
+	)
+	]]>
+</insert>
+
+<update id="updateShowCount" parameterType="_int">
+<![CDATA[
+	update show set show_readcount = show_readcount + 1
+	where member_id = #{member_id}
+]]>
+</update>
 
 </mapper>

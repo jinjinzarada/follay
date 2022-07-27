@@ -37,7 +37,7 @@
 		</tr>
 		<tr>
 			<td><input type="text"
-				class="show_title" name="show_title" placeholder="제목을 입력해주세요."
+				class="show_title" name="show_name" placeholder="제목을 입력해주세요."
 				required="required"></td>
 		</tr>
 

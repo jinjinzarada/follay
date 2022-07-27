@@ -18,16 +18,16 @@
 <section>
 	<div class="slideshow-container">
 		<div class="mySlides fade">
-		  <img src="<%=request.getContextPath()%>/resources/image/main/follay_work_slide.png"
-			onclick="location.href='<%=request.getContextPath()%>/work/list'" width="100%;">
+		  <img src="<%=request.getContextPath()%>/resources/image/main/follay_play_slide.png"
+			onclick="location.href='<%=request.getContextPath()%>/play/list'" width="100%;">
 		</div>
 		<div class="mySlides fade">
 		  <img src="<%=request.getContextPath()%>/resources/image/main/follay_show_slide.png"
 			onclick="location.href='<%=request.getContextPath()%>/show/list'" width="100%;">
 		</div>
 		<div class="mySlides fade">
-		  <img src="<%=request.getContextPath()%>/resources/image/main/follay_play_slide.png"
-			onclick="location.href='<%=request.getContextPath()%>/play/list'" width="100%;">
+		  <img src="<%=request.getContextPath()%>/resources/image/main/follay_work_slide.png"
+			onclick="location.href='<%=request.getContextPath()%>/work/list'" width="100%;">
 		</div>
 		<!-- 뒤로 앞으로 버튼 -->
 		<div>

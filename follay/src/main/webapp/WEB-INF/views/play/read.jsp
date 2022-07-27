@@ -95,35 +95,37 @@
 		<div><img src="<%=request.getContextPath() %>/${play.play_rename_filename}" width="500"></div>
 	</c:if>
 	</div>
-	<form id="frmComment">
+	<div>
+	<form id="frmComment" method="post">
 		<input type="hidden" name="play_no" value="${play.play_no}">
 		<input type="text" name="play_content" placeholder= "예쁜말 고운말로 댓글 적어주세요." class="comment_content">
-		<button type="button" class="comment_submit">댓글등록</button>
+		<button type="submit" class="comment_submit">댓글등록</button>
 	</form>
+	</div>
 	<script>
-	$(".comment_submit").click(function(){
-		console.log($("#frmComment").serialize());
-		$.ajax({
-			url:"<%=request.getContextPath()%>/play/writecomment,
-			type:"post",
-			data:$("#frmComment").serialize(),
-			dataType:"json",
-			success:function(result){
-				console.log(result);
-				if(result){
-					alert(result);
-				}
-				var html = "";
-			},
-			error:function(errcode){
-				console.log(errcode);
-			}			
+ 	$(".comment_submit").click(function(){ 
+ 		console.log($("#frmComment").serialize()); 
+ 		$.ajax({
+			url:"<%=request.getContextPath()%>/play/writecomment",
+ 			type:"post",
+ 			data:$("#frmComment").serialize(), 
+ 			dataType:"json",
+ 			success:function(result){ 
+ 				console.log(result);
+ 				for(var i=0,i<result.length;i++){ 
+ 					var str = "<div class=\"comment\">" 
+ 					str += result[i].content+"</div></hr>" 
+					$(".comment_submit").append(str); 
+ 				} 
+			}, 
+ 			error:function(errcode){ 
+ 				console.log(errcode); 
+			}			 
 		});
 		
-	});
+ 	}); 
 	
-	
-	</script>
+	</script> 
 <hr>
 	<c:forEach items="${play.play_commentlist}" var="playcomment">
 			<p>작성자: ${playcomment.member_id}</p>

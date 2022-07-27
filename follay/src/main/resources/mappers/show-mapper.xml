@@ -38,8 +38,7 @@
 
 <select id="selectShowCommentList" resultMap="ShowCommentResultMap" parameterType="string">
 <![CDATA[
-		select show_no, show_name, show_category, show_content, member_id, show_file, show_readcount 
-		from showcomment where show_no=#{show_no}
+		select * from showcomment where show_no=#{show_no}
 ]]>
 </select>
 

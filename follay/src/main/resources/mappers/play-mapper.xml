@@ -56,7 +56,7 @@
 		order by play.play_date desc, playcomment.pc_date desc 
  		]]> 
 </select>
-<select id="selectPlayAndReComment" resultMap="PlayAndReCommentResultMap" parameterType="_int">
+<select id="selectPlayAndReComment" resultMap="PlayAndReCommentResultMap" parameterType="string">
 		<![CDATA[
 		select * from (select * from play where play_no=#{play_no}) t1 
         left outer join (select * from playcomment where play_no=#{play_no}) t2 using (play_no)
@@ -131,6 +131,24 @@
 		, play_reply_seq+1
 		, 0
 		from play where play_no=#{refnum}
+]]>
+</insert>
+
+<insert id="insertPlayComment"  parameterType="PlayComment">
+<![CDATA[	
+	insert into playcomment
+		(pc_no
+		, pc_content
+		, pc_date
+		, play_no
+		, member_id)
+		values
+		( (select nvl(max(pc_no),0)+1 from playcomment)
+		, #{pc_content}
+		, DEFAULT
+		, (select nvl(max(pc_no),0)+1 from playcomment)
+		, #{member_id}
+		)
 ]]>
 </insert>
 

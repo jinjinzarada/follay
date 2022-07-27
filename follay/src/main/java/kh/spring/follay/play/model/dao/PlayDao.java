@@ -18,12 +18,17 @@ public class PlayDao {
 	
 	// 원글
 	public int insertPlay(Play play) {
-			return sqlsession.insert("Play.insertPlay",play);
+		return sqlsession.insert("Play.insertPlay",play);
+	}
+	
+	// 댓글쓰기
+	public int insertPlayComment(PlayComment playcomment) {
+		return sqlsession.insert("PlayComment.insertPlayComment", playcomment);
 	}
 	
 	// 답글 seq 업데이트
 	public int updatePlayReplySeq(Play play) {
-			return sqlsession.update("Play.updatePlayReplySeq",play);
+		return sqlsession.update("Play.updatePlayReplySeq",play);
 	}
 	
 	// 답글
@@ -76,5 +81,6 @@ public class PlayDao {
 	public int updatePlayCount(int play_readcount) {
 		return sqlsession.update("Play.updatePlayCount", play_readcount);
 	}
+
 
 }

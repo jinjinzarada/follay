@@ -16,6 +16,12 @@ public interface PlayService {
 	 */
 	public int insertPlay(Play play);
 	/**
+	 * 
+	 * @param playcomment
+	 * @return
+	 */
+	public int insertPlayComment(PlayComment playcomment);
+	/**
 	 * @param play 수정할 글번호
 	 * @return 수정괸 글의 갯수
 	 */

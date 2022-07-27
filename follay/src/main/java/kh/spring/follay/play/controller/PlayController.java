@@ -61,14 +61,15 @@ public class PlayController {
 	public ModelAndView insert(ModelAndView mv
 			, Play play
 			, HttpSession session
-//			, RedirectAttributes rttr
+			, RedirectAttributes rttr
 			, @RequestParam(name="uploadfile", required = false) MultipartFile uploadfile
 			, HttpServletRequest req
 			) {
 		
 		Member member = (Member) session.getAttribute("loginSsInfo");
 		if (member == null) {
-//			rttr.addFlashAttribute("msg", "로그인 후 글작성 해주세요.");
+			
+			rttr.addFlashAttribute("msg", "로그인 후 글작성 해주세요.");
 			mv.setViewName("redirect:/member/login");
 			return mv;
 		}
@@ -81,16 +82,30 @@ public class PlayController {
 				play.setPlay_rename_filename(rename_filename);
 				
 			}
-//			mv.addObject("List<PlayComment>", service.selectPlayCommentList(play_no)); 
-//			mv.setViewName("play/writecomment");
-//			mv.addObject("playcomment",playcomment);
-//			return mv;
 		}
 		int result = service.insertPlay(play);
 		mv.setViewName("redirect:/play/list");
 		return mv;
 		
 		}
+	
+	@PostMapping("/writecomment")
+	public ModelAndView writeDo(ModelAndView mv
+			, PlayComment playcomment
+			, HttpSession session) {
+		Member member = (Member) session.getAttribute("loginSsInfo");
+		if (member == null) { // 로그인안되어있다면 로그인으로 이동
+			mv.setViewName("redirect:/login");
+			return mv;
+		}
+		playcomment.setMember_id(member.getMember_id());
+		//board.setbWriter(member.getNickname());
+
+		int result = service.insertPlayComment(playcomment);
+
+		mv.setViewName("redirect:/play/read");
+		return mv;
+	}
 	
 	@GetMapping("/list")
 	public ModelAndView list(@RequestParam(name="page", defaultValue = "1") int currentPage

@@ -1,5 +1,7 @@
 package kh.spring.follay.show.domain;
 
+import java.util.List;
+
 import org.springframework.stereotype.Component;
 
 import lombok.Data;
@@ -24,11 +26,13 @@ public class Show {
 	private String show_file;
 	private int show_readcount;
 	
+	private List<ShowComment> show_commentlist;
+
 	@Override
 	public String toString() {
 		return "Show [show_no=" + show_no + ", show_name=" + show_name + ", show_category=" + show_category
 				+ ", show_content=" + show_content + ", member_id=" + member_id + ", show_file=" + show_file
-				+ ", show_readcount=" + show_readcount + "]";
+				+ ", show_readcount=" + show_readcount + ", show_commentlist=" + show_commentlist + "]";
 	}
 	
 

@@ -26,6 +26,11 @@ public class PlayServiceImpl implements PlayService{
 		}
 	}
 	
+	// 댓글 쓰기
+	public int insertPlayComment(PlayComment playcomment) {
+		return dao.insertPlayComment(playcomment);
+	}
+	
 	// 게시글 수정
 //	@Override
 	public int updatePlay(Play play) {

@@ -52,22 +52,21 @@
 .category_btn:hover {
 	background-color: rgb(34, 155, 223);
 }
-
-th {
-	border-top: 1px solid rgb(34, 155, 223);
-	border-bottom:1px solid rgb(34, 155, 223);
-	padding:8px 10px;
-	color: #333;
+.list_title-span {
+	padding-left:110px ;
+	margin-top: 10px;
+	font-size: 18px;
 	font-family: 'Nanum Gothic', sans-serif;
 }
 
-td {
-	text-align: center;
-	padding:10px 10px;
-	font-size: 17px;
-	color: #333;
-	border-bottom:1px solid #72c0eb;
-	font-family: 'Nanum Gothic', sans-serif;
+.list_div {
+	display: flex;    
+	float:left;
+	margin-top: 30px;
+	padding-left:100px;
+	padding:10px;
+	overflow: hidden;  
+	cursor: pointer;    
 }
 
 a {
@@ -79,15 +78,6 @@ a {
 	text-align: left;
 }
 
-.list_title-span:hover {
-	text-decoration: underline;
-}
-
-.list_div{
-	margin-top: 70px;
-	padding-left:270px;
-	
-}
 /* 페이징 */
 .paging_div {
 	margin-top: 30px;

@@ -6,6 +6,7 @@
 		<result column="work_name" property="work_name"/>
 		<result column="work_category" property="work_category"/>
 		<result column="work_content" property="work_content"/>
+		<result column="work_file" property="work_file"/>
 		<collection property="work_commentlist" resultMap="WorkCommentResultMap"/>
 	</resultMap>
 	
@@ -42,6 +43,19 @@
 <select id="selectTotalCnt" resultType="_int">
 	select count(*) from work
 </select>
+
+<insert id="insertWork" parameterType="Work">
+	<![CDATA[
+	insert into work
+	(work_no
+	, work_name, work_category, work_file, work_content)
+	values 
+	(	(select nvl(max(WORK_NO),0)+1 from work)
+	, #{work_name}, #{work_category}, #{work_file}, #{work_content}
+	)
+	]]>
+</insert>
+
 </mapper>
 
 

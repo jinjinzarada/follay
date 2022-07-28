@@ -18,14 +18,17 @@ public class ShowServiceImpl implements ShowService{
 		return dao.selectTotalCnt();
 	}
 	
+	// 글쓰기
 	public int insertShow(Show show) {
 		return dao.insertShow(show);
 	}
 	
+	// 페이징 처리
 	public List<Show> selectShowList(int currentPage, int pageSize) {
 		return dao.selectShowList(currentPage, pageSize);
 	}
 	
+	// 게시글 
 	public Show selectShow(String show_no) {
 		return dao.selectShow(show_no);
 	}

@@ -52,11 +52,6 @@
 				type="file" name="uploadFile" id="file_btn"
 				required="required"></td>
 		</tr>
-<!-- 		<tr> -->
-<!-- 			<td class="tablewr"> -->
-<!-- 				<button type="button" id="addfile">파일 추가</button> -->
-<!-- 			</td> -->
-<!-- 		</tr> -->
 		<tr>
 			<th id="submit">
 				<button type="submit" class="show_insert">글등록</button>

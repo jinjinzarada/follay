@@ -31,10 +31,6 @@
     overflow: hidden;
 }
 
-#article1 {
-/* 	padding-left:370px; */
-}
-
 .category_btn_wrap {
 	padding-left: 337px;
 }
@@ -57,12 +53,65 @@
 	background-color: #f46076;
 }
 
+a {
+	text-decoration: none;
+	color:inherit;
+}
+
+.list_title-span {
+	padding-left:110px ;
+	margin-top: 10px;
+	font-size: 18px;
+	font-family: 'Nanum Gothic', sans-serif;
+/* 	text-align: center; */
+}
+
+.list_div{
+	margin-top: 30px;
+	padding-left:100px;
+	padding:10px;
+	display: flex;    
+	overflow: hidden;  
+	float:left; 
+	cursor: pointer;        
+/*     justify-content: center;  */
+/*     align-items: center; */
+	
+}
+/* 페이징 */
+.paging_div {
+	margin-top: 30px;
+	padding-left: 530px;
+}
+
+#paging_no {
+	font-weight: 500;
+	font-size: 17px;
+	color: rgb(243, 90, 113);
+	font-family: 'Nanum Gothic', sans-serif;
+}
+
+/* 페이징 처리 */
+.section_container {
+	margin-left: 80.500px;
+	margin-right: 80.500px;
+	margin-top: 80.500px;
+	margin-bottom: 80.500px;
+}
+
+.pagination {
+  margin-left: 43%;
+}
+.page-link {
+  color: rgb(243, 90, 113);
+}
+
 .work_write{
 	padding: 10px 30px;
 	cursor: pointer;
 	display: block;
 	margin: auto;
-	margin-top: 30px;
+	margin-top: 20px;
 	margin-bottom: 40px;
 	color: white;
 	background: #f894a3;

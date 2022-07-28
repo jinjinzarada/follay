@@ -6,7 +6,6 @@ import kh.spring.follay.work.domain.Work;
 
 public interface WorkService {
 
-	
 	public Work selectWork(String work_no);
 	/**
 	 * @param work 게시글 추가할 내용

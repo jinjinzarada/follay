@@ -68,14 +68,17 @@ td {
 /* 	float:left; */
 /* 	text-align: center; */
 }
-
-/* 댓글 */
-#frmComment {
-	background-size: cover;
+.comment_total {
 	background-color: #ffe3d5;
 	width: 100%;
-	
 }
+/* 댓글 */
+/* #frmComment { */
+/* 	background-size: cover; */
+/* 	background-color: #ffe3d5; */
+/* 	width: 100%; */
+	
+/* } */
 
 .comment_content {
 	width: 40%;
@@ -136,3 +139,22 @@ td {
     background-color: #FF8C00;
 /*     border:none; */
 }
+
+#comment_wt {
+	padding-left:10px;
+	font-size: 18px;
+	font-family: 'Nanum Gothic', sans-serif;
+}
+
+#comment_dt {
+	padding-left:10px;
+	font-size:15px;
+	font-family: 'Nanum Gothic', sans-serif;
+}
+
+#comment_ct {
+	padding:10px;
+	font-size:19px;
+	font-family: 'Nanum Gothic', sans-serif;
+}
+

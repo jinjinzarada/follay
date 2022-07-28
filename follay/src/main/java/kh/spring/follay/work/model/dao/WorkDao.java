@@ -30,6 +30,7 @@ public class WorkDao {
 		return sqlsession.selectOne("Work.selectTotalCnt");
 	}
 
+	// 게시글 쓰기
 	public int insertWork(Work work) {
 		return sqlsession.insert("Work.insertWork",work);
 	}

@@ -13,7 +13,7 @@
 <head>
 <meta charset="UTF-8">
 <title>종이접기</title>
-<!-- <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script> -->
+<script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
 </head>
 <body>
 <%@ include file="/WEB-INF/views/common/template_header.jsp" %>
@@ -48,51 +48,28 @@
  	} 
 </script>
 <c:choose>
- <c:when test="${empty showlist}"> 
+ <c:when test="${empty worklist}"> 
  	<div>작성된 글이 없습니다.</div> 
  </c:when> 
 	<c:otherwise>
-	<div class="list_div">
-		<table border="1">
-<!-- 			<tr> -->
-<!-- 				<th>제목</th> -->
-<!-- 				<th>작성일</th> -->
-<!-- 				<th>작성자</th> -->
-<!-- 				<th>조회수</th> -->
-<!-- 			</tr> -->
+	<div class="list_div" >
 <c:forEach items="${worklist}" var="work">
-			<tr id="work_td">
-				<td id="worklist_no">${work.work_no}</td>
-				<td id="worklist_title">
-<a href="<%=request.getContextPath()%>/work/read?show_no=${work.work_no}">
-				<span class="list_title-span">${work.work_title} [${work.work_commentcnt}]</span></a>
-				</td>
-				<td id="worklist_date">${fn:substring(work.work_date,0,16)}</td>
-				<td id="worklist_write">${play.member_id}</td>
-			</tr>
+	<table>
+	<tr>
+		<td style="padding:50px;">
+			<img src="<%=request.getContextPath()%>${work.work_file}"
+			onclick="location.href='<%=request.getContextPath()%>/work/read?work_no=${work.work_no}'" style="width:300px; padding-bottom:30px;">
+			<a href="<%=request.getContextPath()%>/work/read?work_no=${work.work_no}">
+			<span class="list_title-span">${work.work_name}</span></a>
+		</td>
+		<td>
+		</td>
+	</tr>
+	</table>
 </c:forEach>
-		</table>
-	</div>
+</div>
 </c:otherwise>
 </c:choose>
-<!-- 	<article id="article2"> -->
-			<!--db받아온 ntpcVolist를 vo에 담아서 반복문 돌리기  -->
-<%-- 				<% --%>
-<!-- // 					for (NtPlatingListVo vo : ntpcVolist) { -->
-<%-- 				%> --%>
-<!-- 			<div id="contentItem"> -->
-<%-- 				<div class="article3_img_id"><%=vo.getMemberId()%></div> --%>
-<!-- 					<div class="article3_img"> -->
-<%-- 						<img src=<%=vo.getPiFile()%> --%>
-<%-- 							onclick="location.href='ntpcdetail?work_no=<%=vo.getWork_no()%>';" --%>
-<!-- 							id="img_item"> -->
-<!-- 					</div> -->
-<%-- 				<div class="article3_text"><%=vo.getWork_name()%></div> --%>
-<!-- 			</div> -->
-<%-- 				<% --%>
-<!-- // 					} -->
-<%-- 				%> --%>
-<!-- 	</article> -->
 	<!-- 페이징처리 -->
 	<article id="article3">
 		<div class="paging_div">

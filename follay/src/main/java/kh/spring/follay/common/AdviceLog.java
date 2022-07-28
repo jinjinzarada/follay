@@ -47,16 +47,16 @@ public class AdviceLog {
 		return ro;
 	}
 	
-//	@Around("pointcutController()")
-//	public Object aroundController(ProceedingJoinPoint pjp) throws Throwable{
-//		Object ro =null;
-//		System.out.println("aroundController:"+pjp.getThis()+pjp.getSignature().getName());
-//		for(int i=0; i<pjp.getArgs().length; i++) {
-//			System.out.println("args:"+pjp.getArgs()[i]);
-//		}
-//		ro = pjp.proceed();
-//		System.out.println("aroundController ro:"+ro);
-//		return ro;
-//	}
+	@Around("commonControllerPointCut()")
+	public Object aroundController(ProceedingJoinPoint pjp) throws Throwable{
+		Object ro =null;
+		System.out.println("▶▶▶aroundController:"+pjp.getThis()+pjp.getSignature().getName());
+		for(int i=0; i<pjp.getArgs().length; i++) {
+			System.out.println("▶args:"+pjp.getArgs()[i]);
+		}
+		ro = pjp.proceed();
+		System.out.println("▶▶▶aroundController ro:"+ro);
+		return ro;
+	}
 
 }

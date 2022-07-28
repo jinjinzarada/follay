@@ -29,7 +29,8 @@ public class WorkServiceImpl implements WorkService{
 		return dao.selectTotalCnt();
 	}
 	
+	// 글쓰기
 	public int insertWork(Work work) {
 		return dao.insertWork(work);
-		}
+	}
 }

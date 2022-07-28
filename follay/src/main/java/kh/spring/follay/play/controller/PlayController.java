@@ -9,6 +9,7 @@ import javax.servlet.http.HttpSession;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.converter.json.GsonBuilderUtils;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -19,6 +20,9 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.servlet.ModelAndView;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
+
+import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
 
 import kh.spring.follay.common.FileUpload;
 import kh.spring.follay.member.domain.Member;
@@ -89,22 +93,27 @@ public class PlayController {
 		
 		}
 	
-	@PostMapping("/writecomment")
-	public ModelAndView writeDo(ModelAndView mv
+	@PostMapping(value="/writecomment", produces="text/plain;charset=UTF-8")
+	@ResponseBody
+	public String writeDo(ModelAndView mv
 			, PlayComment playcomment
-			, HttpSession session) {
+			, HttpSession session
+			, RedirectAttributes rttr) {
 		Member member = (Member) session.getAttribute("loginSsInfo");
-		if (member == null) { // 로그인안되어있다면 로그인으로 이동
+		if (member == null) { // 로그인 안되어 있다면 로그인으로 이동
+			rttr.addFlashAttribute("msg", "로그인 후 이용해 주세요.");
 			mv.setViewName("redirect:/login");
-			return mv;
+//			return mv;
 		}
 		playcomment.setMember_id(member.getMember_id());
-		//board.setbWriter(member.getNickname());
 
 		int result = service.insertPlayComment(playcomment);
-
-		mv.setViewName("redirect:/play/read");
-		return mv;
+		rttr.addFlashAttribute("msg", "댓글이 등록 되었습니다.");
+		//mv.setViewName("redirect:/play/read?play_no="+playcomment.getPlay_no());
+		String jsonObj = "";
+		Gson gson = new GsonBuilder().create();
+			//	service.selectPlayAndPlayComment(play_no);
+		return jsonObj;
 	}
 	
 	@GetMapping("/list")

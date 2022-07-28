@@ -8,7 +8,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ page import="kh.spring.follay.work.domain.Work"%>
-<script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
 <!DOCTYPE html>
 <html>
 <head>
@@ -57,11 +56,6 @@
 				type="file" name="uploadFile" id="file_btn"
 				required="required"></td>
 		</tr>
-<!-- 		<tr> -->
-<!-- 			<td class="tablewr"> -->
-<!-- 				<button type="button" id="addfile">파일 추가</button> -->
-<!-- 			</td> -->
-<!-- 		</tr> -->
 		<tr>
 			<th id="submit">
 				<button type="submit" class="work_insert">글등록</button>

@@ -85,7 +85,7 @@
 <!-- 		<table> -->
 			<tr>
 				<td id="read_memberid">${play.member_id}</td>
-				<td id="read_playreadcount">조회 ${play.play_readcount}</td>
+<%-- 				<td id="read_playreadcount">조회 ${play.play_readcount}</td> --%>
 				<td id="read_playdate">${fn:substring(play.play_date,0,16)}</td>
 			</tr>
 		</table>
@@ -95,11 +95,12 @@
 		<div><img src="<%=request.getContextPath() %>/${play.play_rename_filename}" width="500"></div>
 	</c:if>
 	</div>
+	<div class="comment_total">
 	<div>
 	<form id="frmComment" method="post">
 		<input type="hidden" name="play_no" value="${play.play_no}">
-		<input type="text" name="play_content" placeholder= "예쁜말 고운말로 댓글 적어주세요." class="comment_content">
-		<button type="submit" class="comment_submit">댓글등록</button>
+		<input type="text" name="pc_content" placeholder= "예쁜말 고운말로 댓글 적어주세요." class="comment_content">
+		<button type="button" class="comment_submit">댓글등록</button>
 	</form>
 	</div>
 	<script>
@@ -112,7 +113,7 @@
  			dataType:"json",
  			success:function(result){ 
  				console.log(result);
- 				for(var i=0,i<result.length;i++){ 
+ 				for(var i=0; i<result.length;i++){ 
  					var str = "<div class=\"comment\">" 
  					str += result[i].content+"</div></hr>" 
 					$(".comment_submit").append(str); 
@@ -126,13 +127,16 @@
  	}); 
 	
 	</script> 
-<hr>
+	
+<div style="padding:10px 10px;">
+			<hr>
 	<c:forEach items="${play.play_commentlist}" var="playcomment">
-			<p>작성자: ${playcomment.member_id}</p>
-			<p>작성일:${playcomment.pc_date}</p>
-			<p>글내용:${playcomment.pc_content}</p>
+			<div><span id="comment_wt">${playcomment.member_id}</span>&nbsp;&nbsp;<span id="comment_dt">${fn:substring(playcomment.pc_date,0,16)}</span></div>
+			<div id="comment_ct">${playcomment.pc_content}</div>
 			<hr>
 	</c:forEach>
+</div>
+	</div>
 	<div>
 		<button type="button" class="gotolist" onClick="history.back()">글목록</button>
 	</div>

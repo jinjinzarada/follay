@@ -40,7 +40,7 @@
 				<th>제목</th>
 				<th>작성일</th>
 				<th>작성자</th>
-				<th>조회수</th>
+<!-- 				<th>조회수</th> -->
 			</tr>
 <c:forEach items="${playlist}" var="play">
 			<tr id="play_td">
@@ -54,7 +54,7 @@
 				</td>
 				<td id="playlist_date">${fn:substring(play.play_date,0,16)}</td>
 				<td id="playlist_write">${play.member_id}</td>
-				<td id="playlist_readcount">${play.play_readcount}</td>
+<%-- 				<td id="playlist_readcount">${play.play_readcount}</td> --%>
 			</tr>
 </c:forEach>
 		</table>

@@ -145,8 +145,8 @@
 		values
 		( (select nvl(max(pc_no),0)+1 from playcomment)
 		, #{pc_content}
-		, DEFAULT
-		, (select nvl(max(pc_no),0)+1 from playcomment)
+		, SYSDATE
+		, #{play_no}
 		, #{member_id}
 		)
 ]]>

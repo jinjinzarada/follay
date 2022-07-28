@@ -95,7 +95,7 @@ public class ShowController {
 			, HttpServletRequest req) {
 		System.out.println(req.getParameter("test5"));
 		
-		final int pageSize = 10;
+		final int pageSize = 3;
 		final int pageBlock = 3;
 		int totalCnt = service.selectTotalCnt();
 		

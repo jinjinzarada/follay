@@ -23,7 +23,7 @@ public class PlayDao {
 	
 	// 댓글쓰기
 	public int insertPlayComment(PlayComment playcomment) {
-		return sqlsession.insert("PlayComment.insertPlayComment", playcomment);
+		return sqlsession.insert("Play.insertPlayComment", playcomment);
 	}
 	
 	// 답글 seq 업데이트

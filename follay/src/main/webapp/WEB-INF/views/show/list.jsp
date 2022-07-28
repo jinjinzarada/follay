@@ -8,12 +8,12 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn" %>
 <%@ page import="kh.spring.follay.show.domain.Show"%>
-<%@ page import="kh.spring.follay.show.domain.ShowImage"%>
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="UTF-8">
 <title>뽐내기</title>
+<script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
 </head>
 <body>
 <%@ include file="/WEB-INF/views/common/template_header.jsp" %>
@@ -26,19 +26,19 @@
 		<!-- 컨셉버튼 -->
 		<div class="category_btn_wrap">
 			<button type="button" class="category_btn" id="total" 
-				<c:if test="${work_category eq '7'}"></c:if>>전체</button>
+				<c:if test="${show_category eq '7'}"></c:if>>전체</button>
 			<button type="button" class="category_btn" id="animal"
-				<c:if test="${work_category eq '1'}"></c:if>>동물</button>
+				<c:if test="${show_category eq '1'}"></c:if>>동물</button>
 			<button type="button" class="category_btn" id="plant"
-				<c:if test="${work_category eq '2'}"></c:if>>식물</button>
+				<c:if test="${show_category eq '2'}"></c:if>>식물</button>
 			<button type="button" class="category_btn" id="bug"
-				<c:if test="${work_category eq '3'}"></c:if>>곤충</button>
+				<c:if test="${show_category eq '3'}"></c:if>>곤충</button>
 			<button type="button" class="category_btn" id="transportation"
-				<c:if test="${work_category eq '4'}"></c:if>>이동수단</button>
+				<c:if test="${show_category eq '4'}"></c:if>>이동수단</button>
 			<button type="button" class="category_btn" id="figure"
-				<c:if test="${work_category eq '5'}"></c:if>>도형</button>
+				<c:if test="${show_category eq '5'}"></c:if>>도형</button>
 			<button type="button" class="category_btn" id="etc"
-				<c:if test="${work_category eq '6'}"></c:if>>기타</button>
+				<c:if test="${show_category eq '6'}"></c:if>>기타</button>
 		</div>
 	</article>
 <script>
@@ -51,30 +51,17 @@
  <c:when test="${empty showlist}"> 
  	<div>작성된 글이 없습니다.</div> 
  </c:when> 
-	<c:otherwise>
-	<div class="list_div">
-		<table border="1">
-<!-- 			<tr> -->
-<!-- 				<th>제목</th> -->
-<!-- 				<th>작성일</th> -->
-<!-- 				<th>작성자</th> -->
-<!-- 				<th>조회수</th> -->
-<!-- 			</tr> -->
+<c:otherwise>
+<div class="list_div">
 <c:forEach items="${showlist}" var="show">
-			<tr id="show_td">
-			<td id="show_image">
-<a id="show_image" href="<%=request.getContextPath()%>/show/read?show_no=${show.show_no}">
-				<span class="list_title-span">${show.show_file}</span></a></td>
-<%-- 				<td id="show_image">${showImage.si_file}</td> --%>
-				<td id="showlist_no">${show.show_no}</td>
-				<td id="showlist_title">
-<a href="<%=request.getContextPath()%>/show/read?show_no=${show.show_no}">
-				<span class="list_title-span">${show.show_name}</span></a>
-				</td>
-			</tr>
+		<div style="padding:50px;">
+			<img src="<%=request.getContextPath()%>${show.show_file}"
+			onclick="location.href='<%=request.getContextPath()%>/show/read?show_no=${show.show_no}'" style="width:300px; padding-bottom:30px;">
+			<a href="<%=request.getContextPath()%>/show/read?show_no=${show.show_no}">
+			<span class="list_title-span">${show.show_name}</span></a>
+		</div>
 </c:forEach>
-		</table>
-	</div>
+</div>
 </c:otherwise>
 </c:choose>
 <!-- 페이징처리 -->
@@ -104,5 +91,36 @@
 </div>
 <%@ include file="/WEB-INF/views/common/template_footer.jsp" %>
 </div>
+<script>
+		//컨셉별 화면 조회
+		$("#total").on("click", function() {
+			location.href = "/follay/show/list?show_category=7";
+		});
+		
+		$("#animal").on("click", function() {
+			location.href = "/follay/show/list?show_category=1";
+		});
+
+		$("#plant").on("click", function() {
+			location.href = "/follay/show/list?show_category=2";
+		});
+
+		$("#bug").on("click", function() {
+			location.href = "/follay/show/list?show_category=3";
+		});
+
+		$("#transportation").on("click", function() {
+			location.href = "/follay/show/list?show_category=4";
+		});
+		
+		$("#figure").on("click", function() {
+			location.href = "/follay/show/list?show_category=5";
+		});
+		
+		$("#etc").on("click", function() {
+			location.href = "/follay/show/list?show_category=6";
+		});
+		
+</script>
 </body>
 </html>

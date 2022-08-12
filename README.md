@@ -8,7 +8,7 @@
 * 로그인, 회원가입, 마이페이지, 게시판, 페이징, 댓글
 # 개발 환경
 * OS : Microsoft Window 10
-* Language : Spring, Java 11, JSP, HTML5, CSS3, JavaScript, XML
+* Language : Spring, Java 11, JSP, HTML5, CSS3, JavaScript, Json, XML
 * Web Application Server : Apache Tomcat 9
 * DataBase : Oracle 11g Express Edition
 * Framework : Ajax, jQuery

@@ -32,4 +32,6 @@
 * 로그인/마이페이지 화면(로그인 후)
 ![follay_login_mypage](https://user-images.githubusercontent.com/97798479/185314136-dbade4a7-64e8-426a-8bbe-5cf4a9e1d2d0.gif)
 
+* 로그아웃
+![follay_logout](https://user-images.githubusercontent.com/97798479/185328535-9c24d106-9437-4f68-961c-cbdfffc1fbfd.gif)
 

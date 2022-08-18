@@ -16,3 +16,14 @@
 # 구현 화면
 * 메인화면
 ![follay_main](https://user-images.githubusercontent.com/97798479/185307447-cf6bf1dd-66cf-4d24-8220-05f74edf659f.gif)
+* 종이접기 화면
+![follay_work](https://user-images.githubusercontent.com/97798479/185308488-fdb572bf-f16b-4d74-97a2-e57c61b54978.gif)
+* 뽐내기 화면
+![follay_play](https://user-images.githubusercontent.com/97798479/185310113-f5386606-f4a9-478e-93d2-7121649b042e.gif)
+* 놀이터 화면
+![follay_nori](https://user-images.githubusercontent.com/97798479/185310643-1dee4b61-8cba-40a3-985d-005e30296acd.gif)
+* 마이페이지 화면(로그인 전)
+![follay_mypage](https://user-images.githubusercontent.com/97798479/185314522-2ad55c2e-ce48-4e24-bfec-f9e0cd66dda9.gif)
+* 로그인/마이페이지 화면(로그인 후)
+![follay_login_mypage](https://user-images.githubusercontent.com/97798479/185314136-dbade4a7-64e8-426a-8bbe-5cf4a9e1d2d0.gif)
+

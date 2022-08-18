@@ -13,4 +13,6 @@
 * DataBase : Oracle 11g Express Edition
 * Framework : Ajax, jQuery
 * Development Tool : SQL Developer, Eclipse, Visual Studio Code
+# 구현 화면
+* 메인화면
 ![follay_main](https://user-images.githubusercontent.com/97798479/185307447-cf6bf1dd-66cf-4d24-8220-05f74edf659f.gif)

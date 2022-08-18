@@ -35,3 +35,6 @@
 * 로그아웃
 ![follay_logout](https://user-images.githubusercontent.com/97798479/185328535-9c24d106-9437-4f68-961c-cbdfffc1fbfd.gif)
 
+* 회원가입
+![follay_insert](https://user-images.githubusercontent.com/97798479/185333765-37ff06cc-edee-41df-a7fe-a3e427dac63e.gif)
+

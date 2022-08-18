@@ -26,14 +26,14 @@
 * 놀이터 화면
 ![follay_nori](https://user-images.githubusercontent.com/97798479/185310643-1dee4b61-8cba-40a3-985d-005e30296acd.gif)
 
-* 마이페이지 화면(로그인 전)
+* 마이페이지 화면 (로그인 전)
 ![follay_mypage](https://user-images.githubusercontent.com/97798479/185314522-2ad55c2e-ce48-4e24-bfec-f9e0cd66dda9.gif)
 
-* 로그인/마이페이지 화면(로그인 후)
+* 로그인/마이페이지 화면 (로그인 후)
 ![follay_login_mypage](https://user-images.githubusercontent.com/97798479/185314136-dbade4a7-64e8-426a-8bbe-5cf4a9e1d2d0.gif)
 
 * 로그아웃
-![follay_logout](https://user-images.githubusercontent.com/97798479/185328535-9c24d106-9437-4f68-961c-cbdfffc1fbfd.gif)
+![follay_logout](https://user-images.githubusercontent.com/97798479/185336127-b3168f19-9fb6-4a40-b93c-a664627f4870.gif)
 
 * 회원가입
 ![follay_insert](https://user-images.githubusercontent.com/97798479/185333765-37ff06cc-edee-41df-a7fe-a3e427dac63e.gif)

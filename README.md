@@ -18,7 +18,7 @@
 ![follay_main](https://user-images.githubusercontent.com/97798479/185307447-cf6bf1dd-66cf-4d24-8220-05f74edf659f.gif)
 
 * 종이접기 화면
-![follay_work](https://user-images.githubusercontent.com/97798479/185308488-fdb572bf-f16b-4d74-97a2-e57c61b54978.gif)
+![follay_work](https://user-images.githubusercontent.com/97798479/185337922-0f4f6eea-2b6f-4810-8e62-2df7e92e15ae.gif)
 
 * 뽐내기 화면
 ![follay_play](https://user-images.githubusercontent.com/97798479/185310113-f5386606-f4a9-478e-93d2-7121649b042e.gif)
